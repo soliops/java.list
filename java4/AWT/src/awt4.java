@@ -15,14 +15,15 @@ class decorate extends awt4_class{
 		/*사용자가 입력한 숫자를 기준으로 구구단을 작성*/
 	
 		int w=1;
-		
+//		String total="";
 		do {
+//			total+=(c+"*"+w+"="+c*w+"\n");
 			this.msg+=(c+"*"+w+"="+c*w+"\n");
 //			System.out.printf("%s * %s = %s \n",c,w,c*w);
 //			System.out.println(c+" * "+w+" = "+c*w);
 			w++;
 		}while(w<=9);
-		
+//		this.msg=total;
 	}
 	public String calls() {
 		return this.msg;
