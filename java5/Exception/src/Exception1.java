@@ -14,15 +14,20 @@ public class Exception1 {
 
 	public static void main(String[] args) {
 		int a;
-		try {
-			 a = Integer.valueOf("홍길동1");
+		String b = "aA1";
+		try { //try : 해당 값을 int로 변경함(1)
+			 a = Integer.valueOf(b); 
+			 //error 발생 : a1이라는 문자인데, 
+			 //강제로 숫자로 변환시 a라는 문자로 인하여 오류 발생(2)
 		}
-		catch(Exception z){
-			System.out.println(z);
+		catch(NumberFormatException z){
+			System.out.println(z); //(3)어떤 부분에서 문제가 발생
 		}
 		finally {
-			 a = Integer.valueOf("1");
-			System.out.println(a);
+			 b = b.replaceAll("[a-z][A-Z]", ""); //데이터 재처리 (4)
+			 //replaceAll 에서  [a-z]는 영어 소문자 범위, [A-Z]는 대문자 범위
+			 a = Integer.valueOf(b); //다시 문법을 재작성해서 사용(5)
+			System.out.println(a); //(6)최종 결과값 출력
 		}
 	}
 
