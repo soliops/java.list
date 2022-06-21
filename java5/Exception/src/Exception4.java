@@ -16,7 +16,7 @@ public class Exception4 {
 		}
 		catch (Exception e) {
 			if(e.getMessage()!=null)
-			System.out.println(e.getMessage());
+			System.out.println(e);
 		}
 		
 	}
