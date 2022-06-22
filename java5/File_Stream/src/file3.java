@@ -44,6 +44,7 @@ class filein{
 		} catch (Exception j) {
 			if(j.getMessage()!=null) {
 				System.exit(0);
+			
 			}
 		}
 	}

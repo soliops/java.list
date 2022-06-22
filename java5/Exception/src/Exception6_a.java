@@ -15,7 +15,7 @@ public class Exception6_a {
 		 단, 외부 클래스에서 숫자만 있는 배열을 모두 예외처리 되도록 합니다.
 		 */
 		Datas db = new Datas();
-		String data[] = {"홍길동","55","유관순","강감찬","48","이순신","세종","35","88"};
+		Object data[] = {"홍길동",55,"유관순","강감찬",48,"이순신","세종",35,88};
 		try {
 			db.setter(data);
 			System.out.println(Arrays.toString(db.getter()));
@@ -42,19 +42,19 @@ class Datas{
 	String[] name = null;
 	int modify;
 	String msg[];
-	public void setter(String[] data1) throws Exception {
+	public void setter(Object[] data1) throws Exception {
 		//배열을 받아서 이름만 재배열로 생성
 		//숫자는 자체 예외처리
-		this.list  = new ArrayList<>(Arrays.asList(data1));
+//		this.list  = new ArrayList<>(Arrays.asList(data1));
 		 this.num = new ArrayList<>();
 		 int w = this.list.size()-1;
 		 int ct = 0;
 //		System.out.println(list);
 
 		do {
-			this.modify= Integer.parseInt(data1[w]);
+//			this.modify= Integer.parseInt(data1[w]);
 			if(this.modify%2!=0||this.modify!=1) {
-				this.num.add(ct,data1[w]);
+//				this.num.add(ct,data1[w]);
 			}else {
 				this.list.remove(data1[w]);
 			}
@@ -73,7 +73,6 @@ class Datas{
 		}while(ww<this.list.size());
 //		System.out.println(Arrays.toString(this.name)); 
 		this.getter();
-		throw new Exception();
 			 
 		 
 	}

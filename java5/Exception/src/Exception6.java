@@ -13,20 +13,21 @@ public class Exception6 {
 		outnumber on = new outnumber();
 		try {
 			int nums = 45*3+16+5+22*8;
-			String nums1 = Integer.toString(nums);
-			on.nums(nums1);
+			on.nums(nums);
+			String nums1 = on.nums(nums); //return 값
+			
 			System.out.println(nums1);
 		}catch (Exception e) {
 			if(e.getMessage()!=null) {
-				System.out.println(e);
+				System.out.println(e.getMessage());
 			}
 		}
 		finally {
 			try {
 			int nums = 11;
-			String nums1 = Integer.toString(nums);
-			on.nums(nums1);
-			System.out.println(on.nums(nums1));
+//			String nums1 = Integer.toString(nums);
+			on.nums(nums);
+			System.out.println(on.nums(nums));
 			}
 			catch(Exception f) {
 				System.exit(0);
@@ -38,8 +39,11 @@ public class Exception6 {
 
 }
 class outnumber {
-	public String nums(String nums1) throws Exception {
-		if(Integer.parseInt(nums1)%2==0) {
+	//자료형 메소드에서 return 값 숫자, 문자, object에 따라서 자료형이 선언되어 생성
+	public String nums(int nums1) throws Exception {
+		if((nums1)%2==0) {
+//			Exception ec= new Exception("예외처리 발생으로 재 확인이 필요합니다.");
+//			throw ec;
 			throw new Exception("짝수값 입니다.");
 		}else {
 			String msg = "홀수값 입니다.";

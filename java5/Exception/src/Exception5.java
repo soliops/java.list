@@ -12,7 +12,7 @@ public class Exception5 {
 //			System.out.println("빈값이 문제가 되어 올바른 값을 전달 받지 못함");
 		
 			if(a.getMessage()!=null) {				
-				System.out.println(a);
+				System.out.println(a.getMessage());
 			}
 			
 		}finally {
