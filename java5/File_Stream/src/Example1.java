@@ -20,43 +20,87 @@ import java.util.Scanner;
 public class Example1 {
 
 	public static void main(String[] args) throws IOException{
-		FileReader fr = new FileReader("C:\\java5\\File_Stream\\src\\movie_db.txt",Charset.forName("UTF8"));
-		BufferedReader br = new BufferedReader(fr);
-		ArrayList<String> list = new ArrayList<String>();
-		String words = "";
-		while((words=br.readLine())!=null) {
-			list.add(words);
-			
-		}
 		try {
-		Scanner sc = new Scanner(System.in);
-		int w= 0;
-		System.out.println(list.size());
-		System.out.println(list.get(w));
-		do {
-			System.out.println("검색할 영화제목을 입력하세요.");
-			String search = sc.next();
-			String ob = list.toString();
-			System.out.println(ob);
-			boolean b = list.get(w).contains(search);
-			System.out.println(b);
-			if(ob.toString().contains(search)) {
-				System.out.println(list.get(w));
-				break;
-			}else if(!ob.toString().contains(search)){
-				System.out.println("검색한 영화는 확인 되지 않습니다.");
+			//파일로드 및 메소드 전달
+			Scanner sc = new Scanner(System.in);
+			System.out.println("1. 개봉영화 2. 개봉예정영화 : ");
+			int user = sc.nextInt();
+			if(user ==1) {
+				movie m = new movie("movie_db.txt");
+				System.out.println(m);
 			}
-			w++;
-		}while(w<list.size());
+			else if(user ==2) {
+				System.out.println("서비스 준비중 입니다.");
+			}
 			sc.close();
-			br.close();
-			fr.close();
+//			else if(user ==2) {
+//				movie m = new movie("movie_expetdb.txt");
+//			}
+
 		}
-		catch (Exception e) {
-			if(e.getMessage()!=null) {
-			System.out.println(e.getMessage());
+		catch (Exception k) {
+			if(k.getMessage()!=null) {
+			System.out.println("현재 서비스가 정상적이지 않습니다.");
 			}
 		}	
 	}
 
+}
+
+class movie{
+	//보조 클래스
+	private String path = "C:\\java5\\File_Stream\\src\\";
+	private FileReader fr = null;
+	private BufferedReader bf = null;
+	private ArrayList<String> list = null;
+	private Scanner sc = null;
+	public movie (String filename) throws IOException{
+		try {
+			this.fr = new FileReader(this.path+filename,Charset.forName("UTF8"));
+			this.custom();
+			this.fr.close();
+			this.bf.close();
+			this.search();
+			
+		}
+		catch (Exception a) {
+			if(a.getMessage()!=null) {
+				System.out.println(a.getMessage());
+				}
+		}
+	}
+	public void custom() throws IOException{
+		this.bf = new BufferedReader(this.fr);
+		this.list = new ArrayList<>();
+		String datas = this.bf.readLine();
+		//do-while문이면 데이터를 하나 먼저 넣고 돌려야한다.
+		do{
+			this.list.add(datas);
+		}while((datas=this.bf.readLine())!=null);
+		
+	}
+	public void search() {
+		this.sc = new Scanner(System.in);
+		System.out.println("검색할 영화제목을 입력하세요. : ");
+		//indexOf, contains
+		String subject = this.sc.next().intern();
+		Boolean call = false;
+		if(subject == "종료") {
+			sc.close();
+			System.exit(0);
+		}
+		for(String moviesb : this.list) {
+			//if(moviesb.indexOf(subject)!=-1	
+			if(moviesb.contains(subject)) {
+				System.out.println(moviesb);
+				call= true;
+			}
+		}
+		if(call==false) {
+			System.out.println("데이터를 확인할 수 없습니다.");
+		}
+//		sc.close();
+		this.search();//재귀함수
+		
+	}
 }
