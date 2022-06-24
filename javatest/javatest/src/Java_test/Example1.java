@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 public class Example1 {
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException,Exception {
 		/*
 		 응용문제
 		 사용자가 6개의 숫자를 입력하는 로또 프로그램 입니다.
@@ -32,7 +32,7 @@ class lotto{
 	Scanner sc = null;
 	int count = 0;
 	int usernum= 0;
-	public void start() throws IOException {
+	public void start()throws IOException,Exception {
 		this.fname = "C:\\javatest\\javatest\\src\\Java_test\\lotto.txt";
 		this.fr = new FileReader(this.fname,Charset.forName("EUCKR"));
 		BufferedReader br = new BufferedReader(this.fr);
@@ -47,8 +47,9 @@ class lotto{
 	public void files () {
 		
 	}
-	public void number () {
+	public void number ()throws Exception {
 		this.sc = new Scanner(System.in);
+		try {
 		int w= 0;
 		do {
 			System.out.println("숫자를 입력해주세요.");
@@ -58,6 +59,11 @@ class lotto{
 			}
 			w++;
 		}while(w< this.lottonum.size());
+		}
+		catch (Exception e) {
+			System.out.println("숫자를 입력하세요");
+			this.number();
+		}
 	}
 	public String getter() {
 		String msg = "로또 결과 : 총 "+this.count+" 개를 맞추셨습니다.";
