@@ -1,5 +1,6 @@
 import java.io.BufferedReader;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -20,15 +21,17 @@ public class net3 {
 		InputStream is = urls.openStream();
 		InputStreamReader isr = new InputStreamReader(is);
 		BufferedReader br = new BufferedReader(isr);
-		FileOutputStream fs = new FileOutputStream("login.html");
+		FileWriter write = new FileWriter("login.html");
+//		FileOutputStream fs = new FileOutputStream("login.html");
 		byte html[] = new byte[1024];
 		String str = "";
 		while((str=br.readLine())!=null) {
-			fs.write(html,0,size);
+//			fs.write(html,0,size);
+			write.write(str);
 		}
 		br.close();
-		fs.flush();
-		fs.close();
+//		fs.flush();
+//		fs.close();
 		
 	}
 
