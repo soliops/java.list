@@ -7,7 +7,7 @@ public class study2 {
 		userinputnum uin = new userinputnum();
 //		uin.userinput();
 //		System.out.println(uin.result());
-		//test2-2
+//		test2-2
 		Scanner sc2 = new Scanner(System.in);
 		String user = sc2.next().intern();
 		userlist ul = new userlist();
@@ -31,20 +31,22 @@ class userinputnum{
 	}
 }
 class userlist{
-	public String[] users = {"강보경","권용환","금새록","김동주","김민재","성유리","손진호","안희성"};
-	
-	public void search(String user) {
-		
-		int ff=0;
+	public String[] users = { "강보경", "권용환", "금새록", "김동주", "김민재", "성유리", "손진호", "안희성" };
+	public String msg[] = { "해당 사용자가 있습니다.", "해당 사용자는 가입되지 않았습니다." };
 
-		while(ff<users.length) {
-			if(user==users[ff]) {
-				System.out.println("해당 사용자가 있습니다.");
-			}
-			else {
-				System.out.println("해당 사용자는 가입되지 않았습니다.");				
+	public void search(String user) {
+		String msg1 = null;
+		int ff = 0;
+
+		while (ff < users.length) {
+			if (user == users[ff]) {
+				msg1 = this.msg[0];
+				break;
+			} else {
+				msg1 = this.msg[1];
 			}
 			ff++;
 		}
+		System.out.println(msg1);
 	}
 }
