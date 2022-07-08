@@ -1,0 +1,54 @@
+<html lang = "ko">
+<head>
+<meta charset="utf-8">
+<title>HTML 2일차 HTML4.0 + CSS 2.0</title>
+<style>
+	/* .(class) #(id) 기호 입니다.*/
+	.box{ 			
+	width:100px;
+	height:100px;
+	background-color: orange;
+	}
+	#box{
+	height:100px;
+	width:100px;
+	background-color: pink;
+	}
+	.color1{
+	width:500px;
+	background-color:black;
+	}
+	.box3{
+	width:100px;
+	height:100px;
+	background-color:orange;
+	border-radius:100px;
+	/*border-radius : 타원형으로 만들 때 사용하는 속성*/
+	}
+	.btn{
+	width:200px;
+	height:40px;
+	background-color:skyblue;
+	border-radius:40px;
+	text-align:center;
+	/*text-align : left, center, right 정렬을 설정*/
+	line-height:40px;
+	/* line-height : 한 라인에 대한 높이값(줄 간격ㄴ)*/
+	}
+</style>
+<!-- class(Style 사용하기 위한 속성), id(javaScript), name(Backend에게 전송하는 속성)
+javaScript랑 연계하려면 써야함
+
+ -->
+</head>
+<body>
+<div class="btn">회원가입</div>
+<div class="box3"></div>
+<input type = "text" name="mid" id ="mid" class="mid">
+<div style="width:100px; height:100px; background-color:blue;"></div>
+<div class="box"></div>
+<div id="box"></div>
+<div class="box color1 color2;"></div>
+<!-- class는 여러가지 값을 가져올 수 있습니다. id는 중복이 되지 않습니다. -->
+</body> 
+</html>

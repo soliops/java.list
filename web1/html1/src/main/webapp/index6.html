@@ -1,0 +1,59 @@
+<html>
+<head>
+<meta charset= "euc-kr">
+<title>HTML 3.0 기본태그2</title>
+</head>
+<body>
+<select>
+<option>skt</option>
+<option>lgt</option>
+<option>kt</option>
+<option>알뜰폰</option>
+</select>
+<!-- select : 사용자가 범위 안의 내용을 선택 할때 사용, 선택태그라고 많이 불림 
+	select : 부모 tag, option : 자식 tag
+-->
+<br><br>
+<textarea rows="10" cols="50">
+이용약관
+</textarea>
+<!-- 
+cols : 한줄당 쓸 수 있는 글자 수
+rows : 한번에 볼 수 있는 줄 
+textarea : 사용자가 한 번에 많은 양의 내용을 입력하고자 할 때 사용, 절대 안에 주석 쓰면 안됨
+-->
+<br>
+<form  method="post" action="http://naver.com">
+<input type="text">
+<br>
+<input type="checkbox">SMS수신
+<br>
+<input type="password">
+<br>
+<input type ="submit" value = "전송">
+<input type ="button" value = "전송2" onclick="abc()">
+<br>
+
+<input type = "reset" value = "취소" >
+</form>
+<br>
+<!-- form 태그 : 사용자가 입력한 데이터를 전송하는 태그-->
+<!-- submit, reset은 단독으로 사용 불가능, form태그로 다른 것들과 묶여야 사용 가능하다 
+ sumbit : 제출 - action 적용 form과 사용을 같이하여 키보드 엔터를 누를 경우 작동
+ button : form과 관계없이 작동가능 클릭해야한다. 무조건 JavaScript랑 연계된다.
+※ submit과 button은 다르다
+ reset : 사용자가 입력한 데이터를 초기화
+ 무조건 form 안에 존재해야함.
+ method
+  - post : 사용자가 입력한 데이터를 자신에게 전송하게 함.
+  - get : 사용자가 입력한 데이터를 
+-->
+
+</body>
+</html>
+
+<script >
+function abc(){
+	location.href = "http://nate.com";
+}
+</script>

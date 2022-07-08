@@ -1,0 +1,40 @@
+<html lang="ko">
+<!-- html이 한국어 위주로 만들어졌다는 표시 -->
+<head>
+<meta charset="utf-8">
+<title>HTML 3.0 기본태그3</title>
+</head>
+<body>
+	<input type="text" style="width: 200px; height: 30px;">
+	<br>
+	<input type="button" value="로그인" style="width: 100px; height: 100px;">
+	<!-- px : pixel 단위크기이다. 외국에선 em, in, inch 등 나라마다 단위가 다르다
+	모바일은 %, vh, vw 같은 단위를 쓴다. -->
+	<!-- tabindex : 커서가 Tab키를 누를 경우 이동하는 순서를 정할 때 사용하는 속성 -->
+	<br>
+	<br>
+		<form method ="post" action = "http://nate.com">
+	<table border="1" width="550" height="120" cellspacing="0" cellpadding="0">
+		<tr>
+			<td width="100">아이디</td>
+			<td width="300" align="center"><input type="text"
+				style="width: 280px; height: 30px;" tabindex="1"></td>
+			<td rowspan="2" width ="150" align="center"><input type="submit" value="로그인"
+				style="width:130px; height:70px;" tabindex ="3"></td>
+		</tr>
+		<tr>
+			<td>패스워드</td>
+			<td align="center"><input type="password"
+				style="width:280px; height:30px;" tabindex = "2"></td>
+		</tr>
+		<tr>
+			<td colspan="3"><input type="checkbox">자동 로그인</td>
+		</tr>
+	</table>
+		</form>
+
+
+
+
+</body>
+</html>

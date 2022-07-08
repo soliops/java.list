@@ -1,0 +1,46 @@
+<html lang ="ko">
+<head>
+<meta charset="utf-8">
+<title>HTML 2일차 HTML4.0 +CSS 2.0</title>
+<style>
+/*태그에 그대로 적용시 . #을 사용하지 않음*/
+body{margin: 0; padding:0;}
+/*안쪽(padding),바깥쪽(margin) 0 사용시 공백을 없앰*/
+.box{width:50px; height:50px; background-color:black;}
+.color1{background-color:orange; margin-top:20px;}
+.color2{background-color:pink; margin-left:20px;}
+.color3{background-color:purple; margin-left:-20px;}
+.color4{background-color:green; margin-top:-20px;}
+.bigbox{width:50px; height:50px; background-color:yellow; padding-left:450px; padding-top:450px;}
+.sbox{width:30px; height:30px; background-color:black; padding-left:20px; padding-top:20px;}
+.ssbox{width:10px; height:10px; background-color:white;}
+/*padding 늘어나면 padding만큼 커짐
+단, padding적용 시 오브젝트의 width와 height가 늘어남
+*/
+/*margin : 바깥쪽 여백 left, right, top, bottom -값도 사용 가능하며 사용시 위치를 당김*/
+/*자식태그에 잘못 사용하면 부모태그까지 같이 움직임 가장 안쪽의 오브젝트엔 margin 사용안함. 제일 바깥쪽의 태그에만 사용*/
+</style>
+</head>
+<body>
+<!-- disabled : readonly와 비슷하지만 값을 전달 받지는 못합니다.
+	(사용자에게 서비스를 제공하지 못할 경우 ex) 은행 서비스 점검)
+-->
+<input type="text" value="hong" disabled>
+<input type="checkbox" disabled>자동로그인
+<br>
+<input type="radio" name="card" checked>신한카드
+<input type="radio" name="card">국민카드
+<input type="radio" name="card" disabled>하나카드
+<br><br>
+<div class="box">박스1</div>
+<div class="box color1">박스2</div>
+<div class="box color2">박스3</div>
+<div class="box color3">박스4</div>
+<div class="box color4">박스5</div>
+<div class="bigbox">
+<div class="sbox">
+<div class="ssbox"></div>
+</div>
+</div>
+</body>
+</html>

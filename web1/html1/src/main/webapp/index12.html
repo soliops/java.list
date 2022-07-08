@@ -1,0 +1,51 @@
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Padding, Margin</title>
+<style>
+body{padding:0; margin:0;}
+.box1{width:100px; height:100px; background-color:skyblue;
+/*margin-left:10px; margin-top:10px; margin-bottom:10px;*/
+margin:10px 50px 10px 10px;
+/*margin: 12시(top) 3시(right) 6시(bottom) 9시(left) 순으로 입력해서 적용함 
+4방향 여백이 모두 같은 숫자일 때는 해당숫자px로 표현 가능*/
+/*margin-bottom : 자신을 기준으로 다른 오브젝트를 밑으로 밀어냄*/
+float:left;
+/*float-left: 자신을 기준으로 왼쪽 정렬
+float-right: 자신을 기준으로 오브젝트를 오른쪽 정렬
+float-center: 자신을 기준으로 오브젝트를 가운데 정렬
+*/
+
+/*margin-right: 오른쪽에 오브젝트가 있을 경우에만 사용.*/
+}
+.box2{width:100px; height:100px; background-color:yellow; float:left;}
+.box3{width:100px; height:100px; background-color:red; clear:both;}
+/*float 사용했을시 clear:both 사용해서 위치를 초기화시킴 */
+
+.ulcss{list-style:none; margin:0; padding:0;
+/*list-style 없애면 disc자리에 무조건 여백이 남기 때문에 margin, padding 0처리해서 여백 없애야 한다.*/
+float:right;
+margin:0 10px 0 0;
+}
+.licss{width:200px; height:30px; border:1px solid black; 
+float:left; text-align:center; line-height:30px;
+}
+/*부모클래스에서 float-right, 자식 클래스는 float-left을 해야 자식은 오른쪽에 역순이 아닌 순서대로 나오면서 붙는다. 
+자식클래스에만 float-right하면 역순으로 오른쪽 정렬된다.*/
+</style>
+</head>
+<body>
+<div class="box1"></div>
+<div class="box2"></div>
+<div class="box3"></div>
+
+<ul class="ulcss">
+<li class="licss">1</li>
+<li class="licss">2</li>
+<li class="licss">3</li>
+<li class="licss">4</li>
+<li class="licss">5</li>
+</ul>
+
+</body>
+</html>

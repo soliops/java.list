@@ -1,0 +1,57 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>HTML 1일차 HTML2.0 태그</title>
+</head>
+<body>
+<!-- 
+<iframe src = "./index2.html" frameborder = "0"width = "100%" height="900"></iframe>
+iframe : 외부 페이지를 현제 페이지로 load하여 출력하는 태그 입니다. 
+width=100% : 브라우저 가로크기를 모두 사용한다는 뜻 
+frameborder : iframe시 외각선을 지울 때 사용합니다.
+-->
+<!--table태그 : 테이블을 생성할때 제작  
+tr : 한줄
+td : 한칸
+1. width, height를 table에 적용하는 방식
+2. tr에 height를 사용하여 td의 높이를 모두 맞춤 (※ width는 사용하지 않습니다.)
+3. td에는 width를 사용하나 첫번째 tr에 해당되는 td에만 width를 적용합니다.
+-->
+<table border = "1" width = "500" height = "120">
+<tr height = "40">
+<td width="100">123</td>
+<td >123</td>
+<td >123</td>
+</tr>
+<tr >
+<td>123</td>
+<td>123</td>
+<td>123</td>
+</tr>
+</table>
+
+<br>
+<!-- colspan : 가로칸을 합칠 대 사용합니다. 숫자는 무조건 2부터 -->
+<!-- rowspan : 세로칸을 합칠 대 사용합니다. 숫자는 무조건 2부터 -->
+<!-- align : left, right, center 표 안에 이미지, 텍스트를 위치를 변경 -->
+<!-- web은 기본이 left(왼쪽정렬)-->
+<table border ="1"  height="90" align = "center">
+<tr align = "center">  <!-- tr,td : align 칸 내용이 위치가 변함 -->
+<td width = "200" colspan="2">1,2</td>
+<td width = "100">3</td>
+<td width = "100" align = "left">4</td>
+</tr>
+<tr align = "center">
+<td colspan = "3">5,6,7</td>
+<td rowspan ="2">8,12</td>
+
+</tr>
+<tr>
+<td>9</td>
+<td>10</td>
+<td>11</td>
+</tr>
+</table>
+
+</body>
+</html>
