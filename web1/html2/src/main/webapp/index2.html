@@ -1,0 +1,56 @@
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>HTML 3일차 CSS2.0 응용 및 검색바 만들기</title>
+<style>
+body{margin:0; padding:0;}
+.box{width:100px; height:100px; background-color: orange;
+border-radius:0 50px 0 0;}
+/*boreder-radius : 왼쪽상단, 오른쪽상단, 오른쪽하단, 왼쪽하단*/
+.box2{
+width:100px; height:100px; background-color:green;
+border-radius: 50px 0 50px 50px;
+}
+.btn{ width:200px; height:30px; background-color:orange; 
+color:red; border:0;}
+.mid{ width:200px; height:30px; border:0; border-bottom: 1px solid black;}
+.search{width:586px; height:57px; 
+background-image:url("./search.png");
+position: relative; 
+}
+.s{ width:450px; height:50px; position:absolute; top:3px; left:3px;
+border:0px; font-size:16px; font-weight:bold;
+outline: none; text-indent: 5px;
+}
+.quick_menu{ width:330px; height:88px; border:1px solid black; list-style:none;
+margin:0; padding:0;
+position:absolute;}
+.menu_li{width:110px; float:left;
+position: relative; 
+}
+
+</style>
+</head>
+<body>
+<div class="box"></div>
+<div class="box2"></div>
+<input type ="button" value="회원가입" class="btn">
+<input type="text" class="mid">
+<br><br>
+<form name="f" id="f" method="get" action="https://search.naver.com/search.naver">
+<div class="search">
+<input type="text" name="query" class="s">
+</div>
+</form>
+<br> <br>
+<ul class="quick_menu">
+<li class="menu_li" ><a href="https://www.gmarket.co.kr" target="_blank" ><img src="./logo_quick_01.png"></a> </li>
+<li class="menu_li" ><a href="https://www.auction.co.kr" target="_blank"><img src="./logo_quick_02.png"></a></li>
+<li class="menu_li" ><a href="https://www.halfclub.com" target="_blank"><img src="./logo_quick_03.png"></a></li>
+<li class="menu_li" ><a href="https://www.11st.co.kr" target="_blank"><img src="./logo_quick_04.png"></a><li>
+<li class="menu_li" ><a href="https://www.wemakeprice.com" target="_blank"><img src="./logo_quick_05.png"></a></li>
+<li class="menu_li" ><a href="https://www.coupang.com" target="_blank"><img src="./logo_quick_06.png"></a></li>
+</ul>
+
+</body>
+</html>

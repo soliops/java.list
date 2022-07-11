@@ -1,0 +1,44 @@
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>HTML 3일차 HTML4.0</title>
+<style>
+body{margin:0; padding:0;}
+div{width:100px; height:100px;}
+.a{background-color:red; position: static; }
+.b{background-color:yellow; position: relative; left:100%; margin-left:-100px;}
+.c{background-color:green;}
+.d{background-color:skyblue; position: absolute; right:0px;}
+/*
+position : 오브젝트의 성격을 변화시킬 때 사용하는 속성
+static(고정), relative(중간형태 margin, top, left, right, bottom)
+absolute(자유분방함)
+*/
+.popup{ width: 600px; height:600px; background-color:yellowgreen; display:block;
+position: relative; }
+.close{ width:50px; height:50px; background-color: black;
+position: absolute; left:100%; color:white; font-size:25px;
+font-weight: bold; text-align:center; line-height:50px; 
+}
+/*자식이 absolute일 경우 부모는 무조건 relative로 셋팅 해야 한다.
+부모가 absolute면 자식이 relative여야 한다.
+*/
+
+</style>
+</head>
+<body>
+<div class="a"></div>
+<div class="b"></div>
+<div class="c"></div>
+<div class="d"></div>
+
+<span class="popup" id ="popup">
+<div class="close" onclick ="abc()">X</div>
+</span>
+</body>
+<script>
+function abc(){
+	document.getElementById("popup").style.display="none";
+}
+</script>
+</html>

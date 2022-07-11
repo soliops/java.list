@@ -1,0 +1,53 @@
+<html lang="ko" >
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-compatible" content="IE=Edge, chrome=1">
+<title>사이트 전체 레이아웃</title>
+<style>
+body{ margin:0; padding:0; }
+/*position: absolute에 margin:0 auto;(X)*/
+.top{ width:1200px; height:40px; background-color:#ccc; 
+margin:0 auto; }
+span{display:block;}
+ul,ol{list-style: none; margin:0; padding:0;}
+.top_span{height:40px; }
+.top_ol{ width:300px; height:40px; float:right;}
+.top_li{width:75px; height:40px; text-align:center; line-height:40px;
+float:left; font-size:12px;}
+.menu{width:1200px; height:80px; background-color:skyblue;
+margin:0 auto;}
+.menu_span{height:80px; padding:10px 15px 10px 15px;}
+.menu_ol{height:50px;}
+.menu_li1{width:240px; height:50px; background-color:green; float:left;}
+.menu_li2{width:600px; height:50px; background-color:purple; float:right;}
+</style>
+</head>
+<body>
+<!-- 최상단(로그인~고객센터) -->
+<div class="top">
+	<span class="top_span">
+		<ol class="top_ol">
+  		<li class="top_li">HOME</li>
+  		<li class="top_li">LOGIN</li>
+  		<li class="top_li">MEMBER</li>
+   		<li class="top_li">CUSTOMER</li> 
+		</ol>
+	</span>
+</div>
+<!-- 상단 메뉴 파트 -->
+<div class="menu">
+<span class="menu_span">
+	<ol class="menu_ol">
+  	<li class="menu_li1"> </li>
+ 	<li class="menu_li2" style="clear:both;"> </li>
+	</ol>
+</span>
+</div>
+<!-- 배너파트 -->
+
+
+
+
+<!-- 상품출력 파트 -->
+</body>
+</html>

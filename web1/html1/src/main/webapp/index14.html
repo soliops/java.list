@@ -3,48 +3,64 @@
 <meta charset="utf-8">
 <title>응용문제</title>
 <style>
-body{margin:0; padding:0;}
-.outline{width:350px; height:115px; border: 1px solid black; border-radius:10px;
-padding:15px;  }
-.ulcss{ width:350px; height:115px; list-style: none; margin:0; padding:0;
-border: 1px solid black; 
+body {
+	margin: 0;
+	padding: 0;
 }
-.licss{width:98px; height:33px; border: 1px solid black; 
-float:left; margin-bottom:5px;
-}
- .licss2{width:30px; height:35px;  
-float:left; text-align:center; line-height:35px;
- }
- .licss3{width:218px; height:33px; border: 1px solid black;
-float:left;
- }
- 
-.licss4{width:348px; height:33px; border: 1px solid black;
- clear:both; margin-bottom:5px;}
 
+.outline {
+	width: 350px;
+	height: 115px;
+	border: 1px solid black;
+	border-radius: 10px;
+	padding: 15px;
+}
+
+.ulcss {
+	width: 350px;
+	height: 115px;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	border: 0px solid black;
+}
+
+.licss {
+	width: 350px;
+	height: 35px;
+	margin-bottom:5px;
+}
+.nomargin{margin-bottom:0px;}
+.mail1{width:100px; height:35px; float:left;}
+.mail2{width:220px; height:35px; float:left;}
+.pass{width:350px; height:35px;}
+.btn{width:350px; height:35px;}
+.fc{width:30px; height:35px; display:block; float:left;
+text-align:center; line-height:35px;}
 </style>
 </head>
-<body align="center" >
-MEMBER LOGIN
-<div class="outline">
-<ul class="ulcss">
-<li class="licss" >
-<input type = "text" style="width:100%; height:100%;"> 
+<!-- 
+퍼블리싱 작업순서
+1. 전체 아웃라인만 작업합니다.
+2. 각 태그별로 class로 사이즈를 정확하게 조절
+3. 태그별로 중복되지 않도록 구성 합니다.
+4. 각 입력파트를 구현하며, 입력파트에 맞는 class를 적용
+5. 세부적인 사이즈 및 여백 공간을 조절합니다.
+ -->
 
-<li class="licss2">@</li>
-<li class="licss3">
-<input type = "text" style="width:100%; height:100%;">
-</li>
-<li class="licss4">
-<input type = "password" style="width:100%; height:100%;">
-</li>
-<li>
-<input type="button" value="로그인" style="width:350px; height:35px; border: 1px solid black; background-color:black; 
-color:white;"> 
-</li>
+<body>
+	MEMBER LOGIN
+	<form name="fm" id="fm" method="post" action="./index14.jsp">
+	<div class="outline">
+		<ul class="ulcss">
+			<li class="licss" name="user_email1"><input type="text" class="mail1">
+			<span class="fc">@</span>
+			<input type ="text" class="mail2" name="user_email2"></li>
+			<li class="licss" style="clear:both"><input type="password" class="pass" name="user_pw"></li>
+			<li class="licss nomargin"><input type="submit" value="로그인" class="btn"></li>
 
-</ul>
-</div>
-
+		</ul>
+	</div>
+	</form>
 </body>
 </html>

@@ -1,0 +1,55 @@
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>HTML 3일차 CSS2.0 응용 (배너 디스크)</title>
+<style>
+body{margin:0; padding:0;}
+.disc{ width:250px; height:20px; list-style:none;
+margin:0; padding:0; 
+}
+.licss{ width:20px; height:20px; background-color:black;
+border-radius:20px; float:left; margin:5px 0 0 5px;
+}
+.red {background-color: red;}
+.menu_ico{ width:95px; height:95px; border:1px solid #ccc;
+border-radius:100%; float:left; overflow:hidden;
+/* overflow : hidden은 해당 오브젝트 사이즈에 부분만 보여지도록 하는 css 속성입니다.*/
+}
+.menu_ico2{ width:95px; height:95px; border:1px solid #ccc;
+border-radius:100%; float:left; overflow:hidden;
+background-image: url("./menus.png");
+}
+/*background-position : background-image적용시 사용함
+  background-position: x축 y축
+  background-position-x: x축
+  background-position-y: y축*/
+.img1{background-position:0px 0;}
+.img2{background-position:-96px 0;}
+.img3{background-position:-192px 0;}
+.img4{background-position:-288px 0;}
+.img5{background-position:-384px 0;}
+</style>
+<!--color: red, orange... rgb(0,0,0)~rgb(255,255,255)  
+#FFFFFF; ~ #000000 (0~f)-->
+</head>
+<body>
+<ol class="disc">
+<li class="licss red"></li>
+<li class="licss"></li>
+<li class="licss"></li>
+<li class="licss"></li>
+</ol>
+<br><br>
+<div class="menu_ico"><img src="./home.png"></div>
+<div class="menu_ico"><img src="./key.png"></div>
+<div class="menu_ico"><img src="./mail.png"></div>
+<div class="menu_ico"><img src="./help.png"></div>
+<div class="menu_ico"><img src="./settings.png"></div>
+</body>
+<br> <br>
+<div class="menu_ico2 img1" style="clear:both;"></div>
+<div class="menu_ico2 img2"></div>
+<div class="menu_ico2 img3"></div>
+<div class="menu_ico2 img4"></div>
+<div class="menu_ico2 img5"></div>
+</html>
