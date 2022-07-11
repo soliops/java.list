@@ -16,10 +16,20 @@ ul,ol{list-style: none; margin:0; padding:0;}
 float:left; font-size:12px;}
 .menu{width:1200px; height:80px; background-color:skyblue;
 margin:0 auto;}
-.menu_span{height:80px; padding:10px 15px 10px 15px;}
-.menu_ol{height:50px;}
-.menu_li1{width:240px; height:50px; background-color:green; float:left;}
-.menu_li2{width:600px; height:50px; background-color:purple; float:right;}
+.menu_span{height:80px; padding:15px;}
+.menu_ol{height:50px; position:relative;}
+.menu_li1{width:240px; height:50px; background-color:green; 
+position:absolute; left:0;}
+.menu_li2{width:600px; height:50px; background-color:purple; position:absolute; right:0;}
+.banner{width:1200px; height:400px; background-color:skyblue;
+margin:0 auto; position:relative;}
+.banner_span{width:1200px; height:400px; position:absolute; }
+.banner_ol{ width:125px; height:15px; list-style:none;
+ padding:0;  margin:0 auto; position: relative; top:375px;
+}
+.banner_li{width:15px; height:15px; background-color:black;
+border-radius:15px; float:left; margin:0 5 0 5px;  }
+.red{background-color:red;}
 </style>
 </head>
 <body>
@@ -43,11 +53,19 @@ margin:0 auto;}
 	</ol>
 </span>
 </div>
-<!-- 배너파트 -->
-
-
-
-
+<!-- 배너파트
+ -->
+<div class="banner">
+<span class="banner_span">
+<ol class="banner_ol">
+<li class="banner_li red"></li>
+<li class="banner_li"></li>
+<li class="banner_li"></li>
+<li class="banner_li"></li>
+<li class="banner_li"></li>
+</ol>
+</span>
+</div>
 <!-- 상품출력 파트 -->
 </body>
 </html>
