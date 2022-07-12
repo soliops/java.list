@@ -1,70 +1,211 @@
-<html lang="ko" >
+<html lang="ko">
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-compatible" content="IE=Edge, chrome=1">
 <title>사이트 전체 레이아웃</title>
 <style>
-body{ margin:0; padding:0; }
+body {
+	margin: 0;
+	padding: 0;
+}
 /*position: absolute에 margin:0 auto;(X)*/
-.top{ width:1200px; height:40px; background-color:#ccc; 
-margin:0 auto; }
-span{display:block;}
-ul,ol{list-style: none; margin:0; padding:0;}
-.top_span{height:40px; }
-.top_ol{ width:300px; height:40px; float:right;}
-.top_li{width:75px; height:40px; text-align:center; line-height:40px;
-float:left; font-size:12px;}
-.menu{width:1200px; height:80px; background-color:skyblue;
-margin:0 auto;}
-.menu_span{height:80px; padding:15px;}
-.menu_ol{height:50px; position:relative;}
-.menu_li1{width:240px; height:50px; background-color:green; 
-position:absolute; left:0;}
-.menu_li2{width:600px; height:50px; background-color:purple; position:absolute; right:0;}
-.banner{width:1200px; height:400px; background-color:skyblue;
-margin:0 auto; position:relative;}
-.banner_span{width:1200px; height:360px; position:absolute;}
-.banner_ol{width:125px; height:15px; list-style:none; padding:0;
-margin:0 auto; position: relative; top:100%;}
-.banner_li{width:15px; height:15px; background-color:black;
-border-radius:15px; float:left; margin:0 5 0 5px;  }
-.red{background-color:red;}
+.top {
+	width: 1200px;
+	height: 40px;
+	background-color: #ccc;
+	margin: 0 auto;
+}
+
+span {
+	display: block;
+}
+
+ul, ol {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.top_span {
+	height: 40px;
+}
+
+.top_ol {
+	width: 300px;
+	height: 40px;
+	float: right;
+}
+
+.top_li {
+	width: 75px;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	float: left;
+	font-size: 12px;
+}
+/*메뉴 파트*/
+.menu {
+	width: 1200px;
+	height: 65px;
+	background-color: rgb(0, 255, 255);
+	margin: 0 auto;
+	padding-top: 15px;
+	position: relative;
+}
+
+.logo {
+	position: absolute;
+	width: 240px;
+	height: 50px;
+	background-color: green;
+	left: 15px;
+}
+
+.main_manu {
+	position: absolute;
+	width: 600px;
+	height: 50px;
+	background-color: purple;
+	right: 15px;
+}
+
+.banner {
+	position: relative;
+	width: 1200px;
+	height: 400px;
+	background-color: blue;
+	margin: 0 auto;
+	text-align: center;
+	/*자식 태그가 inline, inline-block일 경우
+	text-align:center로 화면 가운데로 정렬할 수 있습니다.*/
+}
+
+.disc {
+	width: 15px;
+	height: 15px;
+	background-color: black;
+	border-radius: 15px;
+	float: left;
+	margin-left: 10px;
+}
+
+.nomargin {
+	margin-left: 0px;
+}
+
+.red {
+	background-color: red;
+	/*margin-left: 45%; */
+}
+
+.disc_span {
+	height: 15px;
+	display: inline-block;
+	/*inline, inline-block : span에 주로 사용하는 속성 입니다.
+inline : 자동 사이즈로 조절이 되나 줄바꿈을 하지 못함
+(width, height가 적용이 되나 line-height가 적용이 안됨 - 텍스트 일 경우는 모두 안됨)
+inline-block : 자동 사이즈로 조절이 되나 줄바꿈을 하지 못함
+(width, height가 적용이 되나 line-height가 적용이 됨)
+*/
+	height: 15px;
+	/*margin-left:auto, margin-right:auto 부모 태그 가로 기준으로 
+왼쪽과 오른쪽을 동일한 사이즈를 계산하여 적용하는 방식 입니다.
+단, position:relative 또는 static 일 경우만 사용이 됩니다.*/
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	top: 360px;
+}
+
+/* 중요 : margin:0 auto; 사용할 수 있는 경우
+   1. position:absolute(x)
+   2. width값이 무조건 있어야 가능함
+*/
+
+/*
+.disc_span {
+	height: 15px;
+	display: block;
+	width: 100%;
+	position: absolute;
+	bottom: 25px;
+}
+*/
+/*disc가 있는 span은 높이만 잡고 길이는 절대 안 잡는다. disc가 언제 추가될지 모르기 때문에*/
+.product {
+	width:1160px;
+	height:auto;
+	margin: 0 auto;
+	padding:20px 20px 0 20px;
+}
+
+.product_ul {
+	width:1160px; height:auto;
+}
+
+.product_li {
+	width:250px;
+	height:300px;
+	background-color:black;
+	float:left;
+	margin:20px;
+}
+.copyright{width:1200px; height:100px; background-color:black;
+margin:0 auto; clear:both; color:white; font-size:12px;}
 </style>
 </head>
 <body>
-<!-- 최상단(로그인~고객센터) -->
-<div class="top">
-	<span class="top_span">
-		<ol class="top_ol">
-  		<li class="top_li">HOME</li>
-  		<li class="top_li">LOGIN</li>
-  		<li class="top_li">MEMBER</li>
-   		<li class="top_li">CUSTOMER</li> 
-		</ol>
-	</span>
-</div>
-<!-- 상단 메뉴 파트 -->
-<div class="menu">
-<span class="menu_span">
-	<ol class="menu_ol">
-  	<li class="menu_li1"> </li>
- 	<li class="menu_li2" style="clear:both;"> </li>
-	</ol>
-</span>
-</div>
-<!-- 배너파트
+	<!-- 최상단(로그인~고객센터) -->
+	<div class="top">
+		<span class="top_span">
+			<ol class="top_ol">
+				<li class="top_li">HOME</li>
+				<li class="top_li">LOGIN</li>
+				<li class="top_li">MEMBER</li>
+				<li class="top_li">CUSTOMER</li>
+			</ol>
+		</span>
+	</div>
+	<!-- 상단 메뉴 파트 -->
+	<div class="menu">
+		<span class="logo"></span> <span class="main_manu"></span>
+	</div>
+	<!-- 배너파트
  -->
-<div class="banner">
-<span class="banner_span">
-<ol class="banner_ol">
-<li class="banner_li red"></li>
-<li class="banner_li"></li>
-<li class="banner_li"></li>
-<li class="banner_li"></li>
-<li class="banner_li"></li>
-</ol>
-</span>
-</div>
-<!-- 상품출력 파트 -->
+	<div class="banner">
+		<span class="disc_span">
+			<div class="disc nomargin red"></div>
+			<div class="disc"></div>
+			<div class="disc"></div>
+			<div class="disc"></div>
+			<div class="disc"></div>
+			<div class="disc"></div>
+			<div class="disc"></div>
+			<div class="disc"></div>
+			<div class="disc"></div>
+		</span>
+	</div>
+	<!-- 상품출력 파트 ※ 여백공간 코드 작성시 좌우 px을 합친다는 생각으로 퍼블리싱 해야함-->
+	<div class="product">
+		<ul class="product_ul">
+			<li class="product_li"></li>
+			<li class="product_li"></li>
+			<li class="product_li"></li>
+			<li class="product_li"></li>
+			<li class="product_li"></li>
+			<li class="product_li"></li>
+			<li class="product_li"></li>
+			<li class="product_li"></li>
+			<li class="product_li"></li>
+			<li class="product_li"></li>
+		</ul>
+	</div>
+	<!-- 카피라이터 파트 -->
+	<div class="copyright">
+	<span>Copyright ⓒ 1999~2022 Naver Corp. All Rights reserved.</span>
+	<span>회사명, 대표자명, 사업자등록번호, 통신판매번호 <a href="https://ftc.go.kr/bizCommPop.do?wrkr_no=1428138153" target="_blank">[사업자등록확인]</a></span>
+	<span>대표전화, 개인정보담당자명, 대표메일, 주소</span>
+	</div>
 </body>
 </html>

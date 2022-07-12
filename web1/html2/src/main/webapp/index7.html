@@ -1,0 +1,39 @@
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-compatible" content="ie=edge, chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- viewport를 사용한 이유는 모바일 웹에서도 사용할 수 있도록 하기 위함 -->
+<title>HTML 4일차 HTML5.0 + CSS 3.0</title>
+<link rel="stylesheet" type="text/css" href="./index7.css?v=2022071201">
+<!-- link 태그 : css파일을 로드 하기 위해서 사용된 태그 입니다. -->
+</head>
+<body>
+	<!-- label : span 태그의 업그레이드 버전, 마크업이다. 속성을 봐야지만 알수 있으니까
+ for라는 속성 : input type 태그 속성에서 id를 이용하여 핸들링할 수 있습니다.
+-->
+	<label class="box"></label>
+	<br>
+	<input type="checkbox" id="ck">
+	<label for="ck"> 자동로그인</label>
+	<br>
+	<input type="checkbox" id="ck">
+	<span for="ck"> 자동로그인</span>
+	<br>
+	<input type="radio" name="a" id="a1">
+	<label for="a1">동의함</label>
+	<input type="radio" name="a" id="a2">
+	<label for="a2">동의안함</label>
+	<br>
+	<br>
+	<!-- text에 list라는 속성 추가됨 datalist태그와 연결을 시킬 수 있음 -->
+	<input type="text" list="search">
+	<datalist id="search"> <!-- datalist는 select의 업그레이드 태그 입니다. -->
+		<option>JAVA</option>
+		<option>MYSQL</option>
+		<option>MSSQL</option>
+		<option>HTML</option>
+		<option>CSS</option>
+	</datalist>
+</body>
+</html>
