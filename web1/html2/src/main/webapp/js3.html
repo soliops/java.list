@@ -1,0 +1,46 @@
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Javascript 2일차 반복문</title>
+<script type="text/javascript">
+	var a = 1;
+	for(a=1;a<10;a++){ //for문
+// 		console.log(a);
+	}
+	var w=1;
+	while(w<10){ //while문
+// 		console.log(w);
+		w++;
+	}
+	var z=1;
+	do{ 	//do-while문
+// 		console.log(z); 
+		z++;
+	}while(z<10);
+	
+	var f,ff;
+	for(f=2;f<10;f++){
+		for(ff=1;ff<10;ff++){
+			var k = f*ff;
+// 			console.log(f+"*"+ff+"="+k);		
+		}
+	}
+	/* 응용문제 위에 있는 더블 for문을 이용하여 
+	while, do-while을 이용하여 더블 반복문으로 결과값은 동일하게 나오도록 코드를 작성하시오.*/
+	var w=2;
+	while(w<10){
+		ww=1;
+		do{
+			var y = w*ww;
+			console.log(w+"*"+ww+"="+y);
+			ww++;
+		}while(ww<10);
+		w++;
+	}
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

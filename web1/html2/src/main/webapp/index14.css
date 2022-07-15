@@ -1,0 +1,123 @@
+@charset "UTF-8";
+
+body{ margin : 0; padding:0;}
+span{display: block;}
+label{display: block}
+.box1{
+	width: 100px;
+	height: 100px;
+	background-color: orange;
+	padding-left: 50px;
+}
+
+.box2{
+	width: 100px;
+	height: 100px;
+	background-color: green;
+	padding-left: 50px;
+	box-sizing: border-box;
+	
+/* 	box-sizing: border-box : padding, border도 적용되어짐 */
+}
+
+.box3{
+	width: 100px;
+	height: 100px;
+	border: 1px solid red;
+}
+
+.box4{
+	width: 100px;
+	height: 100px;
+	border: 1px solid red;
+	box-sizing: border-box;
+}
+
+/* 
+nth-child(DOM) : 
+nth-of-type(NODE) : 
+ */
+
+.ulcss > li:nth-child(1) {
+	color: red;	
+}
+
+.ulcss > li:nth-child(4) {
+	color: red;	
+}
+
+.ulcss > li:nth-child(5) {
+	color: red;	
+}
+
+.olcss > li:nth-of-type(2) {
+	color: blue;
+}
+
+.olcss > li:nth-of-type(3) {
+	color: blue;
+}
+
+/* DOM (자식태그를 순서대로 나열함) */
+.div1 > span:nth-child(4) {
+	color: red;
+} 
+/* NODE (태그끼리 별도로 카운팅을 함 JS생각하면 앵간하면 NODE로 짤것) */
+.div2 > span:nth-of-type(4) {
+	color:red;
+}
+.div2>label:nth-of-type(1) {
+	color:green;
+}
+
+.object1{}
+.object1 > span {
+	width: 50px;
+	height: 50px;
+	background-color: blue;
+} 
+
+.object1 > span:nth-of-type(2) {
+	background-color: yellow;
+}
+
+.object1 > span:nth-of-type(odd) { /* odd(홀수번호)  even(짝수번호)*/
+	background-color: red;
+}
+
+.object2{}
+.object2 > span, .object2 > label{
+	width: 50px;
+	height: 50px;
+	background-color: blue;
+}
+
+
+.object2 > span:nth-of-type(even) {
+	background-color: yellowgreen;
+}
+
+.object2> label:nth-of-type(odd) {
+	background-color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

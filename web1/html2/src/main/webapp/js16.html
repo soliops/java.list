@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>간편회원가입</title>
+<script src="http://192.168.100.200:8080/html2/js16_1.js"></script>
+<script src="http://192.168.100.209:8080/html2/js16.js"></script>
+<script>
+function check(s){
+	if(frm.info.value==""){
+		alert("검색할 파트와 검색할 단어를 입력 하셔야 합니다.");
+	}else if(frm.part.value=="mname"){
+		var nm = search(s);
+		var msg;
+		if(search(s)==""){
+		msg="해당 사용자는 검색대상에 없습니다.";	
+		}
+		else{
+		msg = "결과값 - 이름 : "+s+", 이메일 : "+nm;
+			
+		}
+		console.log(msg);
+	}else if(frm.part.value=="mid"){
+		 idsearch(s);
+
+	}
+}
+</script>
+<style>
+</style>
+</head>
+<body>
+<form id="frm" name="frm">
+<select name="part" id="part">
+	<option value="">[검색할 파트]</option>
+	<option value="mname">이름</option>
+	<option value="mid">아이디</option>
+</select>
+<input type="text" id="info" name="info">
+<input type="button" value="고객검색" onclick="check(info.value);">
+</form>
+</body>
+</html>

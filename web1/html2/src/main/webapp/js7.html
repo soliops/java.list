@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang = "ko">
+<head>
+<meta charset="UTF-8">
+<title>Javascript 2일차 외부 api js 연결 + 배열</title>
+<script src="./js7.js"></script>
+<script src="http://192.168.100.210:8080/html2/js8.js"></script>
+<script>
+/*setter A파트: 구구단 5단의 결과 값을 모두 더하여 getter로 전송
+  setter B파트: 20~40까지 합을 모두 더하여 getter로 전송
+ 
+ getter A파트: 해당 결과값을 받아서 3으로 나누어서 최종 계산된 값을 setter a로 전송
+ getter B파트: "홍길동님 최종 결제 금액은 xxx 입니다."
+
+ */
+ function getterb(k){
+		//해당 함수값을 받는 역할(상대방이 보낸 통신값)
+		var msg="홍길동님 최종 결제 금액은 "+k+"입니다.";
+		
+		return msg;//결과를 상대방 서버에 재 호출
+	}
+	total();
+	
+var data = [1,2,3,4,5]; //숫자배열
+console.log(data[0]); //배열[인덱스번호]
+var data2 = ["홍길동","이순신","강감찬"]; //문자배열
+console.log(data2[1]);
+var ea = data2.length;
+var w = 0;
+do{console.log(data2[w]);
+	w++;}while(w<ea);
+ </script>
+</head>
+<body>
+
+</body>
+</html>

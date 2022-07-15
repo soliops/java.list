@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+<title>Javascript 3일차 HTML + Javascript (popup)</title>
+<script>
+	//window.open 함수 : 팝업창(새창) 오픈할 때 사용합니다.
+	//window.open("경로","타이틀","사이즈, 스크롤바, 보안사항")
+// 	window.open("./js12.html","","width=500 height=300");
+	
+	function popup(){
+		window.open("./js11.html","","width=300 height=200");
+	}
+	function popup2(){
+		var w = 0;
+		while(w<1){			
+		window.open("./popup.html","","width=400 height=300");
+		w++;
+		}
+	}
+</script>
+</head>
+<body>
+<input type="button" value="주소찾기" onclick="popup();">
+<br> <br>
+<input type="text" id="address" readonly>* 주소 입력
+<input type="button" value="팝업" onclick="popup2();">
+</body>
+</html>

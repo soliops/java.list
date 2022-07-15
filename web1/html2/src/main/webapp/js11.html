@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge, chrome=1">
+<title>Javascript 3일차 HTML + Javascript</title>
+<script>
+//function (일반함수,리턴함수,이벤트 핸들링함수)
+function abc(){
+	//hmtl에 id값을 가져와서 js 변수로 이관함
+// 	var id = document.getElementById("mid");
+// 	console.log(id.value); //해당 Id값을 가져오는 역할
+// 	id.readOnly=true; //readOnly(읽기 전용)
+	
+	/* 인터넷에서 돌아다니는 방법인데 추천 안한다.
+	var id = document.getElementById("mid").value;
+	console.log("mid");
+	document.getElementById("mid").readOnly=true;
+	*/
+	
+	var id = document.getElementById("mid");
+	var pw = document.getElementById("mpass");
+	if(id.value==""){ 	//해당 id값이 비어있을 경우
+		alert("아이디를 입력하세요."); //alert(경고문구)
+		id.focus();//focus() 커서를 해당 오브젝트에 적용할때 사용
+	}else if (pw.value==""){
+		alert("패스워드를 입력하세요.");
+		pw.focus();
+		}
+	else{
+		/*form id 사용시*/
+// 		var f = document.getElementById("frm");
+// 		f.submit();
+
+		/*form name 사용시*/
+		frm.submit(); //submit() : method+action 발동시키는 함수
+	}
+	}
+
+</script>
+</head>
+<body>
+<form id="frm" name="frm" method="post" action="http://www.naver.com">
+<input type="text" id="mid" name="mid">
+<input type="password" id="mpass" name="mpass">
+<input type="button" value="확인" onclick="abc();"> 
+</form>
+<!-- 
+onclick 속성(button)
+onclick 사용 안하는 속성 (submit, reset)
+  -->
+</body>
+</html>

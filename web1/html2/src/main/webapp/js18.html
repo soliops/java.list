@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Javascript 3일차 2차배열 사용법</title>
+<script>
+function abc(s){
+	/*
+	var s = document.getElementById("se");
+	console.log(s.value);
+	*/
+	if(s==""){
+		console.log("통신사를 입력하세요");
+	}
+	else{
+	console.log(s);
+	}
+}
+</script>
+<style>
+</style>
+</head>
+<body>
+<!-- onchange = option에 대한 선택값이 변경 되면 바로 해당 함수를 호출합니다.
+	첫번째 의미 this(해당 태그에 대한 value) -->
+<select name="se" id="se" onchange="abc(this.value)">
+	<option value="">[통신사]</option>
+	<option value="SKT">SKT</option>
+	<option value="KT">KT</option>
+	<option value="LGT">LGT</option>
+</select>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+<title>Javascript 3일차 HTML + Javascript 2(js13.html과 함께 사용)</title>
+<script>
+	function abc(){
+		//var a = document.getElementById("mid"); name값을 안 줬을때
+		if(frm.mid.value==""){
+			alert("중복 확인 하실 아이디를 입력하세요");
+		}
+		else{
+			frm.submit();
+		}
+	}
+</script>
+<style>
+.idclass {
+	width: 200px;
+	height: 30px;
+	border: 1px solid blue;
+	box-sizing:border-box;
+}
+
+.btn {
+	width: 80px;
+	height: 30px;
+}
+</style>
+</head>
+<body>
+<!-- 
+get 방식은 브라우저에 파라미터값을 이용하여 전송하는 형태입니다.
+단점: 보안에 취약함
+ -->
+	<form id="frm" name="frm" method="get" action="./js13.html">
+		<input type="text" id="mid" name="mid" class="idclass"> 
+		<input type="button" value="전송" class="btn" onclick="abc();">
+	</form>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+<title>팝업창 = js14.html</title>
+<script>
+ 	function popclose(){
+ 		self.close();
+ 		//self.close() : 자신의 창을 강제 종료 시킬 때 사용
+ 	}
+ 		function abc(addr){
+ 		//window.opener : 부모창을 지칭하게 됩니다.
+		window.opener.document.getElementById("address").value = addr;
+ 		}
+</script>
+</head>
+<body>
+<a href="javascript:void abc('서울 특별시 마포구 신촌로');">서울 특별시 마포구 신촌로</a> <br>
+<a href="javascript:void abc('서울 특별시 영등포구 신촌로');">서울 특별시 영등포구 신촌로</a> <br>
+<a href="javascript:void abc('서울 특별시 금천구 신촌로');">서울 특별시 금천구 신촌로</a> <br>
+<a href="javascript:void abc('서울 특별시 양천구 신촌로');">서울 특별시 양천구 신촌로</a> <br>
+<input type="button" value="창닫기" onclick="popclose();">
+</body>
+</html>

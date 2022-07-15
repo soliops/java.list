@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+<title>Javascript 3일차 데이터값 응용1</title>
+
+<script>
+	//CORS 발생 : 서로 다른 도메인 및 IP가 발생할 경우
+	//corss-site, corss-domain 서버없이 해결법
+	function abc(){
+// 		opener.location.reload(); //부모창을 새로고침
+// 		var z = opener.document.mid;
+		/*부모창에 있는 값을 자식창으로 가져오는 사항 (id로 이용)*/
+		var z = opener.document.getElementById("mid").value;
+		alert(z);
+// 		document.bbb.action = "http://naver.com";
+// 		document.bbb.submit();
+// 		bbb.location.href="http://naver.com";
+	}
+	
+</script>
+</head>
+<body>
+<!-- <form name="bbb" method="post"> -->
+<!-- <iframe id="bbb" name="bbb" src="http://192.168.100.209:8080/html2/js15.html"></iframe> -->
+<!-- </form> -->
+<input type ="button" value="데이터" onclick="abc();">
+</body>
+</html>

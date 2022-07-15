@@ -1,0 +1,19 @@
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+<title>Javascript 3일차 데이터값 응용1</title>
+
+<script>
+	//CORS 발생 : 서로 다른 도메인 및 IP가 발생할 경우
+	//corss-site, corss-domain 서버없이 해결법
+	function abc(){
+		window.open("./js15_1.html","","width=400 height=300");
+	}
+</script>
+</head>
+<body>
+<input type ="text" name="mid" id="mid" value="abcabc">
+<input type ="button" value="팝업" onclick="abc();">
+</body>
+</html>

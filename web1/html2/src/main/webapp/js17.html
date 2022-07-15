@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Javascript 3일차 2차배열 사용법</title>
+<script>
+	//체스배열
+	var a =[
+		["홍길동","이순신"],
+		["hong","lee"]
+	];
+// 	console.log(a[1][1]);
+	//키배열
+	var b ={
+		"person":["홍길동","이순신"],
+		"mid":["hong","lee"]
+	};
+// 	console.log(b.mid[1]);	
+	var keys = Object.keys(b); //Object.keys : 키 이름이 있는 배열을 말함.
+// 	console.log(keys.length);
+	var keys_value=Object.values(b); //Object.values : 키에 맞는 값 배열만 가져옴
+// 	console.log(keys_value);
+	var keys_en=Object.entries(b);//Object.entries : 배열키와 값을 동시에 가져옴
+	console.log(keys_en);
+// 	console.log(keys_en[1][1]);
+// 	console.log(Object.keys(b.person));
+	console.log(b[keys[0]][0]); //실무에서 무조건 사용
+	//연관배열
+	var c = [
+		{"mname":"홍길동","mid":"hong"},
+		{"mname":"이순신","mid":"lee"}
+	];
+	console.log(c[1]["mname"]);
+	//복합배열
+	var d =[
+		{"mname":["홍길동","이순신" ],
+		},
+		{"mid":["hong","lee"]
+		}
+	];
+	console.log(d[1]["mid"][1]);
+	console.log(Object.values(d)[0]["mname"][0]);
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

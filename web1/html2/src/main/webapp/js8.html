@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Javascript 2일차 외부 api js 연결 +배열(응용편)</title>
+<script src="./js8.js?v=2"></script>
+<script src="./js8_a.js?v=3"></script>
+<script >
+/*응용문제 setter, getter
+data_a["hong","park","kim","jang"] 
+data_b[2500,3400,1000,6200]
+data_c["S","V","N","N"] S: 실버회원, V: vip ,N:일반회원
+kim일 경우
+결과출력: data_a를 가지고 있는 분이 최종 출력을 합니다.
+kim님 적립금은 1000 이며, 일반회원 입니다.
+data_b에서 출발시 var_user_id 선언 user_id ="jang";
+1. 이종혁 user_id ="jang" => 김창순씨 에게 전송
+2. 김창순 해당 값이 있는지 없는지를 파악
+	없을 경우 "해당 사용자는 가입되지 않았습니다."
+	있을 경우 김찬순 => index값을 보내주셔야 합니다.
+	해당 index를 받은 이종혁은 해당 적립금 금액을 return해줌
+3. 김창순 해당 값을 받음
+4. 2번에서 김창순씨에게 받은 index값을 이진형씨에게 보냅니다.
+	이진형씨는 index값을 받아서 해당 배열에 회원 레벨을 return합니다.
+	이종혁은 이진형씨에게 받은 레벨값을 김창순씨에게 return하게 됩니다.
+5. 최종 김창순씨는 아이디, 적립금, 레벨 return 값을 결과값처럼 출력해주면 됩니다.
+return 값이 2개일 경우 배열로 return
+*/
+var user_id ="jang"
+aa(user_id);		
+function gettera(idx){
+	var data_b =[2500,3400,1000,6200];
+	var w= 0;
+	var point;
+	while(w<data_b.length){
+		if(idx==w){
+			point = data_b[w];
+		}
+		w++;
+	}
+	var level = vip(idx);
+	return [point,level];
+	
+}
+</script>
+</head>
+<body>
+
+</body>
+</html>

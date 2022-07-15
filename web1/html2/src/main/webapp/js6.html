@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Javascript 2일차 함수+ return함수 응용</title>
+<script src="http://192.168.100.209:8080/html2/js6.js"></script>
+<script type="text/javascript">
+function return1(k){
+	//해당 함수값을 받는 역할(상대방이 보낸 통신값)
+	var msg;
+	console.log(k);
+	if(k%2==0){
+		msg="짝수 입니다.";
+	}else{
+		msg="홀수 입니다.";
+	}
+	return msg;//결과를 상대방 서버에 재 호출
+}
+call1(); //상대방 서버에 있는 함수를 호출
+
+
+
+
+/* 응용문제 해당 함수들을 이용하여 결과값을 retrun 받는
+코드를 작성하시오.
+20,30을 함수로 전달 
+결과값 600 출력되어야 합니다.
+*/
+function call(a,aa){
+	var result = re(a,aa);
+	console.log("결과 : "+result);
+}
+function re(n,nn){
+	var cal = n*nn;
+	return cal;
+}
+call(20,30);
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
