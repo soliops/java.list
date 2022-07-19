@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Javascript 4일차 HTML 코드 생성(input) + js6.html</title>
+<script>
+//js6.html에서 get으로 넘어온 데이터를 split을 통해서
+//각 배열별로 값을 분배하여 출력 되도록 합니다.
+	var url =window.location.search;
+	var sp = url.split("&pollname=");
+	var pollname=sp[1];
+	var sp2=sp[0].split("?mid=");
+	var mid = sp2[1];
+// 	console.log(sp);
+// 	console.log(sp2);
+// 	console.log(mid+""+pollname);	
+	
+</script>
+</head>
+<body>
+<p>설문조사 참여확인</p>
+아이디 : <span id ="userid"></span> <br>
+설문조사 선택 번호 : <span id = "pollnum"></span>
+</body>
+<script>
+
+	document.getElementById("userid").innerText=mid;
+	document.getElementById("pollnum").innerText=pollname;
+</script>
+</html>

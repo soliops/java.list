@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Javascript 4일차 HTML 코드 생성(Input)</title>
+<script >
+	function abc(){
+		var i = document.createElement("input");
+		/* input에는 type, name, value, className, maxLength */
+		i.type="text";
+		i.name="security";
+		i.className="aa";
+		i.maxLength="5";
+		document.getElementById("box").append(i);
+	}
+</script>
+<style>
+.aa{width:200px; height:30px; border:1px solid black;}
+</style>
+</head>
+<body>
+<div id="box">
+<input type="button" value="인증번호" onclick="abc();">
+</div>
+<form id="frm" name="frm" method="get" action="./js6_1.html">
+아이디 : <input type="text" name="mid" value="hong" readonly>
+<p>설문조사 시스템</p>
+<div id="poll">
+<span>[가장 어려운 과목은 무엇 입니까?]</span>
+</div>
+<input type="button" value="전송" onclick="oksign();">
+</form>
+</body>
+<script>
+	function oksign(){
+		if(frm.pollname.value==""){
+			alert("설문조사 해당 사항을 체크 해주세요");
+		}else{
+			frm.submit();
+		}
+		
+		
+	}
+
+
+	var ww=0;
+	var label,input,text;
+	while(ww<5){
+		label=document.createElement("label");
+		input=document.createElement("input");
+		input.type="radio";
+		//checkbox면 name값을 하나로 받을지, 여러개로 받을지는
+		//backend의 역량에 달려있다. 하나로 받으면 배열로 받아야함.
+		input.name="pollname";
+		input.value=ww+1;
+		text = document.createTextNode("설문조사"+ww);
+		label.append(input);
+		label.append(text);
+// 		input.append(text);
+		document.getElementById("poll").append(label);
+		ww++;
+	}
+</script>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Javascript 4일차 HTML 코드 생성2</title>
+<script>
+	var notice = ["2022년 5월 부터 야간개장 오픈!!","한국민속촌 귀굴 5월부터 11월까지 개장","봄엽서 시골 여름 이벤트 행사 7월~9월까지"];
+</script>
+<style>
+.notice{font-size:13px; font-weight:bold;
+	width:150px; height:30px; background-color: black;
+	border-radius:30px; color:white;
+	line-height: 30px; text-align: center;
+}
+</style>
+</head>
+<body>
+<input type="button" value="생성" onclick="abc()">
+<div id="box">
+</div>
+<br> <br>
+
+<fieldset>
+<legend class="notice">공지사항[NOTICE]</legend>
+<ul id="notice">
+</ul>
+</fieldset>
+<script> 
+/*
+script가 html보다 아래에 있을 경우는 함수로 적용되지 않고 즉시 실행이
+필요할 경우 HTML코드 아래에 적게 됩니다. 이유는 html 모든 태그가 로드 된 후
+javascript가 작동 되도록 하기 위해서 입니다.
+*/
+	var ea = notice.length;
+	var k = 0;
+	var html, text;
+	do{
+	 	html=document.createElement("li");
+		text = document.createTextNode(notice[k]);
+		html.append(text);
+		document.getElementById("notice").append(html);
+		k++;
+	}while(k<ea)
+	
+	function abc(){
+		var id = document.getElementById("box");
+		var w =0;
+		var o_ul = document.createElement("ul");
+		while(w<10){
+		var o_li = document.createElement("li");
+		var text = document.createTextNode("연습"+w);
+		o_li.append(text);
+		o_ul.append(o_li);
+		id.append(o_ul);
+		w++;
+	}
+}
+</script>
+</body>
+</html>
