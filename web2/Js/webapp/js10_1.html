@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title> 총 결제금액 확인 파트</title>
+<script>
+
+</script>
+
+</head>
+<body>
+<p>선택한 상품은 : <span id="product_nm"></span> </p>
+<p>결제하실 금액은 : <span id="product_total"></span> </p>
+<br>
+<input type="button" value="결제하기" onclick="post_pay();">
+</body>
+<script>
+	var data = [
+		["사과","딸기","바나나","키위","파인애플","수박","참외"],
+		[1800,5500,4000,6000,12000,23000,8000]
+	];
+	var uri = window.location.search;
+	var array = uri.split("&fr=");
+	var ea = uri.split("&fr=").length;
+	var w = 0;
+	var product_list=""; //사용자가 선택한 상품 전체 리스트를 출력변수
+	var money=0;
+	do{
+		if(w==0){
+			var product1 = array[0].split("?fr=");
+			product_list += data[0][product1[1]]+"("+data[1][product1[1]]+") ";
+			money = data[1][product1[1]];
+		}
+		else{
+			product_list += data[0][array[w]]+"("+data[1][array[w]]+") ";
+			money += data[1][array[w]];
+		}
+		w++;
+		}while(w<ea);
+	document.getElementById("product_nm").append(product_list);
+	document.getElementById("product_total").append(money+"원");
+	//console.log(product_list);
+	function post_pay(){
+		location.href="./js10_1b.html?total="+money;
+	} 
+	
+</script>
+</html>
