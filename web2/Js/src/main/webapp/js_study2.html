@@ -4,12 +4,74 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
 <title>숙제</title>
-<script>
-//숙제 주소
-//
-</script>
+<style>
+body{margin:0;padding:0;}
+ul{width:330px; height:auto; list-style:none;}
+li{width:110px; height:auto; text-align:center; line-height:auto; float:left; border:1px solid black; box-sizing:border-box;}
+</style>
 </head>
 <body>
-
+<ul id="box"></ul>
 </body>
+<script>
+const banners = [
+    {
+     "p_title":"지마켓",
+     "p_img":"./mini/logo_quick_01.png",
+     "p_link":"https://www.gmarket.co.kr/"
+    },
+    {
+     "p_title":"옥션",
+     "p_img":"./mini/logo_quick_02.png",
+     "p_link":"http://www.auction.co.kr/"
+    },
+    {
+     "p_title":"하프클럽",
+     "p_img":"./mini/logo_quick_03.png",
+     "p_link":"http://www.halfclub.com/"
+    },
+    {
+     "p_title":"11번가",
+     "p_img":"./mini/logo_quick_04.png",
+     "p_link":"https://www.11st.co.kr/"
+    },
+    {
+     "p_title":"위메프",
+     "p_img":"./mini/logo_quick_05.png",
+     "p_link":"https://front.wemakeprice.com/"
+    },
+    {
+     "p_title":"쿠팡",
+     "p_img":"./mini/logo_quick_06.png",
+     "p_link":"https://www.coupang.com/"
+    }
+];
+	var pul = document.getElementById("box");
+	var pli,pa,pimg,ptext;
+	var tt= Object.keys(banners[0])[0];
+	console.log(tt);
+	
+	var w=0;
+	var ea = banners.length;
+	while(w<ea){
+		pli = document.createElement("li");
+		pli.value=w;
+		pa = document.createElement("a");
+		pa.href=banners[w]["p_link"];
+		pimg = document.createElement("img");
+		pimg.src = banners[w]["p_img"];
+		ptext = document.createTextNode(banners[w]["p_title"]);
+		pimg.append(ptext);
+		pa.append(pimg);
+		pli.append(pa);
+		pul.append(pli);
+		w++;
+	}
+// 	var q;
+// 	for(q in banners){
+// 		Object.keys(banners[q]["p_title"][0]).forEach(function(a,b,c){
+// 				console.log(banners[a]);			
+// 		});
+// 	}
+</script>
 </html>
