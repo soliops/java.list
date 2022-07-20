@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Insert title here</title>
+<script>
+ var url =window.location.search; 
+ console.log(url);
+ var pp = url.split("=");
+ var pr = pp[1];
+ 
+var bank=["계좌를 선택하세요","하나은행 608-12-553432 예금주명 : 홍길동","SC은행 323-20-227025 예금주명 : 홍길동","국민은행 64-2342-1134568 예금주명 : 홍길동"];
+function cre(){
+
+	var a,select,opt,text,text2;
+	a = document.getElementById("sel");
+	select = document.createElement("select"); 
+	for(w=0;w<4;w++){
+	opt=document.createElement("option");
+	text= document.createTextNode(bank[w]);
+	opt.append(text);
+	select.append(opt);
+	a.append(select);	
+	}	
+	var in_text = document.createElement("input");
+	in_text.type="text";
+	in_text.value="입금자명을 입력하세요"
+	text2= document.createTextNode("예금");
+	in_text.append(text2);
+	a.append(in_text);
+}
+function fin(){
+	if(fr.s.checked==true){
+		cre();
+	}else{
+		
+		sel.display=false;
+		
+	}
+}
+function ok(){
+	if(fr.r.checked!=true){
+		alert("방법을 선택해주세요");
+	}else{	
+	alert("결제가 완료되었습니다.");
+	}
+		
+}
+
+</script>
+<style>
+ul{list-style:none;}
+li{float:left;}
+.in{clear:both;}
+</style>
+</head>
+<body>
+결제하실 금액 : <span id="price"></span>
+<form name="fr" id="fr">
+<ul name="li">
+<p>최종 결제하실 방법을 선택해주시길 바랍니다.</p>
+<li> <input type="radio" name="r" id = "s" value="O" onclick="cre();">무통장 입금</li>
+<li> <input type="radio" name="r">가상계좌</li>
+<li> <input type="radio" name="r">계좌이체</li>
+<li> <input type="radio" name="r">신용카드</li>
+</ul>
+<br>
+<input type="button" value="결제완료" onclick="ok()"> 
+<div id="sel"></div>
+
+</form>
+
+</body>
+<script>
+document.getElementById("price").innerText=pr;
+</script>
+</html>

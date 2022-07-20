@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<title>Javascript 6일차 history.go + 다차원 배열 key</title>
+<script>
+	function abc(){
+		history.go(-1); 
+		//history.go란 전페이지 도는 이동한 전전페이지를 설정
+		//사용하는 함수 입니다.
+	}
+	/*
+	결과
+	홍길동
+	AB형
+	25
+	
+	강감찬
+	O형
+	29
+	kang@naver.com
+	
+	이순신
+	*/
+	const data = {
+		    "members":[
+		        ["홍길동",1],
+		        ["강감찬",2],
+		        ["이순신",3]
+		    ],
+		    "blood":[
+		        [1,"AB형"],
+		        [2,"O형"],
+		        [3,"B형"]
+		    ],
+		    "age":[
+		        [1,"25"],
+		        [2,"29"],
+		        [3,"34"]
+		    ],
+		    "email":[
+		        [1,""], 
+		        [2,"kang@naver.com"],
+		        [3,"leess@nate.com"]
+		    ]
+		}
+	//console.log(data["email"][배열그룹번호][배열값]);
+// 						키4개			3회     2개
+				
+// 	console.log(data["email"][2][1]); //email key안에 그룹배열을 확인함
+// 	console.log(Object.keys(data)); //key값 확인
+// 	console.log(data["members"]); //사용자 이름
+// console.log(Object.keys(data).length);
+// console.log(data["members"].length);
+	var q;
+	for(q in data["members"]){
+		Object.keys(data).forEach(function(a,b,c){
+			if(a=="members"){
+				console.log(data[a][q][0]);
+			}else{
+				console.log(data[a][q][1]);				
+			}
+		});
+	}
+
+
+</script>
+</head>
+<body>
+<a href="javascript:void abc();">뒤로가기</a>
+</body>
+</html>

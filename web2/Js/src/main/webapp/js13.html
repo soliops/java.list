@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Javascript 6일차 외부api js연동</title>
+<script src="http://192.168.100.209:8080/js/js13.js?v=2"></script>
+<script>
+	function kakao_call(){
+		if(f.mid.value==""){
+			alert("아이디를 입력하세요");
+		}
+		else{
+			var result = kakao.login(f.mid.value);
+			console.log(result);
+		}
+	}
+</script>
+</head>
+<body>
+<form name="f" id="f">
+<input type="text" name="mid">
+<input type="button" value="로그인" onclick="kakao_call();")>
+</form>
+</body>
+</html>

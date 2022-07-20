@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Javascript 6일차 재배열(sort) + 상수 및 변수(중복방지)</title>
+<script>
+	var a=5;
+	var a=10; //var은 변수명을 다시 사용할 수 있고, 값도 변경됨
+	console.log(a);
+	let b = 5;	//let 중복이름 사용금지 값은 변경됨
+	//let b = 10;
+	console.log(b);
+	const c =10;	//const 중복사용금지 값도 변경이 안됨
+	//c=20;
+	console.log(c);
+	
+	var b1= Number("20");
+	var b2= String(20);
+	console.log(b2);
+	
+	function abc(){
+		var n1 = document.getElementById("no1").value;
+		var n2 = document.getElementById("no2").value;
+		var n3 = Number(n1)+Number(n2);
+		console.log(n3.toLocaleString());
+		//toLocaleString() : 자리수에 맞춰서 콤마로 설정
+	}
+	
+	var data = [5,4,7,2,9,1];
+// 	console.log(data.sort());
+	data.sort(function(aa,bb){
+		return bb-aa;
+	});
+	console.log(data);
+	var data2 = ["a","h","b","r","c"];
+// 	console.log(data2.sort());	
+	data2.sort(function(cc,dd){
+		//배열이 문자일 경우 임의 음수와 양수 그리고 0을 기준으로 재 배치 하게 됩니다.
+		console.log(cc);
+		if(cc>dd){
+			return-1;
+		}
+		else if(cc<dd){
+			return 1;
+		}
+		else{
+			return 0;
+		}
+	});
+	console.log(data2);
+	
+</script>
+</head>
+<body>
+<input type="text" id="no1">
+<input type="text" id="no2">
+<input type="button" value="계산" onclick="abc();">
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Javascript 6일차 key배열 Object.keys</title>
+<script>
+const m = {
+	    "mid":["hong","lee","kims","yuri","kang","ygs"],
+	    "mname":["홍길동","이순신","김유신","유리왕","강감찬","유관순"],
+	    "mtel":["010-1234-5555","010-0909-0001","010-5252-4242","010-2424-0000","010-1588-1588","010-0815-0815"]
+};
+	var test = Object.keys(m)
+	console.log(test);
+	Object.keys(m).forEach(function(a,b,c){ //Object.key는 무조건 forEach
+		m[a].forEach(function(aa,bb,cc){
+			//console.log(aa);
+		});
+	});
+	
+	//console.log(m["mid"][0]);
+	var s;
+	for(s in m){ //키값을 로드 3바퀴
+		Object.keys(s).forEach(function(aa,bb,cc){ 
+			//각 배열에 키값에 맞는 데이터가 출력(6번 회전)
+			console.log(m[s][aa]);
+		});
+		//console.log(s);
+	}
+	
+/*
+	Object.keys("mid").forEach(function(a,b,c){
+		console.log(c);
+	});
+*/
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>
