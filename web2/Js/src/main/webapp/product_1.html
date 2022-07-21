@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>javascript 7일차 상품 리스트 출력(응용)</title>
+<script src="http://192.168.100.77:8080/js/product.js"></script>
+<style>
+.pdlist {width:1000px; height:600px; border:1px solid black;
+box-sizing:border-box; margin:0 auto;}
+.pdlist > ul {list-style:none; margin:0; padding:20px; 
+width:inherit; height:auto; }
+.pdlist > ul > li {
+float:left; width:200px; height:290px; margin:20px;
+border:1px solid #ccc;}
+.olcss{list-style:none; margin:0; padding:0;
+width:inherit; height:290px;
+}
+.olcss > li {width:inherit; font-size:13px; font-weight:bold;}
+.olcss > li:nth-of-type(1){
+height:200px; text-align:center;
+}
+.olcss > li:nth-of-type(2){
+height:60px; text-align:center;
+}
+.olcss > li:nth-of-type(3){
+height:30px; text-align:center; line-height:30px;
+}
+</style>
+
+</head>
+<body>
+<div class="pdlist">
+<ul id="ulproduct">
+<!-- <li> -->
+<!-- <ol class="olcss"> -->
+<!-- <li><img src="./product/product3.jpg"> </li> -->
+<!-- <li>앱솔루트</li> -->
+<!-- <li>45000</li> -->
+<!-- </ol> -->
+<!-- </li> -->
+</ul>
+</div>
+</body>
+<script >
+	var html = document.getElementById("ulproduct");
+	var p,pp; 
+	var lihtml,ol,li,img;
+	for(p in product["pd"]){ //상품갯수
+		lihtml = document.createElement("li");
+		ol = document.createElement("ol");
+		ol.className = "olcss";
+		for(pp in product){ //키갯수 3
+			li = document.createElement("li");
+			var field;
+			if(pp=="pd"){
+				field="img"
+			img = document.createElement("img");
+			img.src=product[field][p];
+				li.append(img);
+			}
+			else if(pp=="img"){
+				field="pd"
+				li.innerHTML =product[field][p];
+			}
+			else if(pp="money"){
+				field=pp;
+				li.append(Number(product[field][p].toLocaleString()));
+			}
+			//console.log(product[field][p]);
+// 			li.append(product[field][p]);
+			ol.append(li);
+		}
+		lihtml.append(ol);
+		html.append(lihtml);
+	}
+</script>
+</html>

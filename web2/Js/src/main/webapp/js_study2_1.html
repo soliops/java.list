@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<title>javascript 6일차 배열 및 Object 출력</title>
+<script src="http://192.168.100.77:8080/js/banner.js"></script>
+<!-- banners : av 이미지, 링크 -->
+<style>
+.ulcss{list-style:none; margin:0; padding:0; width:240px; heigth:auto;}
+.ulcss > li{ width:80px; height:35px; overflow:hidden; float:left; }
+.ulss > li > a > img {width:80px; object-fit:cover;}
+</style>
+</head>
+<body>
+<ul id="banner" class="ulcss">
+<!-- 
+<li><a href=""><img src="" title=""></a></li>
+ -->
+</ul>
+</body>
+<script>
+// console.log(banners);
+// console.log(banners[0]["p_img"]);
+var html = document.getElementById("banner");
+banners.forEach(function(aa,bb,cc){ //aa 배열, bb:index  6바퀴
+		//li,a,img
+		html_li = document.createElement("li");
+		html_a = document.createElement("a");
+		html_img = document.createElement("img");
+		Object.keys(banners[bb]).forEach(function(a1,a2,a3){ //3바퀴
+			//a1:key, a2:keyindex
+			//href, src, title
+ 			//console.log(banners[bb][a1]);
+			switch(a1){
+			case "p_title":
+				html_img.title=banners[bb][a1];
+				break;
+			case "p_img":
+				html_img.src=banners[bb][a1];
+				break;
+			case "p_link":
+				html_a.href=banners[bb][a1];
+				break;
+			}
+		});		
+		html_a.append(html_img);
+		html_li.append(html_a);		
+		html.append(html_li);
+});
+</script>
+</html>

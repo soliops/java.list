@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>javascript 7일차 상품 리스트 출력(응용)</title>
+<script src="http://192.168.100.77:8080/js/product_list.js"></script>
+<style>
+
+</style>
+</head>
+<body>
+<form name="f" id="f">
+<table border="1" cellpadding="0" cellspacing="0">
+<thead>
+	<tr>
+	<td ><label><input type="checkbox" id="all" onclick="allok();" ></label></td>
+	<td>상품명</td>
+	<td>가격</td>
+	</tr>
+</thead>
+<tbody id="tbody"></tbody>
+</table>
+</form>
+</body>
+<script>
+var html = document.getElementById("tbody");
+ function allok(){
+	 var all = document.getElementById("all");
+	 var ck;
+	 var cks = document.getElementByName("ok");
+	 if(f.all.checked==true){
+		 cks = true;
+	 }else{
+		 cks = false;
+	 }
+		 cks=ck;
+// 	 f.all.checked==true?(ck=true):(ck=false);
+ }
+ console.log(product["pd_name"]);
+ var q;
+ for(q in product["pd_name"]){ //4개
+// 	 console.log(product["pd_name"][q]);
+ 	tr = document.createElement("tr");
+ 	var p, td,input;
+	for(p in product["pd_name"][q]){
+// 	 	 console.log(product["pd_name"][q][p]);
+		//console.log(product["pd_name"][q][2]);
+	 	 td= document.createElement("td");
+			var idx;
+				if(p==0){
+					idx=2;
+	 	 		input=document.createElement("input");
+	 	 		input.type="checkbox";
+	 	 		input.name="ok";
+			 	input.value=product["pd_name"][q][idx];
+	 		 	td.append(input);					
+				}
+				else if(p==1){
+					idx=0;
+				td.append(product["pd_name"][q][idx]);	
+				}
+				else if(p==2){
+					idx=1;
+				td.append(Number(product["pd_name"][q][idx]).toLocaleString());					
+			}
+	 	 	tr.append(td);
+	 	 }
+		html.append(tr);
+ }
+ </script>
+</html>

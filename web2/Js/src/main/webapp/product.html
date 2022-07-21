@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<title>javascript 7일차 상품 리스트 출력(응용)</title>
+<script src="http://192.168.100.77:8080/js/product.js?v=2"></script>
+</head>
+<body>
+<div id = "product"></div>
+<script >
+console.log(product);
+console.log(product["img"][0]);
+console.log(product["img"]);
+console.log(Object.keys(product));
+var html = document.getElementById("product");
+var q;
+Object.keys(product).forEach(function(a,b,c){
+for(q in product){
+	html_ul	= document.createElement("ul");
+	html_li = document.createElement("li");
+		var t;
+		switch (q){
+		case "pd":
+			t = "img";
+			break;
+		case "img":
+			t = "pd";
+			break;
+		case "money":
+			t = q;
+			break;
+		}	
+		console.log(product[t][b]);
+		html_li.append(product[t][b]);
+		if(t=="pd"){			
+			html_li.innerHTML += "'<br>'";
+		}
+		html_ul.append(html_li);
+	}
+		html.append(html_ul);
+	
+});
+
+</script>
+</body>
+</html>

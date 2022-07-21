@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<title>javascript 7일차 배열 데이터 응용</title>
+<script src="http://192.168.100.77:8080/js/user.js"></script>
+<style>
+.member{width:400px;}
+td{width:120px; height:40px;}
+</style>
+</head>
+<body>
+<table id = "member">
+	<tr>
+	<td>회원명</td>
+	<td>회원레벨</td>
+	<td>회원나이</td>
+	</tr>
+</table>
+</body>
+<script>
+console.log(person.member_list);
+// console.log(Object.keys(person));
+// 	console.log(Object.keys(person.member_list[0])[0]);
+var html = document.getElementById("member");
+person.member_list.forEach(function(a,b,c){
+	html_tr = document.createElement("tr");
+ 	Object.keys(person.member_list[b]).forEach(function(aa,bb,cc){
+ 			html_td = document.createElement("td");				
+ 		var change;
+ 		switch (aa) {
+		case "name":
+			change = aa;
+			html_td.append(person.member_list[b][aa]);
+			break;
+		case "level":
+			change="age"
+			html_td.append(person.member_list[b][change]);
+			break;	
+		case "age":
+			change="level"
+			html_td.append(person.member_list[b][change]);
+			break;
+		}
+ 			console.log(aa);
+	html_tr.append(html_td);	
+ 	});
+	html.append(html_tr);
+});
+ 	console.log(Object.keys(person.member_list[0]));
+</script>
+</html>

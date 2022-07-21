@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>javascript 7일차 상품 리스트 출력 및 체크박스(응용)</title>
+<script src="http://192.168.100.77:8080/js/product_list.js"></script>
+<script>
+ function allcheck2(){
+	 if(f.allcheck.checked==true){
+	 var w=0;
+	 while(w<ea){
+		 f.pd[w].checked=true;
+		 w++;
+	 }
+	}
+	 else{
+		 var w=0;
+		 while(w<ea){
+			 f.pd[w].checked=false;
+			 w++;
+		 }
+	 }
+ }
+ function method2(){
+		//하나라도 체크가 되어야만 전송이 됨.(응용)
+	 f.submit();
+ }
+</script>
+</head>
+<body>
+<form name="f" id="f" method="get" action="./product_1.html">
+<table border="1" cellpadding="0" cellspacing="0">
+<thead>
+	<tr>
+	<th><input type="checkbox" id="allcheck" onclick="allcheck2();" ></th>
+	<th>상품명</th>
+	<th>가격</th>
+	</tr>
+</thead>
+<tbody id="list">
+<!-- <tr> -->
+<!-- <td> <input type="checkbox" name="a"> </td> -->
+<!-- <td>상품명</td> -->
+<!-- <td>가격</td> -->
+<!-- </tr> -->
+</tbody>
+</table>
+<input type="button" value="구매하기" onclick="method2();">
+</form>
+</body>
+<script>
+// var product = {"pd_name":[["셔링 숄더백","36000",2],["루이까또즈 숄더백","190000",4],["꾸찌 오피디아 미디엄 백팩","269000",3],["백스테이 베르스 서류가방","175000",1]]};
+// 	var html = document.getElementById("list");
+// 	var ea = product["pd_name"].length;
+// // 	console.log(product["pd_name"][2][1]);
+// 	var tr,td,input;
+// 	Object.keys(product["pd_name"]).forEach(function(aa,bb,cc){
+// 		tr =document.createElement("tr");
+// 		//console.log(aa);
+// 		var f;
+// 		for(f in product["pd_name"][aa]){
+// // 			console.log(typeof(f)); f가 문자인지 숫자인지 파악
+// 			td =document.createElement("td");
+// 			var code2;
+// 			switch(f){
+// 			case "0": //상품명
+// 				code2 = 2;
+// 				input =document.createElement("input");
+// 				input.type = "checkbox";
+// 				input.name = "pd";
+// 				input.value = product["pd_name"][aa][code2];
+// 				td.append(input);
+// 			break;
+// 			case "1": //가격
+// 				code2 = 0;	
+// 				td.append(product["pd_name"][aa][code2]);
+// 			break;
+// 			case " 2": //고유값
+// 				code2 = 1;
+// 				td.append(Number(product["pd_name"][aa][code2]).toLocaleString());
+// 			break;
+// 			}
+// 			tr.append(td);
+// 			html.append(tr);
+// 			//console.log(product["pd_name"][aa][code]);
+// 		}
+// 	});
+
+	
+	var html = document.getElementById("list");
+	var ea = product["pd_name"].length;	//전체체크시 사용하기 위함
+	var tr,td,input;
+	Object.keys(product["pd_name"]).forEach(function(aa,bb,cc){
+	
+		tr = document.createElement("tr");
+		
+		var f;
+		for(f in product["pd_name"][aa]){
+			td = document.createElement("td");
+			var code;
+			switch(f){
+				case "0":	//상품명
+					code = 2;
+					input = document.createElement("input");
+					input.type="checkbox";
+					input.name="pd";
+					input.value= product["pd_name"][aa][code];
+					td.append(input);
+				break;
+				case "1":	//가격
+					code = 0;
+					td.append(product["pd_name"][aa][code]);
+				break;
+				case "2":	//고유값
+					code = 1;
+					td.append(Number(product["pd_name"][aa][code]).toLocaleString());
+				break;
+			}
+			
+			tr.append(td);
+			html.append(tr);
+			//console.log(product["pd_name"][aa][code]);	
+		}	
+	});	
+ </script>
+</html>
