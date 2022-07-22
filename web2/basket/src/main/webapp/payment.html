@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-compatible" content="IE=Edge, chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+        <title>  가전제품 종합쇼핑몰 포홈테이블 입니다. </title>
+        <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="./payment.css">
+    <script src="http://mekeyace.kbsn.or.kr/mysql.js"></script>
+    </head>
+    <body>
+        <!-- 최상단 -->
+        <header>
+            <span class="home">HOME > 주문서 작성/결제</span>
+        </header>
+        <!-- 주문진행상황 -->
+        <nav>
+            <div class="bnav">
+                <span class="bleft">주문서작성/결제</span>
+                <ul class="bright">
+                    <li>01 장바구니</li>
+                    <li><img src="./ico2/icon_join_step_off.png"></li>
+                    <li>02 주문서작성/결제</li>
+                    <li><img src="./ico2/icon_join_step_on.png"></li>
+                    <li>03 주문완료</li>
+                </ul>
+            </div>
+        </nav>
+        <span class="text">
+            주문상세내역
+        </span>
+        <!-- 상품 출력 -->
+        <section>
+            <div id="prodiv" class="prodiv">
+                <ul class="proul">
+                    <li>
+                        <span></span>
+                        <span>상품/옵션정보</span>
+                    </li>
+                    <li>수량</li>
+                    <li>상품금액</li>
+                    <li>할인/적립</li>
+                    <li>합계금액</li>
+                </ul>
+            </div>
+            <section>
+            
+            <div class="view">
+                <ul class="viewul">
+                    <li>
+                        <label><img src="./product_img/019.jpg"></label>
+                        <ol>
+                            <li>상품명</li>
+                            <li>색깔</li>
+                            <li>사이즈</li>
+                        </ol>
+                    </li>
+                    <li>
+                        <div id="countbox0" class="countbox" >
+                        	<input type="text" id="countnum0" style="width:15px; height:15px; line-height:30px; float:left" readonly>
+                        	<span>
+                            <input type="button" class="up" value="1" onclick="num(this.value)">
+                            <input type="button" class="down" value="0" onclick="num(this.value)">
+                        	</span>
+                        </div>
+                    </li>
+                    <li id="pro_price0"></li>
+                    <li id="coupon0">,</li>
+                    <li id="pro2_price0"></li>
+                </ul>
+                   </div>
+                 <div class="view">
+                <ul class="viewul">
+                    <li>
+                        <label><img src="./product_img/019.jpg"></label>
+                        <ol>
+                            <li>상품명</li>
+                            <li>색깔</li>
+                            <li>사이즈</li>
+                        </ol>
+                    </li>
+                    <li>
+                        <div id="countbox1" class="countbox" >
+                        	<input type="text" id="countnum1" style="width:15px; height:15px; line-height:30px; float:left" readonly>
+                        	<span>
+                            <input type="button" class="up" value="1" onclick="num1(this.value)">
+                            <input type="button" class="down" value="0" onclick="num1(this.value)">
+                        	</span>
+                        </div>
+                    </li>
+                    <li id="pro_price1"></li>
+                    <li id="coupon1">,</li>
+                    <li id="pro2_price1"></li>
+                </ul>
+                   </div>
+                 <div class="view">
+                <ul class="viewul">
+                    <li>
+                        <label><img src="./product_img/019.jpg"></label>
+                        <ol>
+                            <li>상품명</li>
+                            <li>색깔</li>
+                            <li>사이즈</li>
+                        </ol>
+                    </li>
+                    <li>
+                        <div id="countbox2" class="countbox" >
+                        	<input type="text" id="countnum2" style="width:15px; height:15px; line-height:30px; float:left" readonly>
+                        	<span>
+                            <input type="button" class="up" value="1" onclick="num2(this.value)">
+                            <input type="button" class="down" value="0" onclick="num2(this.value)">
+                        	</span>
+                        </div>
+                    </li>
+                    <li id="pro_price2"></li>
+                    <li id="coupon2">,</li>
+                    <li id="pro2_price2"></li>
+                </ul>
+                   </div>
+                 <div class="view">
+                <ul class="viewul">
+                    <li>
+                        <label><img src="./product_img/019.jpg"></label>
+                        <ol>
+                            <li>상품명</li>
+                            <li>색깔</li>
+                            <li>사이즈</li>
+                        </ol>
+                    </li>
+                    <li>
+                        <div id="countbox3" class="countbox" >
+                        	<input type="text" id="countnum3" style="width:15px; height:15px; line-height:30px; float:left" readonly>
+                        	<span>
+                            <input type="button" class="up" value="1" onclick="num3(this.value)">
+                            <input type="button" class="down" value="0" onclick="num3(this.value)">
+                        	</span>
+                        </div>
+                    </li>
+                    <li id="pro_price3"></li>
+                    <li id="coupon3">,</li>
+                    <li id="pro2_price3"></li>
+                </ul>
+                   </div>
+                          <!-- 상품 합계 -->
+            <div class="totalbox">
+                <ul class="totalul">
+                    <li>총 2개의 상품금액</li>
+                    <li>배송비</li>
+                    <li>합계</li>
+                </ul>
+                <ol class="totalol">
+                    <li id= "totalmoney">139,000원</li>
+                    <li><img src="./ico2/order_price_plus.png"></li>
+                    <li>0원</li>
+                    <li><img src="./ico2/order_price_total.png"></li>
+                    <li id= "totalmoney2">139,000원</li>
+                </ol>
+            </div>
+            <!-- 버튼 -->
+            <div class="btn">
+                <input type="button" id="pay" value="결제하기" class="pay" onclick="pay();">
+            </div>
+        </section>
+        </section>
+    </body>
+    <script>
+   var number=1;
+//    console.log(basket_product);
+//    console.log(basket_product["flat_product"]);
+   for(var t in basket_product["flat_product"]){
+// 	   console.log(Object.keys(basket_product["flat_product"][t]));
+   }
+//    console.log(basket_product[0]["product_no"])
+
+   var url = window.location.search;
+   var url_split= url.split("&");
+//    console.log(url_split);
+   var pro_sel=[];
+   var sel_fin=[];
+	for(var w=0;w<url_split.length;w++){
+		if(w==0){
+			pro_sel[w]=url_split[w].split("?")[1];
+		}else{			
+		pro_sel[w]=url_split[w];
+		}
+// 		console.log(pro_sel);
+			sel_fin[w]=pro_sel[w].split("=");
+	}
+	//수량파악
+  	
+// 		var countbox0 = document.getElementById("countbox0");
+// 		var countbox1 = document.getElementById("countbox1");
+// 		var countbox2 = document.getElementById("countbox2");
+// 		var countbox3 = document.getElementById("countbox3");
+		
+		var countnum0 = document.getElementById("countnum0");
+		var countnum1 = document.getElementById("countnum1");
+		var countnum2 = document.getElementById("countnum2");
+		var countnum3 = document.getElementById("countnum3");
+	
+		var number1=1;
+		var number2=1;
+		var number3=1;
+		countnum0.value=number;
+		countnum1.value=number1;
+		countnum2.value=number2;
+		countnum3.value=number3;
+		
+		function num(r){
+			var countbox0 = document.getElementById("countbox0");
+			if(r=="1"){
+				number = number+1;
+				countnum0.value=number;
+			}
+			else{
+				number = number-1;
+				if(number<1){
+					alert("수량은 1개 이하로 내려가지 않습니다.");
+				}
+   				countnum0.value=number;
+
+			}	
+		}
+		function num1(r){
+
+			if(r=="1"){
+				number1 = number1+1;
+				countnum1.value=number1;
+			}
+			else{
+				number1 = number1-1;
+				if(number1<1){
+					alert("수량은 1개 이하로 내려가지 않습니다.");
+				}
+   				countnum1.value=number1;
+
+			}	
+		}	function num2(r){
+
+			if(r=="1"){
+				number2 = number2+1;
+				countnum2.value=number2;
+			}
+			else{
+				number2 = number2-1;
+				if(number2<1){
+					alert("수량은 1개 이하로 내려가지 않습니다.");
+				}
+   				countnum2.value=number2;
+
+			}	
+		}	function num3(r){
+
+			if(r=="1"){
+				number3 = number3+1;
+				countnum3.value=number3;
+			}
+			else{
+				number3 = number3-1;
+				if(number3<1){
+					alert("수량은 1개 이하로 내려가지 않습니다.");
+				}
+   				countnum3.value=number3;
+
+			}	
+		}
+ 	var ww=0;
+ 	var count=0;
+ 	var money =0;
+ 	var newArr=basket_product["flat_product"];
+// 	  	console.log(newArr);
+//  	console.log(newArr[0]["product_money"]);
+//  	console.log(sel_fin.length);
+ 	while(ww<sel_fin.length){
+ 		var pro_price= document.getElementById("pro_price"+ww);
+ 	  	var pro2_price = document.getElementById("pro2_price"+ww);
+ 	if(sel_fin[ww][1]==1){ 
+ 	if(sel_fin[ww][0]==newArr[ww]["product_no"]){
+			pro_price.innerText= newArr[ww]["product_money"];
+			pro2_price.innerText= newArr[ww]["product_money"];
+	money =newArr[0]["product_money"]*number+newArr[1]["product_money"]*number1+newArr[2]["product_money"]*number2+newArr[3]["product_money"]*number3;
+
+ 		}
+ 	}
+ 	ww++;
+ 	}
+   	
+
+	var totalnum = document.getElementById("totalnum");
+	var totalmoney = document.getElementById("totalmoney");	
+	var taxiprice = document.getElementById("taxtiprice");	
+	var totalmoney2 = document.getElementById("totalmoney2");
+// 	totalnum.innerText="총 "+count+"개의 상품금액";
+	var taxi = 0;
+	
+	totalmoney2.innerText=money+"원";
+// 	taxiprice.innerText=taxi+" 원";
+	totalmoney.innerText=money+"원";
+  	var pro_price_text= document.createTextNode("");
+    	//결제하기
+    	function pay(){
+    		location.href="http://192.168.100.209:8080/basket/money.html?total="+money;
+    	}
+    	
+    </script>
+</html>
