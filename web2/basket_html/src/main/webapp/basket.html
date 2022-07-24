@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-compatible" content="IE=Edge, chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+        <title>  가전제품 종합쇼핑몰 포홈테이블 입니다. </title>
+        <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="./basket.css">
+         <script src="http://mekeyace.kbsn.or.kr/mysql.js"></script>
+          <script src="./basket.js"></script>
+    </head>
+    <body>
+        <!-- 최상단 -->
+        <header>
+            <span class="home">HOME > 장바구니</span>
+        </header>
+        <!-- 주문진행상황 -->
+        <nav>
+            <div class="bnav">
+                <span class="bleft">장바구니</span>
+                <ul class="bright">
+                    <li>01 장바구니</li>
+                    <li><img src="./ico2/icon_join_step_on.png"></li>
+                    <li>02 주문서작성/결제</li>
+                    <li><img src="./ico2/icon_join_step_off.png"></li>
+                    <li>03 주문완료</li>
+                </ul>
+            </div>
+        </nav>
+        <!-- 상품 출력 -->
+        <section>
+            <form id="f" name="f">
+            <div id="prodiv" class="prodiv">
+                <ul class="proul">
+                    <li>
+                        <span><input type="checkbox" class="ck"></span>
+                        <span>상품/옵션정보</span>
+                    </li>
+                    <li>수량</li>
+                    <li>상품금액</li>
+                    <li>할인/적립</li>
+                    <li>합계금액</li>
+                </ul>
+            </div>
+        <section id="viewsection">
+            
+            <div id="view" class="view">
+                <ul class="viewul">
+                    <li>
+                        <span><input type="checkbox" class="ck"></span>
+                        <label><img src="./product_img/019.jpg"></label>
+                        <ol>
+                            <li>상품명</li>
+                            <li>색깔</li>
+                            <li>사이즈</li>
+                        </ol>
+                    </li>
+                    <li>
+                        -
+                    </li>
+                    <li>55,000원</li>
+                    <li>-</li>
+                    <li>55,000</li>
+                </ul>
+            </div>
+          
+        </section>
+            <!-- 버튼 -->
+            <div class="btn">
+                <ol class="ordol">
+                    <li class="sord">선택 상품 주문</li>
+                    <li class="tord"><input type="button" name="order" id="order" value="0" onclick="ock();">전체 상품 주문</li>
+                </ol>
+            </div>
+                <!-- 주의사항 -->
+                <div class="warning">
+                    <img src="./ico2/icon_warning.png">
+                    <span>주문서 작성단계에서 할인/마일리지 적용을 하실 수 있습니다.</span>
+                </div>
+            </form>
+        </section>
+    </body>
+</html>

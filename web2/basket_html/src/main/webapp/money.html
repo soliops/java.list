@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-compatible" content="IE=Edge, chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+        <title>  가전제품 종합쇼핑몰 포홈테이블 입니다. </title>
+        <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="./money.css?v=2">
+    </head>
+    <body>
+        <!-- 최상단 -->
+        <header>
+            <span class="home">HOME > 결제수단 선택/결제</span>
+        </header>
+        <!-- 결제수단 선택/결제 -->
+        <nav>
+            <div class="bnav">
+                <span class="bleft">결제수단 선택/결제</span>
+                <ul class="bright">
+                    <li>01 장바구니</li>
+                    <li><img src="./ico2/icon_join_step_off.png"></li>
+                    <li>02 주문서작성/결제</li>
+                    <li><img src="./ico2/icon_join_step_on.png"></li>
+                    <li>03 결제수단 선택</li>
+                </ul>
+            </div>
+        </nav>
+        <span class="text">
+            결제수단 선택
+        </span>
+       
+            <!-- 상품 합계 -->
+            <div class="totalbox">
+                <ul class="totalul">
+                    <li><input type="radio">무통장 결제</li>
+                    <li><input type="radio" checked>신용카드 결제</li>
+                    <li><input type="radio">휴대폰 결제</li>
+                    <li><input type="radio">도서상품권</li>
+                </ul>
+            </div>
+            <!--무통장 결제-->
+            <div class="totalbox">
+                <ul class="banks">
+                    <li>입금자명 : <input type="text" class="person_name"></li>
+                    <li>
+                        입금계좌 : 
+                        <select class="banks_select">
+                            <option>[입금계좌를 선택해 주세요]</option>
+                        </select>
+                    </li>
+                </ul>
+            </div>
+            <!--휴대폰 결제-->
+            <div class="totalbox">
+                <ul class="banks margin1">
+                    <li>휴대폰 번호 : <input type="text" class="tel1" maxlength="3"> - <input type="text" class="tel2" maxlength="4"> - <input type="text" class="tel2" maxlength="4"></li>
+                </ul>
+            </div>
+            <!--도서상품권 결제-->
+            <div class="totalbox">
+                <ul class="banks margin1">
+                    <li>도서상품권 : <input type="text" class="code1" maxlength="8"> ※ 8자리 코드를 입력하세요</li>
+                </ul>
+            </div>
+            <!--최종 결제 금액-->
+            <!-- 버튼 -->
+            <div class="btn">
+                <span class="pay">결제확인</span>
+            </div>
+        </section>
+    </body>
+</html>

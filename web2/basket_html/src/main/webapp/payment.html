@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-compatible" content="IE=Edge, chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+        <title>  가전제품 종합쇼핑몰 포홈테이블 입니다. </title>
+        <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="./payment.css">
+ <script src="http://mekeyace.kbsn.or.kr/mysql.js"></script>
+  <script src="./payment.js"></script>
+    </head>
+    <body>
+        <!-- 최상단 -->
+        <header>
+            <span class="home">HOME > 주문서 작성/결제</span>
+        </header>
+        <!-- 주문진행상황 -->
+        <nav>
+            <div class="bnav">
+                <span class="bleft">주문서작성/결제</span>
+                <ul class="bright">
+                    <li>01 장바구니</li>
+                    <li><img src="./ico2/icon_join_step_off.png"></li>
+                    <li>02 주문서작성/결제</li>
+                    <li><img src="./ico2/icon_join_step_on.png"></li>
+                    <li>03 주문완료</li>
+                </ul>
+            </div>
+        </nav>
+        <span class="text">
+            주문상세내역
+        </span>
+        <!-- 상품 출력 -->
+        <section>
+            <div id="prodiv" class="prodiv">
+                <ul class="proul">
+                    <li>
+                        <span></span>
+                        <span>상품/옵션정보</span>
+                    </li>
+                    <li>수량</li>
+                    <li>상품금액</li>
+                    <li>할인/적립</li>
+                    <li>합계금액</li>
+                </ul>
+            </div>
+         <section id="sec">
+			<div class="view">
+                <ul class="viewul">
+                    <li>
+                        <label><img src="./product_img/085.jpg"></label>
+                        <ol>
+                            <li>원모어 피스톤 피트 이어폰</li>
+                            <li>그레이</li>
+                            <li>S</li>
+                        </ol>
+                    </li>
+                    <li>
+                        <div class="countbox">
+                        	<input type="text" name="cb0" id="cb0" class="cb" value="1" readonly>
+                            <span class="up" onclick="num_check('cb0','up','paymoney0','total0');"></span>
+                            <span class="down" onclick="num_check('cb0','down','paymoney0','total0');"></span>
+                        </div>
+                    </li>
+                    <li><input type="text" name="paymoney0" id="paymoney0" class="money" value="14,900">원</li>
+                    <li>10%</li>
+                    <li id="total0">13,410</li>
+                </ul>
+            </div>
+            <div class="view">
+                <ul class="viewul">
+                    <li>
+                        <label><img src="./product_img/019.jpg"></label>
+                        <ol>
+                            <li>로지텍 G443 무선 헤드셋</li>
+                            <li>블랙</li>
+                            <li>85MS</li>
+                        </ol>
+                    </li>
+                    <li>
+                        <div class="countbox">
+                        	<input type="text" name="cb1" id="cb1" class="cb" value="1" readonly>
+                            <span class="up" onclick="num_check('cb1','up','pay_money1','total1');"></span>
+                            <span class="down" onclick="num_check('cb1','down','pay_money1','total1');"></span>
+                        </div>
+                    </li>
+                    <li><input type="text" name="pay_money1" id="pay_money1" class="money" value="95,230">원</li>
+                    <li>,</li>
+                    <li id="total1">95,230</li>
+                </ul>
+            </div>
+            <div class="view">
+                <ul class="viewul">
+                    <li>
+                        <label><img src="./product_img/037.jpg"></label>
+                        <ol>
+                            <li>삼지아이티 피스넷 에어</li>
+                            <li>실버화이트</li>
+                            <li>50M</li>
+                        </ol>
+                    </li>
+                    <li>
+                        <div class="countbox">
+                        	<input type="text" name="cb2" id="cb2" class="cb" value="1" readonly>
+                            <span class="up" onclick="num_check('cb2','up','pay_money2','total2');"></span>
+                            <span class="down" onclick="num_check('cb2','down','pay_money2','total2');"></span>
+                        </div>
+                    </li>
+                    <li><input type="text" name="pay_money2" id="pay_money2" class="money" value="31,460">원</li>
+                    <li>,</li>
+                    <li id="total2">31,460</li>
+                </ul>
+            </div>
+            <div class="view">
+                <ul class="viewul">
+                    <li>
+                        <label><img src="./product_img/081.jpg"></label>
+                        <ol>
+                            <li>어메이즈핏 스마트워치</li>
+                            <li>블랙</li>
+                            <li>200S</li>
+                        </ol>
+                    </li>
+                    <li>
+                        <div class="countbox">
+                        	<input type="text" name="cb3" id="cb3" class="cb" value="1" readonly>
+                            <span class="up" onclick="num_check('cb3','up','pay_money3','total3');"></span>
+                            <span class="down" onclick="num_check('cb3','down','pay_money3','total3');"></span>
+                        </div>
+                    </li>
+                    <li><input type="text" name="pay_money3" id="pay_money3" class="money" value="192,000">원</li>
+                    <li>10%</li>
+                    <li id="total3">172,800</li>
+                </ul>
+            </div>
+        </section>
+            <!-- 상품 합계 -->
+            <div class="totalbox">
+                <ul class="totalul">
+                    <li>총 2개의 상품금액</li>
+                    <li>배송비</li>
+                    <li>합계</li>
+                </ul>
+                <ol class="totalol">
+                    <li id = "totalmoney1">139,000원</li>
+                    <li><img src="./ico2/order_price_plus.png"></li>
+                    <li>0원</li>
+                    <li><img src="./ico2/order_price_total.png"></li>
+                    <li id = "totalmoney2">139,000원</li>
+                </ol>
+            </div>
+            <!-- 버튼 -->
+            <div class="btn">
+                <span class="pay" onclick="ock();">결제하기</span>
+            </div>
+        </section>
+    </body>
+</html>
