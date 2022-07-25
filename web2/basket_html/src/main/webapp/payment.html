@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" >
         <title>  가전제품 종합쇼핑몰 포홈테이블 입니다. </title>
         <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="./payment.css">
+        <link rel="stylesheet" type="text/css" href="./payment.css?v2=1">
  <script src="http://mekeyace.kbsn.or.kr/mysql.js"></script>
-  <script src="./payment.js"></script>
+  <script src="./payment.js?v2=1"></script>
     </head>
     <body>
         <!-- 최상단 -->
@@ -33,7 +33,7 @@
         </span>
         <!-- 상품 출력 -->
         <section>
-            <div id="prodiv" class="prodiv">
+            <div name="prodiv" id="prodiv" class="prodiv">
                 <ul class="proul">
                     <li>
                         <span></span>
@@ -65,7 +65,7 @@
                     </li>
                     <li><input type="text" name="paymoney0" id="paymoney0" class="money" value="14,900">원</li>
                     <li>10%</li>
-                    <li id="total0">13,410</li>
+                    <li id="total0" value="13410">13,410원</li>
                 </ul>
             </div>
             <div class="view">
@@ -87,7 +87,7 @@
                     </li>
                     <li><input type="text" name="pay_money1" id="pay_money1" class="money" value="95,230">원</li>
                     <li>,</li>
-                    <li id="total1">95,230</li>
+                    <li id="total1" value="95230">95,230원</li>
                 </ul>
             </div>
             <div class="view">
@@ -109,7 +109,7 @@
                     </li>
                     <li><input type="text" name="pay_money2" id="pay_money2" class="money" value="31,460">원</li>
                     <li>,</li>
-                    <li id="total2">31,460</li>
+                    <li id="total2" value="31460">31,460원</li>
                 </ul>
             </div>
             <div class="view">
@@ -131,23 +131,23 @@
                     </li>
                     <li><input type="text" name="pay_money3" id="pay_money3" class="money" value="192,000">원</li>
                     <li>10%</li>
-                    <li id="total3">172,800</li>
+                    <li id="total3" value="172800">172,800원</li>
                 </ul>
             </div>
         </section>
             <!-- 상품 합계 -->
             <div class="totalbox">
-                <ul class="totalul">
-                    <li>총 2개의 상품금액</li>
+                <ul class="totalul" name="totalul" id="totalul">
+                    <li><input type="text" name="ttnum" id="ttnum" class="totalnum" readonly></li>
                     <li>배송비</li>
                     <li>합계</li>
                 </ul>
                 <ol class="totalol">
-                    <li id = "totalmoney1">139,000원</li>
+                    <li id = "totalmoney1"><input type="text" name="totals0" id="totals0" class="totals" readonly>원</li>
                     <li><img src="./ico2/order_price_plus.png"></li>
                     <li>0원</li>
                     <li><img src="./ico2/order_price_total.png"></li>
-                    <li id = "totalmoney2">139,000원</li>
+                    <li id = "totalmoney2" ><input type="text" name="totals1" id="totals1" class="totals" readonly>원</li>
                 </ol>
             </div>
             <!-- 버튼 -->
@@ -156,4 +156,53 @@
             </div>
         </section>
     </body>
+    <script>
+
+    var totalnum = document.getElementById("ttnum");
+	totalnum.value ="총 "+choice.length+"개의 상품금액";
+	console.log(totalnum);
+	
+	var totalmoney1 = document.getElementById("totals0");
+	var totalmoney2 = document.getElementById("totals1");
+    var ts0 = document.getElementById("total0");
+    var ts1 = document.getElementById("total1");
+    var ts2 = document.getElementById("total2");
+    var ts3 = document.getElementById("total3");
+   
+	var ti,money2;
+	var money=0;
+	money= ts0.value+ts1.value+ts2.value+ts3.value;
+// 	totalsum(money);
+	totalmoney1.value=(money.toLocaleString());
+	totalmoney2.value=(money.toLocaleString());
+console.log(money);
+	function totalsum(a,check){
+		var totalmoney1 = document.getElementById("totals0");
+		var totalmoney2 = document.getElementById("totals1");
+		console.log(a);
+		if(check=="up"){
+		money = money+a;
+		totalmoney1.value= (money.toLocaleString());		
+		totalmoney2.value= (money.toLocaleString());
+		}else{
+			money = money-a;
+			totalmoney1.value= (money.toLocaleString());
+			totalmoney2.value= (money.toLocaleString());
+		}
+	}
+	
+	
+	function ock(){
+		var totalmoney2 = document.getElementById("totals1");
+// 		console.log(totalmoney2);
+		var num = Number(totalmoney2.value.replace(",",""));
+// 		console.log(num);
+		location.href = "http://192.168.100.209:8080/basket/money.html?total="+num;
+	}
+// 	console.log(document.getElementById("total0").value);
+// 	console.log(total_money);	
+// 	totalmoney1.append(money_money);
+// 	totalmoney2.append(money2);	
+// 	totalmoney1
+    </script>
 </html>

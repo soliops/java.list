@@ -1,3 +1,4 @@
+   
 var url = window.location.search;
 var url_split= url.split("&");
 var pro_sel=[];
@@ -23,58 +24,55 @@ var choice=[];
 		}
 		
 	}
+
+	
 		var bp = basket_product["flat_product"];
-		console.log(bp);
+//		console.log(bp);
 		for(var v in bp){
 			for(var vv in bp[v]){				
-				console.log(bp[v][vv]);		
+//				console.log(bp[v][vv]);		
 						
 			}
 //			Object.keys(bp[v]).forEach(function(a,b,c){
 //			});
 		}
 		
-		console.log(bp[1]["product_img"]);								
+var totalnum = document.getElementById("totalnum");
+//totalnum.type
+console.log(choice);
+//		console.log(bp[1]["product_img"]);								
 	
 function num_check(cr,check,pm,tt){
 	var cbs = document.getElementById(cr);
-	console.log(cbs.name);
+//	console.log(cbs.name);
 	var pm = document.getElementById(pm);
 	var num = Number(pm.value.replace(",",""));
 	var total_money; 
 	if(check=="up"){
 		cbs.value = Number(cbs.value)+1; 
 		if(cbs.name=="cb0"||cbs.name=="cb3"){
-		total_money = Number(cbs.value) * num *0.9;						
+		total_money = Number(cbs.value) * num *0.9;		
+		document.getElementById(tt).innerText = total_money.toLocaleString()+"원";				
 		}else{
 		total_money = Number(cbs.value) * num;			
+		document.getElementById(tt).innerText = total_money.toLocaleString()+"원";
 		}
-		
-		document.getElementById(tt).innerText = total_money.toLocaleString();
+		totalsum(num,check);
 	}
 	else{
 		if(Number(cbs.value) > 1){
 		cbs.value = Number(cbs.value)-1;
 		if(cbs.name=="cb0"||cbs.name=="cb3"){
-		total_money = Number(cbs.value) * num *0.9;						
+		total_money = Number(cbs.value) * num *0.9;
+				document.getElementById(tt).innerText = total_money.toLocaleString()+"원";						
 		}else{
 		total_money = Number(cbs.value) * num;			
+				document.getElementById(tt).innerText = total_money.toLocaleString()+"원";
 		}
-		document.getElementById(tt).innerText = total_money.toLocaleString();
+			totalsum(num,check);
 		}
 	}
 		
 }
 
-//var totalmoney1 = document.getElementById("totalmoney1");
-//var mny = document.getElementById("total1")
-//console.log(mny);
-//var final_money=0;
-//for(var ft=0;ft<choice.length;ft++){
-//	final_money+= Number(mny);
-//}
-////totalmoney1.innerText = final_money;
-var money=100;
- function ock(){
-	location.href = "http://192.168.100.209:8080/basket/money.html?total="+money;
-}
+
