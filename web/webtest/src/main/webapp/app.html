@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>AJAX 3일차 (응용문제)</title>
+<script src="./jquery.js"></script>
+<script>
+$(function(){
+	/*
+	응용문제
+	사용자가 1~10까지 숫자 중 한가지를 선택합니다.
+	해당 숫자를 app로 backend에게 ajax로 전달합니다.
+	backend는 1~10까지 중 무작위 숫자 하나를 뽑습니다.
+	사용자가 입력한 숫자와 무작위 숫자가 같을 경우
+	"당첨", 다를 경우 "다음기회에" 라고 app.html로 return해 줍니다.
+	힌트 : ajax에서 전송되는 값은 모두 문자입니다.
+	*/
+	$("#btn").click(function(){
+		var $number = $("#number").val();
+		$.ajax({
+			url:"./app",
+			data:{number:$number},
+			catch:false,
+			type:"GET",
+			dataType:"text",
+			success:function(data){
+				console.log(data);
+			},
+			error:function(){
+				console.log("전송 실패");
+			}
+		})
+	})
+});
+</script>
+</head>
+<body>
+<input type="text" id="number">
+<input type="button" id="btn" value="뽑기" >
+</body>
+</html>

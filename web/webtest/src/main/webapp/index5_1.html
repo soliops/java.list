@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AJAX 3일차 (전송형태-한글) - index5.html</title>
+</head>
+<body>
+<div id="print">
+</div>
+</body>
+<script>
+//encodeURI(암호화) <-> decodeURI (풀이)
+var a = dedoceURI(window.location.search);
+var word = a.split("?user=");
+document.getElementById("print").innerText=word[1];
+
+</script>
+</html>

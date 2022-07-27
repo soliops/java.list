@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AJAX 3일차 (Jquery 중급문법)-확장함수</title>
+<script src="./jquery.js"></script>
+<script>
+const c = "홍길동2"; //자바스크립트 전역변수
+$(function(){
+	const $c = "테스트"; //jquery 전역변수
+	$("#btn").click(function(){
+		abc(); //javascript 함수 호출
+		//안됨 해당 javascript함수로 전달시 jquery에서 처리하는 변수값에 대한 적용사항이 전달 되지 않음
+		$.fn.abc();
+	});
+	$.fn.abc =function(){
+		console.log("확장함수");
+		abc(); //jquery에서 javascript abc를 호출함
+	}
+	$.fn.bbb = function(){
+		console.log($c);
+		console.log(c);
+	}
+	function bbb(){ 
+		console.log("test");
+		
+	}
+});
+	function abc(){
+		console.log("test");
+		$.fn.bbb(); //javascript에서 jquery 확장 함수 호출가능
+	}
+
+
+</script>
+</head>
+<body>
+<!-- jquery 안에 javascript 함수는 호출하지 못함 -->
+<input type="button" value="test" onclick="bbb()"> <!--jquery 안에 있는 bbb는 호출 하지 못함-->
+<input type="button" value="test2" id="btn">
+<input type="button" value="test3" onclick="$.fn.bbb()"> <!-- jquery안에 있는 확장함수를 onclick으로 핸들링 가능함  -->
+</body>
+</html>

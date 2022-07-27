@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AJAX 3일차 (전송형태-한글) - index5_1.html</title>
+<script>
+function data_get(){
+	var nm = document.getElementById("username");
+	location.href="./index5_1.html?user="+nm.value;
+	
+}
+function form_get(){
+	f.submit();
+}
+function ajax_get(){
+	//백엔드 쪽에 코드가 들어가 있어야 찍힌다.
+	let data;
+	var a =document.getElementById("username3");
+	var gdata = "?user=" + a.value;
+	function wck(){
+		if(window.XMLHttpRequest){
+			return new XMLHttpRequest();
+		}
+	}
+	function userget(){
+		if(data.readyState==XMLHttpRequest.DONE && data.status==200){
+			console.log(this.response)
+		}
+	}
+	data = wck();
+	data.onreadystatechange = userget;
+	data.open("GET","./index5.do"+gdata,true);
+	data.send();
+}
+function go_page(){
+	fr.submit();
+}
+</script>
+</head>
+<body>
+<!-- location 방식 -->
+<input type="text" id="username">
+<input type="button" value="전송" onclick="data_get();">
+
+<!-- form 방식 -->
+<!-- 
+application/x-www-form-urlencoded : 첨부파일 없이 암호화가 필요할 때
+multipart/form-data : 첨부파일 사용시에 적용
+ -->
+<form name="f" id="f" method="get" action="index5_1.html" enctype="application/x-www-form-urlencoded">
+<input type="text" name="user" id="username2">
+<input type="button" value="전송" onclick="form_get();">
+</form>
+<!-- ajax방식 -->
+<form name="fr" id="fr" method="POST" action="index4.html">
+<input type="text" name="user" id="username3">
+<input type="button" value="전송" onclick="ajax_get();" >
+<input type="button" value="전송2" onclick="go_page();" >
+
+
+
+</form>
+
+
+</body>
+</html>

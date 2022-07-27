@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AJAX 3일차 (Jquery 중급문법) - 확장함수2(상속)</title>
+<script src="./jquery.js"></script>
+<script src="//d1p7wdleee1q2z.cloudfront.net/post/search.min.js"></script>
+<script>
+//backend : jquery (핸들링,ajax,setter,getter함수,api연동) - Data전송, 톻신
+$(function(){
+	
+	$("#address_btn").postcodifyPopUp({ //도로명주소 API
+		insertPostcode5 : "#addr",
+		insertAddress :"#addr2"
+	});
+	
+	
+	$("#btn").click(function(){
+		var $a="홍길동";
+		$.box1($a);
+	});
+	$.fn.abc = function(){ //getter
+		var $b = 10;
+		return $b;
+	}
+	console.log($.fn.abc());
+	//장점 : $.fn을 많이 안써도 된다.
+	$.extend({ //상속 함수를 모아놓은 그룹을 extend
+		box1:function($nm){ //setter
+			console.log("box1");
+			console.log($nm); 
+		},
+		box2:function(){
+			console.log("box2");			
+		}
+	});
+	$.box2();
+			
+	$("#f").submit(function(){
+		this.method="POST";
+		this.action="./index10.do";
+		this.enctype="application/x-www-form-urlencoded";
+		this.submit();
+		//id만 있고 name이 없으면 값을 못받는다.
+	
+	});
+})
+</script> 
+</head>
+<body>
+<input type="button" id="btn" value="클릭"> <br> <br>
+<!-- 도로명주소 -->
+<form name="f" id="f">
+<!-- name값 필수다 -->
+<input type="text" id="addr"  name="addr" maxlength="5" readonly> <br>
+<input type="text" id="addr2" name="addr2" readonly style="width:300px;"> <br>
+<input type="text" id="addr3" name="addr3" style="width:300px;"  placeholder="상세주소 입력"> <br>
+<input type="button" value="주소검색" id="address_btn">
+<input type="submit" value="회원가입">
+</form>
+</body>
+</html>

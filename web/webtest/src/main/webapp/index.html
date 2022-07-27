@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AJAX 1일차 (XML 파일 로드)</title>
+<!-- AJAX(비동기) : 비동기 통신을 기본으로 하는 통신언어 + JS, JQ(AJAX는 코드 다름) 
+			(Socket.io + node.js)
+-->
+<!-- AJAX(동기화) : node.js(ansync) (동기화 통신) -->
+<!-- 
+동기화 : 순서대로 프로세서가 진행 되었다라는 뜻
+동기화 단점 : 프로세서 진행이 느립니다.
+
+비동기화 : 실시간 통신
+비동기화 단점 : 버그가 발생시 버그 위치를 정확히 파악하기가 어려움
+ -->
+</head>
+<body>
+<input type="button" value="통신" onclick="ajax();"> 
+
+</body>
+<script>
+let data; //ajax를 통신 데이터값을 저장하기 위한 변수
+function ajax(){
+	function wck(){ //접속방식을 설정
+		if(window.XMLHttpRequest){ //현재창에 통신함수 적용
+			return new XMLHttpRequest();//통신 선언함수
+		}
+		
+	}
+	function fileopen(){ //통신 성공 유/무 및 데이터 로드
+		if(data.readyState==XMLHttpRequest.DONE && data.status==200){
+			//status(200) : 해당 파일을 정상적으로 전송 및 올바르게 수행했다는 번호입니다.
+			console.log(this.responseXML);
+		}
+	}
+	data = wck(); //통신 선언함수를 data라는 변수로 전달
+	data.onreadystatechange = fileopen;//해당 파일 상태가 올바른지 파악
+	data.open("GET","./test.xml",true); //GET, POST
+	data.send(); //해당 통신 파일을 체크하여 해당 정보를 비동기로 적용
+	
+	
+}
+</script>
+</html>

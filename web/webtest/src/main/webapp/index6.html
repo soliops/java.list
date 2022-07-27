@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge ,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AJAX 3일차 (jquery 기초 문법)</title>
+<script src="./jquery.js"></script>  <!-- jquery엔진을 로드(맨위) -->
+<script>
+/*
+$(document).ready(function(){
+	alert("test");
+});
+*/
+
+$(function(){ //jquery 모든 문법을 사용해야 함
+	//click, change, submit
+	$("#btn").click(function(){ //핸들링 함수
+		var $w=0;
+		while($w<10){
+			console.log($w);
+			$w++;
+		}
+	});
+	$("#sbtn").change(function(){ 
+		//this => #sbtn(지칭)
+		var $a = $(this).val(); //변수 선언시 무조건 $ -값을 가져옴
+		//값을 가져올때는 val()
+		console.log($a);
+	});
+	
+	$("#btn2").click(function(){
+		var $b = "홍길동";
+		$("#mid").val($b); // 해당 값을 전달
+	});
+
+});
+
+/* 
+(function(){
+	
+})();
+*/
+/*
+(function($){
+	alert("test");
+})(jQuery); // jquery필터 만드는 사람들
+*/
+</script>
+</head>
+<body>
+<input type="button" value="전송" id="btn">
+<select id="sbtn">
+<option value="">[통신사]</option>
+<option value="SKT">SKT</option>
+<option value="KT">KT</option>
+<option value="LGT">LGT</option>
+</select>
+<input type="text" id="mid">
+<input type="button" value="클릭" id="btn2">
+</body>
+</html>

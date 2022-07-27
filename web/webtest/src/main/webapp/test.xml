@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>  <!-- 데이터화를 하기 위한 파일-->
+<test>
+<study>DATA1</study>
+<study>DATA2</study>
+<study>DATA3</study>
+<study>DATA4</study>
+</test>

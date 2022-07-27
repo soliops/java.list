@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>webtest</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+  </welcome-file-list>
+  <servlet>
+  	<servlet-name>webtest</servlet-name> <!-- nickname별칭 -->
+  	<servlet-class>test.first</servlet-class> <!-- class명 -->
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>webtest</servlet-name>
+  	<url-pattern>/first.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>webtest2</servlet-name> <!-- nickname별칭 -->
+  	<servlet-class>test.index4</servlet-class> <!-- class명 -->
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>webtest2</servlet-name>
+  	<url-pattern>/index4.do</url-pattern> <!-- java파일 url경로 파일 변경 -->
+  </servlet-mapping>
+  <servlet>
+  	<servlet-name>webtest3</servlet-name> <!-- nickname별칭 -->
+  	<servlet-class>test.index5</servlet-class> <!-- class명 -->
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>webtest3</servlet-name>
+  	<url-pattern>/index5.do</url-pattern>   <!-- java파일 url경로 파일 변경 -->
+  </servlet-mapping>
+    <servlet>
+  	<servlet-name>login</servlet-name> <!-- nickname별칭 -->
+  	<servlet-class>test.index7</servlet-class> <!-- class명 -->
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>login</servlet-name>
+  	<url-pattern>/index7.do</url-pattern>   <!-- java파일 url경로 파일 변경 -->
+  </servlet-mapping>
+      <servlet>
+  	<servlet-name>login2</servlet-name> <!-- nickname별칭 -->
+  	<servlet-class>test.index8</servlet-class> <!-- class명 -->
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>login2</servlet-name>
+  	<url-pattern>/index8.do</url-pattern>   <!-- java파일 url경로 파일 변경 -->
+  </servlet-mapping>
+  
+     <servlet>
+  	<servlet-name>addr</servlet-name> <!-- nickname별칭 -->
+  	<servlet-class>test.index10</servlet-class> <!-- class명 -->
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>addr</servlet-name>
+  	<url-pattern>/index10.do</url-pattern>   <!-- java파일 url경로 파일 변경 -->
+  </servlet-mapping>
+  
+   <servlet>
+  	<servlet-name>addr2</servlet-name> <!-- nickname별칭 -->
+  	<servlet-class>test.index11</servlet-class> <!-- class명 -->
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>addr2</servlet-name>
+  	<url-pattern>/index11</url-pattern>   <!-- java파일 url경로 파일 변경 -->
+  </servlet-mapping>
+     <servlet>
+  	<servlet-name>app</servlet-name> <!-- nickname별칭 -->
+  	<servlet-class>test.app</servlet-class> <!-- class명 -->
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>app</servlet-name>
+  	<url-pattern>/app</url-pattern>   <!-- java파일 url경로 파일 변경 -->
+  </servlet-mapping>
+</web-app>
