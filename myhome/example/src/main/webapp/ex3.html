@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<title>AJAX 복습3</title>
+<script src="./js/jquery.js"></script>
+<script>
+	$(function(){
+		$("#login").click(function(){
+			var $mid = $("#mid").val();
+			var $mpass = $("#mpass").val();
+			if($mid=="" || $mpass==""){
+				alert("아이디 및 패스워드를 입력하세요.");
+			}
+			else{
+				f.submit();
+			}
+		});
+	});
+	function login(){
+		var a = document.getElementById("mid").value;
+		var b = document.getElementById("mpass").value;
+		if(a=="" || b==""){
+			alert("아이디 및 패스워드를 입력하세요.");	
+		}
+		else{
+			f.submit();
+		}
+	}
+</script>
+</head>
+<body>
+<form name="f" id="f" method="GET" action="./ex3.do">
+아이디 : <input type="text" name="mid" id="mid"><br>
+패스워드 : <input type="password" name="mpass" id="mpass"> <br>
+<input type="button" value="js" onclick="login();">
+<input type="button" value="jq" id = "login">
+</form>
+</body>
+</html>

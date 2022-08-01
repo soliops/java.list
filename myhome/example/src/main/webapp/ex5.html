@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<title>AJAX 복습5 - POST</title>
+<script src="./js/jquery.js"></script>
+<script>
+$(function(){
+	$("#toemail").click(function(){
+		if($("#email1").val()=="" ||$("#email2").val()==""){
+			alert("이메일을 다시 한번 확인해주세요");
+		}
+		else{
+		var $email = $("#email1").val()+"@"+$("#email2").val();
+		$.fn.ajaxpost($email);			
+		}
+	});
+	
+	$.fn.ajaxpost = function($email){
+		$.ajax({
+			url:"./ex5.do",
+			method:"POST",
+			cache:false,
+			dataType:"html",
+			contentType:"application/x-www-form-urlencoded",
+			data:{email:$email},
+			success:function($data){
+				console.log($data);
+				if($data==null || $data=="error"){
+					console.log("올바른 이메일 주소가 아닙니다.");
+				}
+				else{
+					alert("해당 이메일 주소로 보안코드를 보냈습니다.");
+				}
+			},
+			error:function(){
+				console.log("통신 오류");
+			}
+		});
+	}
+});
+
+function toemail(){
+	var email1 = document.getElementById("email1").value;
+	var email2 = document.getElementById("email2").value;
+	if(email1==""||email2==""){
+		alert("이메일을 다시 한번 확인해주세요");
+	}
+	else{
+	var email = email1 + "@" + email2;
+	ajax(email);
+	}
+}
+function ajax(email){
+	let em;
+
+	function wck(){
+		if(window.XMLHttpRequest){
+			return new XMLHttpRequest();	
+		}
+	}
+	function ajaxpost(){
+		if(em.readyState==XMLHttpRequest.DONE && em.status==200){
+			if(this.response==null){
+				console.log("이메일 인증 시스템 오류");
+			}
+			else if(this.response=="ok"){
+				alert("이메일로 보안코드가 발송 되었습니다.");
+			}
+			else{
+				console.log(this.response);
+			}
+		}
+		else if(em.status==404){
+			console.log("통신 오류");
+		}
+		
+	}
+	var data = "email="+email;
+	em=wck();
+	em.onreadystatechange=ajaxpost;
+	em.open("POST","./ex5.do",true);
+	em.setRequestHeader("content-type","application/x-www-form-urlencoded");
+	em.send(data);
+	
+}
+</script>
+</head>
+<body>
+
+<input type="text" id="email1"> @ <input type="text" id="email2"> <br>
+<input type="button" value="이메일인증-js" onclick="toemail();"> 
+<input type="button" value="이메일인증-jq" id="toemail"> 
+</body> 
+</html>

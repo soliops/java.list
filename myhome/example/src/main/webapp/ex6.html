@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<title>AJAX 복습6 - 실시간 데이터 변경</title>
+<script src="./js/jquery.js"></script>
+<script>
+$(function(){
+	
+	/* setTimeout - 지속성 형태로 구성하는 방식
+	$.fn.aaa = function(){
+		console.log("test");
+		setTimeout($.fn.aaa,1000);	
+	}
+	setTimeout($.fn.aaa,1000);
+	*/
+	//setTimeout($.fn.aaa,1000);	- 1회성 시간타이머
+	//setInterval($.fn.aaa,1000);	- 지속적 시간타이머
+
+	/*응용*/
+// 	$.fn.bbb = function(){
+// 		$("#dataview").html("test");
+// 		setTimeout($.fn.bbb,2000);				
+// 	}
+// 	setTimeout($.fn.bbb,2000);
+/* ajax를 안에 넣고 ccc를 콜해야 setTimeout을 지속적으로 사용할수 있다.
+$.fn.ccc = function(){
+		$.ajax({		
+	});
+		setTimeout($.fn.ccc,2000);	
+}
+	setTimeout($.fn.ccc,2000);	
+*/
+
+$.fn.ccc = function(){
+	$.ajax({
+		url:"./ex6.do",
+		method:"GET",
+		dataType:"html",
+		cache:false,
+		success:function($data){
+			console.log($data);
+			$("#dataview").html($data);
+		},
+		error:function(){
+			console.log("통신오류");
+		}
+	});
+	setTimeout($.fn.ccc,5000);
+}
+setTimeout($.fn.ccc,0);
+});
+
+</script>
+</head>
+<body>
+<div id="dataview"></div>
+</body>
+</html>

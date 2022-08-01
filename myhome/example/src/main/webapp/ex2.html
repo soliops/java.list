@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<title>AJAX 복습2</title>
+<script src="./js/jquery.js"></script>
+<script>
+	$(function(){
+		$("#members").click(function(){
+			f.submit();
+			//$("#f").submit(); click이라서 가능하다 submit은 불가능
+		});
+	});
+	function members2(){
+		f.submit();
+	}
+</script>
+</head>
+<body>
+<form name="f" id="f" method="post" action="./ex2.do" enctype="application/x-www-form-urlencoded">
+아이디 : <input type="text" name="mid" id="mid"> <br>
+패스워드 : <input type="password" name="mpass" id="mpass"> <br>
+[성별] <br>
+<input type="radio" name="msex" value="M">남성
+<input type="radio" name="msex" value="W" checked>여성 <br>
+[서비스 수신여부] <br>
+SMS 수신여부 <input type="checkbox" name="sms" value="Y">
+<input type="button" value="js" onclick="members2();"> 
+<input type="button" value="jq" id="members">
+</form>
+</body>
+</html>

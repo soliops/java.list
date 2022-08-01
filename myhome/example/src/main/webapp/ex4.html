@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<title>AJAX 복습4 - GET</title>
+<script src="./js/jquery.js"></script>
+<script>
+	$(function(){
+		var $number;
+		$("#telcheck").click(function(){
+			var $tel1 = $("tel1").val();
+			var $tel2 = $("tel2").val();
+			var $tel3 = $("tel3").val();
+			var $tel = $tel1 + $tel2 + $tel3;
+			$.fn.ajaxget($tel);
+		});
+		$.fn.ajaxget = function($tel){
+			$.ajax({
+				url:"./ex4.do",
+				data:{usertel:$tel},				
+				cache:false, //브라우저에 캐시정보를 확인
+				method:"GET",
+				datatype:"text",
+				success:function($data){
+					if($data==""||$data==null){
+					console.log("SMS 시스템 오류");	
+					}
+					else{
+					console.log($data);
+					$number= $data;
+					//jquery에서 display 확인방법 2가지
+					$("#security").fadeIn();		
+					//$("#security").css("display","block");
+					}
+				},
+				error:function(){
+					console.log("통신 오류가 발생하였습니다.");
+				}
+			});
+		}
+		$("#scok").click(function(){
+			var $u = $("#scnum").val();
+			if($u==$number){
+				alert("인증이 확인되었습니다.");
+			}
+			else{
+				alert("인증번호를 다시 한번 확인 하세요");				
+			}
+		});
+	});
+let number;
+	
+	function telcheck(){
+		var tel1 = document.getElementById("tel1").value;
+		var tel2 = document.getElementById("tel2").value;
+		var tel3 = document.getElementById("tel3").value;
+		var tel = tel1+tel2+tel3;
+		ajax(tel);
+	}
+	function ajax(tel){
+		let pm;
+		function wck(){
+			if(window.XMLHttpRequest){
+				return new XMLHttpRequest();
+			}
+		}
+		function aget(){
+			if(pm.readyState==XMLHttpRequest.DONE && pm.status==200){
+				if(this.response==null){
+					console.log("SMS 시스템 오류");
+				}
+				else{
+					console.log(this.response);
+					number= this.response;
+					document.getElementById("security").style.display="block";
+				}
+			}
+			else if(pm.status==404){
+				console.log("통신 오류");
+			}
+		}
+		pm=wck();
+		pm.onreadystatechange = aget;
+		pm.open("GET","./ex4.do?usertel="+tel,true);
+		pm.send();	
+	}
+	function scok(){
+		var u = document.getElementById("scnum").value;
+		if(u == number){
+			alert("인증이 확인 되었습니다.");
+		}
+		else{
+			alert("인증번호를 다시 한번 확인 하세요");
+		}
+	}
+	
+</script>
+</head>
+<body>
+<input type="text" id="tel1" >-
+<input type="text" id="tel2" >-
+<input type="text" id="tel3" >
+<input type="button" value="인증번호-js" onclick="telcheck();">
+<input type="button" value="인증번호-jq" id = "telcheck">
+<div id="security" style="display:none;">
+<input type="text" maxlength="5" placeholder="인증번호 5자리" id="scnum">
+<input type="button" value="인증확인-js" onclick="scok();">
+<input type="button" value="인증확인-jq" id="scok">
+</div>
+</body>
+</html>
