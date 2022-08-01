@@ -1,0 +1,266 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-compatible" content="IE=Edge, chrome=1">
+    <title>재시험</title>
+    <link rel="stylesheet" href="./join.css">
+    <script>
+    //각 항목 체크 사항
+	var memberid = false;
+	var memberpw = false;
+	var membername = false;
+	var membernick = false;
+	var memberemail = false;
+	var membermtel = false;
+	var memberptel = false;
+	var memberaddr = false;
+    //아이디 체크
+    function idcheck(){
+   	var mid = document.getElementById("mid").value;
+    	if(mid.length<4){
+    		alert("아이디는 4자 이상을 입력하셔야 합니다.");
+    		document.getElementById("mid").focus();
+    		return false;
+    	}
+    	else{
+    		return true;
+    		memberid = true;
+    	}
+    }
+    //비밀번호 체크
+    function pwcheck(){
+    var mpass = document.getElementById("mpass").value;
+    var mpass2 = document.getElementById("mpass2").value;
+    if(mpass.length<4){
+    	alert("비밀번호는 4자 이상 입력하셔야 합니다.");
+    	document.getElementById("mpass").focus();
+    }else{
+    	if(mpass!=mpass2){
+    		alert("비밀번호를 다시 확인해주세요.");
+        	document.getElementById("mpass2").focus();
+        	return false;
+    		}
+   	 	else{
+   	 		return true;
+    		memberpw = true;
+    		}
+    	}
+    }
+    //이메일 체크
+    function emailcheck(){
+    var memail = document.getElementById("memail").value;	
+    if(memail.indexOf("@")==-1){
+    	alert("이메일을 다시 확인해주세요");
+    	document.getElementById("memail").focus();
+    	return false;
+    	}
+    else{
+    	return true;
+    	memberemail = true;
+    }
+    }
+    //주소 검색
+    function addr_search(){
+    	window.open("./popup.html","","width=650,height=850");
+    }
+    
+   //회원 가입 버튼
+    function membercheck(){
+    	
+    	//아이디
+    	var mid = document.getElementById("mid").value;
+    	//비밀번호
+    	var mpass = document.getElementById("mpass").value;
+    	var mpass2 = document.getElementById("mpass2").value;
+    	//이름
+    	var mname = document.getElementById("mname").value;
+    	//닉네임
+    	var mnick = document.getElementById("mnick").value;
+    	//이메일
+    	var memail = document.getElementById("memail").value;
+    	//전화번호
+    	var mtel;
+    	var mtel1 = document.getElementById("mtel1").value;
+    	var mtel2 = document.getElementById("mtel2").value;
+    	var mtel3 = document.getElementById("mtel3").value;
+    	//휴대폰번호
+    	var ptel;
+    	var ptel1 = document.getElementById("ptel1").value;
+    	var ptel2 = document.getElementById("ptel2").value;
+    	var ptel3 = document.getElementById("ptel3").value;
+    	//주소
+    	var addr_number = document.getElementById("addr_number").value;
+    	var addr1 = document.getElementById("addr1").value;    	
+    	var addr2 = document.getElementById("addr2").value;
+    	if(mid==""){
+    		alert("아이디를 입력해주세요");
+    		document.getElementById("mid").focus();
+    	}
+    	else if(mpass==""){
+    		alert("비밀번호를 입력해주세요");
+        	document.getElementById("mpass").focus();
+    	}else if(mpass2==""){
+    		alert("비밀번호를 입력해주세요");
+        	document.getElementById("mpass2").focus();
+    	}		
+    	else if(mname==""){
+    		alert("이름을 입력해주세요");
+        	document.getElementById("mname").focus();
+    	}
+    	else if(mnick==""){
+    		alert("닉네임을 입력해주세요");
+        	document.getElementById("mnick").focus();
+    	}
+    	else if(memail==""){
+     		alert("이메일을 입력해주세요");
+        	document.getElementById("memail").focus();
+    	}
+    	else if(mtel1==""){
+    		alert("전화번호를 입력해주세요");
+        	document.getElementById("mtel1").focus();
+    	}else if(mtel2==""){
+    		alert("전화번호를 입력해주세요");
+        	document.getElementById("mtel2").focus();
+    	}else if(mtel3==""){
+    		alert("전화번호를 입력해주세요");
+        	document.getElementById("mtel3").focus();
+    	}
+    	else if(ptel1==""){
+    		alert("휴대폰번호를 입력해주세요");
+        	document.getElementById("ptel1").focus();
+    	}else if(ptel2==""){
+    		alert("휴대폰번호를 입력해주세요");
+        	document.getElementById("ptel2").focus();
+    	}else if(ptel3==""){
+    		alert("휴대폰번호를 입력해주세요");
+        	document.getElementById("ptel3").focus();
+    	}
+    	else if(addr1=="" || addr_number ==""){
+    		alert("주소를 입력해주세요");
+    		document.getElementById("addr1").focus();
+    	}
+    	else if(addr2==""){
+    		alert("상세주소를 입력해주세요");
+    		document.getElementById("addr2").focus();
+    	}
+    	else{
+    	// 모든 정보 입력시
+    		if(idcheck()==false){
+    		}    			
+    		else if(pwcheck()==false){
+    		}
+    		else if(emailcheck()==false){	
+    		}
+    		else{
+  			//마지막 확인
+    		var result = confirm("회원 가입을 완료하시겠습니까?");
+    		if(result ==true){    			
+    		alert("회원 가입에 성공하셨습니다.");
+    		frm.submit();
+    		}
+    		else{
+    			alert("회원 가입 사항을 수정하고 다시 진행해주세요.");
+    		}
+    		}
+    	
+    	}
+    }
+    //취소 버튼
+    function membercancel(){
+    	alert("회원 가입을 취소하고, 이전 페이지로 돌아갑니다.");
+    	history.go(-1);
+    }   
+    </script>
+</head>
+<body>
+<form name="frm" id="frm" method="post" action="./jstest1.do" enctype="application/x-www-form-urlencoded">
+        <div class="joinContainer">
+            <h2 class="joinTit">회원가입</h2>
+            <div class="joinWarp">
+                <dl>
+                    <dt>아이디</dt>
+                    <dd class="input_st1">
+                        <input type="text" name="mid" id="mid" placeholder="4~16자 까지 입니다." maxlength="16">
+                        <span class="joinID"></span>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>비밀번호</dt>
+                    <dd class="input_st1">
+                        <input type="password" name="mpass" id="mpass" placeholder="4~16자 까지 입니다." maxlength="16">
+                        <span class="joinPw1"></span>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>비밀번호확인</dt>
+                    <dd class="input_st1">
+                        <input type="password" name="mpass2" id="mpass2" maxlength="16">
+                        <span class="joinPw2"></span>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>이름</dt>
+                    <dd class="input_st1">
+                        <input type="text" name="mname" id="mname" maxlength="20">
+                        <span class="joinName"></span>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>닉네임</dt>
+                    <dd class="input_st1">
+                        <input type="text" name="mnick" id="mnick" placeholder="사용할 닉네임을 입력하세요">
+                        <span class="joinNic"></span>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>E-mail</dt>
+                    <dd class="input_st1">
+                        <input type="text" name="memail" id="memail" placeholder="예) example@naver.com">
+                        <span class="joinEmail"></span>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>전화번호</dt>
+                    <dd class="input_st2">
+                        <input type="text" name="mtel1" id="mtel1" maxlength="3"><span>-
+                        </span><input type="text" name="mtel2" id="mtel2" maxlength="4"><span>-
+                        </span><input type="text" name="mtel3" id="mtel3" maxlength="4">
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>휴대폰번호</dt>
+                    <dd class="input_st2">
+                        <input type="text" name="ptel1" id="ptel1" maxlength="3"><span>-
+                        </span><input type="text" name="ptel2" id="ptel2" maxlength="4"><span>-
+                        </span><input type="text" name="ptel3" id="ptel3" maxlength="4">
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>주소</dt>
+                    <dd class="input_st3">
+                        <input type="text" name="addr_number" id="addr_number" placeholder="우편번호" readonly>
+                        <span class="joinHome"></span>
+                        <input type="button" value="주소 검색" onclick="addr_search();">
+                    </dd>
+                    <dd class="input_st1">
+                        <input type="text" maxlength="60" name="addr1" id="addr1" placeholder="도로명주소" readonly>
+                    </dd>
+                    <dd class="input_st1">
+                        <input type="text" maxlength="60" name="addr2" id="addr2" placeholder="상세주소">
+                    </dd>
+                    <dd class="input_st1 refer">
+                        <input type="text" placeholder="참고항목" disabled>
+                    </dd>
+                </dl>
+            </div>
+            <div class="buttonBox">                   
+                    <input class="joinBtn" type="button" value="회원가입" onclick="membercheck();">
+                    <input class="cancelBtn" type="button" value="취소" onclick="membercancel();">
+            </div>
+        </div>  
+</form>
+
+</body>
+</html>

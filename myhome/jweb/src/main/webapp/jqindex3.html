@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<title>Jquery(2일차) - form post전송 + (backend가)배열로 받기</title>
+<script src="./js/jquery.js"></script> <!-- 무조건 위에 -->
+<script src="./js/jquery-ui.js"></script>
+<link rel="stylesheet" type="text/css" href="./js/jquery-ui.css">
+<script>
+	$(function(){
+		$("#okbtn").click(function (){
+			//is를 사용하여 radio, checkbox (true, false)를 확인함
+// 			var $ck = $("#like1").is(":checked");
+			var $ea = $(".ck").length; //공통 class명으로 갯수파악
+// 			console.log($ea);
+			var $w=1;
+			var $ct=0;
+			while($w<=$ea){
+				var $nm = "#like" + $w;
+// 				$($nm).attr("checked","true"); 전체 체크박스에 적용
+				//javascript setAttribute, getAttribute = attr
+				if($("#like"+$w).is(":checked")==true){
+					$ct++;
+				}
+				$w++;
+			}
+			if($ct==0){
+				alert("한가지 라도 선택 하셔야 합니다.");
+			}
+			else{
+				f.method="POST",
+				f.action ="test3.do",
+				f.enctype="application/x-www-form-urlencoded";
+				f.submit();
+			}
+		});	
+		//name값이 같을 경우
+		$("#okbtn2").click(function(){
+			var $ea = $(".ck").length;
+			var $w=0;
+			var $ct=0;
+			while($w<$ea){
+				//jquery abc.eq(0) =javascript abc[0]
+// 				console.log(($(".ck").eq($w)).is(":checked"));
+				
+				if($(".ck").eq($w).is(":checked")==true){
+					$ct++;
+				}
+				
+				$w++;
+			}
+			if($ct==0){
+				alert("한가지 라도 선택 하셔야 합니다.");
+			}
+			else{
+				f.method="POST",
+				f.action ="test3.do",
+				f.enctype="application/x-www-form-urlencoded";
+				f.submit();
+			}
+		});
+	});
+</script>
+</head>
+<body>
+<!-- 
+<form name="f" id="f" >
+<p>좋아하는 운동경기는 무엇입니까?</p> <br>
+야구<input type="checkbox" name="like1" id="like1" class="ck" value="야구"> <br>
+축구<input type="checkbox" name="like2" id="like2" class="ck" value="축구"> <br>
+농구<input type="checkbox" name="like3" id="like3" class="ck" value="농구"> <br>
+배구<input type="checkbox" name="like4" id="like4" class="ck" value="배구"> <br>
+탁구<input type="checkbox" name="like5" id="like5" class="ck" value="탁구"> <br>
+<input type="button" value="확인" id="okbtn">
+</form>
+ -->
+ <form name="f" id="f" >
+<p>좋아하는 운동경기는 무엇입니까?</p> <br>
+야구<input type="checkbox" name="like" id="like1" class="ck" value="야구"> <br>
+축구<input type="checkbox" name="like" id="like2" class="ck" value="축구"> <br>
+농구<input type="checkbox" name="like" id="like3" class="ck" value="농구"> <br>
+배구<input type="checkbox" name="like" id="like4" class="ck" value="배구"> <br>
+탁구<input type="checkbox" name="like" id="like5" class="ck" value="탁구"> <br>
+<input type="button" value="확인" id="okbtn2">
+</form>
+</body>
+</html>

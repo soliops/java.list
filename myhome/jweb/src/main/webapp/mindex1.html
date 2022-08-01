@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-compatible" content="IE=Edge, chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="./login.css?v=6">
+  <title>반응형 로그인</title>
+  <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+<script>
+	$(function(){
+		$("#frm").submit(function(){
+			var $id= $("#mid").val();
+			var $pass= $("#mpass").val();
+			
+			if($id==""){
+				alert("아이디를 입력하세요");
+				$("#mid").focus();
+				return false;
+			}
+			else if($pass==""){
+				alert("패스워드를 입력하세요");
+				$("#mpass").focus();
+				return false;
+			}else{
+				frm.method="POST";
+				frm.action="./test5.do";
+				frm.enctype="application/x-www-form-urlencoded";
+				frm.submit();
+			}
+		});
+	});	
+</script>
+</head>
+<body>
+<form name="frm" id="frm"> 
+<input type="hidden" name="key" value="loginpost">
+    <div class="login">
+        <span class="left">
+           <label>
+                <div>아이디</div>
+                <div><input type="text" name="mid" id="mid" class="mid" placeholder="아이디를 입력하세요"></div>
+           </label> 
+           <label>
+                <div>패스워드</div>
+                <div><input type="password" name="mpass" id="mpass" class="mpass" placeholder="패스워드를 입력하세요"></div>
+           </label> 
+        </span>
+        <span class="right">
+            <input type="submit" value="로그인" class="btn">
+        </span>
+        <span class="bottom">
+            <ul>
+                <li><a href="#">회원가입</a></li>
+                <li><a href="#">아이디/비밀번호 찾기</a></li>
+            </ul>
+        </span>
+        
+    </div>
+</form>
+</body>
+</html>

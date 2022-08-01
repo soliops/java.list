@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<title>Jquery(2일차)-ajax(get전송)</title>
+<script src="./js/jquery.js"></script> <!-- 무조건 위에 -->
+<script src="./js/jquery-ui.js?v=4"></script>
+<link rel="stylesheet" type="text/css" href="./js/jquery-ui.css">
+<script>
+	$(function() {
+		$("#sdate").datepicker();
+		$("#edate").datepicker();		
+		$("#dateok").click(function(){
+			var $s = $("#sdate").val();
+			var $e = $("#edate").val();
+			
+			if($s > $e){
+				alert("날짜 선택이 잘못 되었습니다.");
+			}
+			else if($s < $e){
+				$.fn.getdate($s,$e);
+			}
+			else{
+				alert("날짜 선택이 잘못 되었습니다.");				
+			}
+		});
+		
+		$.fn.getdate = function($sdate,$edate){
+			$.ajax({
+				url:"./test1.do",
+				data:{sdate:$sdate,edate:$edate},
+				//data 전송시 json은 해당 backend가 배열값을 받는다는
+				//신호가 있어야만 처리가 가능한 부분입니다.
+				cache:false,
+				method:"GET",
+				dataType:"text", //json, text, xml, script, jsonp
+				success:function($data){
+					console.log($data);
+					if($data=="ok"){
+						alert("선택하신 날짜로 예약 되셨습니다.");
+					}
+				},
+				error:function(){
+					console.log("통신오류 발생하였습니다.");
+				}
+			});
+		}
+	});
+</script>
+</head>
+<body>
+<input type="text" id="sdate" class="ui-widget" readonly>
+<input type="text" id="edate" class="ui-widget" readonly>
+<input type="button" value="선택완료" id="dateok" class="ui-button">
+</body>
+</html>

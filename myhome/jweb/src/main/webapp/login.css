@@ -1,0 +1,208 @@
+@charset "UTF-8";
+body { margin: 0; padding: 0; }
+ul,ol{list-style: none; margin: 0; padding: 0;}
+span,label { display: block; }
+
+a:link, a:visited{ 
+    color:#000;
+    text-decoration: none;  /* 텍스트 효과 (그림자,밑줄, 점선 다양한 효과) */
+}
+
+/* PC화면 */
+.mid, .mpass{ /* , 같은 속성을 사용한다는 뜻 입니다. */
+    /* 아이디 입력부분 */
+    width: inherit;
+    height: inherit;
+    box-sizing: border-box;
+}
+.login { 
+    width: 580px;
+    height: 200px;
+    border: 1px solid black;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 25px;
+}
+.left { 
+    width: 400px;
+    height: 80px;
+    float: left;
+   /* margin-right: 25px;*/
+}
+.left > label:nth-of-type(1){
+    width: inherit;
+    height: 35px;
+    margin-bottom: 10px;
+    font-size: 12px;
+    line-height: 35px;
+}
+.left > label:nth-of-type(1) > div:nth-of-type(1){
+    width: 100px;
+    height: inherit;
+    float: left;
+    margin-right: 25px;
+}
+.left > label:nth-of-type(1) > div:nth-of-type(2){
+    width: 275px;
+    height: inherit;
+    float: left;
+}
+
+.left > label:nth-of-type(2){
+    width: inherit;
+    height: 35px;
+    font-size: 12px;
+    line-height: 35px;
+}
+
+.left > label:nth-of-type(2) > div:nth-of-type(1){
+    width: 100px;
+    height: inherit;
+    float: left;
+    margin-right: 25px;
+}
+.left > label:nth-of-type(2) > div:nth-of-type(2){
+    width: 275px;
+    height: inherit;
+    float: left;
+}
+
+.right {
+   margin-left: 25px;
+   width: 100px;
+   height: 80px;
+   float: left;
+   margin-bottom: 30px;
+}
+.right > .btn{
+    width: inherit; 
+    height: inherit;
+    background-color: black;
+    color: white;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.bottom {
+    clear: both;
+    width: 525px;
+    height: 40px;
+}
+.bottom > ul {
+    width: inherit;
+    height: inherit;
+    font-size: 12px;
+    font-weight: bold;
+}
+.bottom > ul > li:nth-of-type(1){
+    width: 50%;
+    height: inherit;
+    float: left;
+    line-height: 40px;
+}
+.bottom > ul > li:nth-of-type(2){
+    width: 50%;
+    height: inherit;
+    float: left;
+    line-height: 40px;
+    text-align: right;
+}
+
+
+@media screen and (min-width:561px) and (max-width:800px) {
+
+   body{
+       padding-left:20px;
+       padding-right: 20px;
+       box-sizing: border-box;
+   }
+   .login {
+    width: 100%;
+    height: 220px;
+   }
+   .left { 
+    width: 100%;
+    float:none;
+   }
+   .right {
+     margin-top: 10px;
+     margin-left:0px;
+     width: 100%;
+     height: 40px;
+     float:none;
+     margin-bottom: 10px;
+   }
+   .left > label:nth-of-type(1) > div:nth-of-type(1){
+        width: 20%;
+        margin-right:1%;
+   }
+   .left > label:nth-of-type(1) > div:nth-of-type(2){
+        width: 79%;
+   }
+   .mid, .mpass{    
+       width: 100%;
+   }
+   .left > label:nth-of-type(2) > div:nth-of-type(1){
+        width: 20%;
+        margin-right:1%;
+   }
+   .left > label:nth-of-type(2) > div:nth-of-type(2){
+        width:79%;
+   }
+   .bottom {
+       width: 100%;
+   }
+}
+
+/* 모바일 화면 */
+@media screen and (min-width:340px) and (max-width:560px) {
+    body{
+        padding-left:20px;
+        padding-right: 20px;
+        box-sizing: border-box;
+    }
+    .login {
+        width: 100%;
+        height: 260px;
+    }
+    .left { 
+        width: 100%;
+        float:none;
+    }
+    .right {
+        margin-top: 10px;
+        margin-left:0px;
+        width: 100%;
+        height: 40px;
+        float:none;
+        margin-bottom: 10px;
+    }
+    .left > label:nth-of-type(1) > div:nth-of-type(1){
+        display: none;
+    }
+    .left > label:nth-of-type(2) > div:nth-of-type(1){
+        display: none;
+    }
+    .left > label:nth-of-type(1) > div:nth-of-type(2){
+        width: 100%;
+    }
+    .left > label:nth-of-type(2) > div:nth-of-type(2){
+        width: 100%;
+    }
+    .mid, .mpass{    
+        width: 100%;
+    }
+    .bottom {
+        width: 100%;
+    }
+    .bottom > ul > li:nth-of-type(1){
+        width: 100%;
+        text-align: center;
+        float: none;
+    }
+    .bottom > ul > li:nth-of-type(2){
+        width: 100%;
+        text-align: center;
+        float: none;
+    }
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<title>Jquery(2일차) - 결제시스템 응용</title>
+<script src="./js/jquery.js"></script> <!-- 무조건 위에 -->
+<script src="./js/jquery-ui.js"></script>
+<link rel="stylesheet" type="text/css" href="./js/jquery-ui.css">
+<script>
+	$(function(){
+		$("#btn").click(function(){
+			if(confirm("결제를 진행하시겠습니까?")){
+				f.method="POST",
+				f.action="./test4.do"
+				f.enctype="application/x-www-form-urlencoded";
+				f.submit();
+			}
+		});
+	});
+</script>
+</head>
+<body>
+<form name="f" id="f" >
+<input type="radio" name="ck" id="ck1" class="rd" value="0" checked>신용카드 <br>
+<input type="radio" name="ck" id="ck2" class="rd" value="1">무통장입금 <br>
+<input type="radio" name="ck" id="ck3" class="rd" value="2">계좌이체 <br>
+<input type="radio" name="ck" id="ck4" class="rd" value="3">도서상품권 <br>
+<input type="radio" name="ck" id="ck5" class="rd" value="4">휴대폰결제<br>
+<input type="button" value="결제하기" id="btn">
+</form>
+</body>
+</html>
