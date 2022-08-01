@@ -50,4 +50,12 @@
   <servlet-name>security</servlet-name>
   <url-pattern>/security.do</url-pattern>
   </servlet-mapping>  
+  <servlet>
+  <servlet-name>index4</servlet-name>
+  <servlet-class>test.index4</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>index4</servlet-name>
+  <url-pattern>/index4.do</url-pattern>
+  </servlet-mapping>
 </web-app>
