@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<title>로그인</title>
+<script>
+	function login(){
+		if(f.userid.value==""){
+			alert("아이디를 입력하세요.");
+			return false;
+		}
+		else if(f.userpw.value==""){
+			alert("패스워드를 입력하세요.");
+			return false;
+		}
+		else{
+			f.method="POST";
+			f.action="login.do"
+			f.enctype="application/x-www-form-urlencoded";
+			f.submit();
+		}
+	}
+</script>
+</head>
+<body>
+<form name="f" id="f" onsubmit="return login();">
+<input type="text" name="userid">
+<input type="password" name="userpw">
+<input type="submit" value="로그인"> <br>
+<a href="./join.html">[회원가입] </a><br>
+<a href="./pass_search.html">[아이디 및 패스워드 찾기]</a> <br>
+</form>
+</body>
+</html>
