@@ -3,9 +3,46 @@
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-<title>아이디 확인 및 패스워드 전송</title>
+<title>포인트 update 사용법</title>
+<script>
+	function abc(i){
+		var ids = document.getElementById("data"+i);
+		console.log(ids);
+		if(ids.value==""){
+			alert("포인트 값을 입력해 주시길 바랍니다.");
+		}
+		else{
+			//isNaN : false(숫자만 적용되었을 경우), true(문자가 있음)
+			//isNaN : return boolean
+			if(isNaN(ids.value)==true){
+				alert("숫자만 입력하세요.");
+			}
+			else{
+				f.submit();				
+			}
+		}
+	}
+</script>
 </head>
 <body>
-
+<form name="f" id="f" method="post" action="index4.do">
+<p>포인트 변경</p>
+<table>
+<tr>
+<td>데이터1[이순신]</td>
+<td>
+<input type="hidden" name="jidx1" id="jidx1" value="2">
+<input type="text" name="data1" id="data1"></td>
+<td><input type="button" value="수정" onclick="abc(2);"></td>
+</tr>
+<tr>
+<td>데이터2[강감찬]</td>
+<td>
+<input type="hidden" name="jidx2" id="jidx2" value="3">
+<input type="text" name="data2" id="data2"></td>
+<td><input type="button" value="수정" onclick="abc(3);"></td>
+</tr>
+</table>
+</form>
 </body>
 </html>

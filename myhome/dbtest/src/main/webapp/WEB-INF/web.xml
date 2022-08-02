@@ -18,11 +18,11 @@
   <url-pattern>/index.do</url-pattern>
   </servlet-mapping>
   <servlet>
-  <servlet-name>index2</servlet-name>
+  <servlet-name>select</servlet-name>
   <servlet-class>test.index2</servlet-class>
   </servlet>
   <servlet-mapping>
-  <servlet-name>index2</servlet-name>
+  <servlet-name>select</servlet-name>
   <url-pattern>/index2.do</url-pattern>
   </servlet-mapping>
   <servlet>
@@ -51,11 +51,19 @@
   <url-pattern>/security.do</url-pattern>
   </servlet-mapping>  
   <servlet>
-  <servlet-name>index4</servlet-name>
+  <servlet-name>update</servlet-name>
   <servlet-class>test.index4</servlet-class>
   </servlet>
   <servlet-mapping>
-  <servlet-name>index4</servlet-name>
+  <servlet-name>update</servlet-name>
   <url-pattern>/index4.do</url-pattern>
+  </servlet-mapping>
+    <servlet>
+  <servlet-name>delete</servlet-name>
+  <servlet-class>test.index5</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>delete</servlet-name>
+  <url-pattern>/index5.do</url-pattern>
   </servlet-mapping>
 </web-app>
