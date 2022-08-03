@@ -46,7 +46,7 @@ public class joinok extends HttpServlet {
 		list.add(this.maddr1);
 		list.add(this.maddr2);
 		jm.insert(list);
-		String r = jm.join_msg();
+		String r = jm.join_msg().intern();
 		response.setContentType("text/html;charset=UTF-8");
 		this.pr = response.getWriter();
 		if(r=="ok") {

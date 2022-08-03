@@ -25,4 +25,12 @@
   	<servlet-name>joinok</servlet-name>
   	<url-pattern>/joinok.do</url-pattern>
   	</servlet-mapping>
+  	 	<servlet>
+  	<servlet-name>loginok</servlet-name>
+  	<servlet-class>configure.loginok</servlet-class>
+  	</servlet>
+  	<servlet-mapping>
+  	<servlet-name>loginok</servlet-name>
+  	<url-pattern>/loginok.do</url-pattern>
+  	</servlet-mapping>
 </web-app>
