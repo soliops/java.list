@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>파일 업로드 기능</title>
+<script>
+	function abc(){
+		f.submit();
+	}
+</script>
+</head>
+<body>
+<!-- 파일첨부 기능이 있을 경우 무조건 POST로만 전송 됩니다. -->
+<form name="f" id="f" method="POST" action="fileuploadok.do" enctype="multipart/form-data">
+<input type="file" name="file" accept="image/*">
+<input type="button" value="전송" onclick="abc();">
+</form>
+</body>
+</html>
