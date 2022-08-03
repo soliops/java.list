@@ -31,10 +31,10 @@ public class fileuploadok extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		 
 		request.setCharacterEncoding("UTF-8");
-		response.setContentType("text/html; charset=utf-8");
-		Part filepart = request.getPart("file");
-		String filename = filepart.getSubmittedFileName();
-		for(Part part:request.getParts()) {
+		Part filepart = request.getPart("file"); //사용자 PC에 있는 이미지 경로를 저장 
+		String filename = filepart.getSubmittedFileName(); //업로드할 파일명을 가져옴
+		for(Part part:request.getParts()) { //여러개의 파일을 업로드시 모든 파일을 서버에 저장 되도록 하기 위함.
+			//해당 파일을 저장할 위치에 동일한 이름을 copy하게 됩니다.
 			part.write("C:\\myhome\\review_nc\\src\\main\\webapp\\upload\\"+filename);
 			//로컬이랑 서버랑 다르다
 		}
