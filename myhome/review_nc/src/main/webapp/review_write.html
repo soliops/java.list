@@ -21,7 +21,8 @@
 			else{
 				frm.method="POST";
 				frm.action="./writeok.do";
-				frm.enctype="application/x-www-form-urlencoded";
+				frm.enctype="multipart/form-data";
+				//frm.enctype="multipart/onct??????있음-data";
 				frm.submit();
 			}
 		});
@@ -30,6 +31,7 @@
 // 			 history.go(-1);
 			 window.location.reload();
 		})
+
 	});
 
 </script>
@@ -47,6 +49,7 @@
 <input type="radio" name="rscore" id="rscore5" value="1">1점<br>
 내용  <br>
 <textarea rows="0" cols="0" name="rtext" id="rtext" style="width:200px; height:300px;"></textarea><br>
+파일첨부 <input type="file" name="fileupload" accept="image/*" > <br>
 <input type="button" id="rok" value="작성완료">
 <input type="button" id="rcancel" value="작성취소" >
 </form>

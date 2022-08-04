@@ -12,10 +12,11 @@ public class write_module {
 			String today = time.format(dt);
 			dbconfig dbc = new dbconfig();
 			Connection ct = dbc.dbc();
-			String sql = "insert into pd_review values('0',?,?,?,?,'"+today+"','N')";
+			
+			String sql = "insert into pd_review values('0',?,?,?,?,?,?,?)";
 			PreparedStatement ps = ct.prepareStatement(sql);
-			for(int w=0;w<data.size();w++) {
-				ps.setString(w+1, data.get(w));
+			for(int w=1;w<data.size();w++) {
+				ps.setString(w, data.get(w));
 			};
 			int n =0;
 			n = ps.executeUpdate();

@@ -25,4 +25,20 @@
   <servlet-name>fileuploadok</servlet-name>
   <url-pattern>/fileuploadok.do</url-pattern>
   </servlet-mapping>
+  <servlet>
+  <servlet-name>fileup-database</servlet-name>
+  <servlet-class>configure.fileok</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>fileup-database</servlet-name>
+  <url-pattern>/fileok.do</url-pattern>
+  </servlet-mapping>
+    <servlet>
+  <servlet-name>index</servlet-name>
+  <servlet-class>configure.index</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>index</servlet-name>
+  <url-pattern>/index.do</url-pattern>
+  </servlet-mapping>
 </web-app>
