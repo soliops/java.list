@@ -36,7 +36,7 @@ public class config {
 //			}else {sql+="?,";}
 //			w++;
 //		}
-		System.out.println(data);
+//		System.out.println(data);
 
 			String sql = "insert into "+table_name+"values ('0',?,?,?,?,?,?,?)";
 			this.ps = this.ct2.prepareStatement(sql);

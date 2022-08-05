@@ -7,7 +7,6 @@ import java.io.PrintWriter;
 import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -15,8 +14,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
-
-import org.apache.el.parser.AstListData;
 
 
 
@@ -82,8 +79,8 @@ public class writeok extends HttpServlet {
 		
 		response.setContentType("text/html;charset=utf-8");
 		this.pr = response.getWriter();
-		config cff = new config();
-		this.indate = cff.nowtimer();
+		write_module wm_date = new write_module();
+		this.indate = wm_date.nowtimer();
 		this.outdate = "0001-01-01 01:00:00";
 		if(this.filenm=="") {
 			this.url2=null;
@@ -100,10 +97,7 @@ public class writeok extends HttpServlet {
 		}
 		String[] data = {"pd_reivew",this.rname,this.rproduct,this.rscore,this.rtext,this.indate,this.outdate,this.url2}; 
 		ArrayList<String> list = new ArrayList<String>(Arrays.asList(data));		
-//		config cf = new config();
-//		cf.insert(list);
-//		this.msg = cf.insert(list).intern();
-//		
+
 		write_module wm = new write_module();
 		wm.insert(list);
 		this.msg = wm.join_msg().intern();
@@ -120,43 +114,7 @@ public class writeok extends HttpServlet {
 					+ "</script>");
 					
 		}		
-//		write_module wm = new write_module();
-//		//파일 첨부
-//		this.r_part = request.getPart("fileupload");
-//		this.filenm = this.r_part.getSubmittedFileName();
-//
-//		this.path = request.getServletContext().getRealPath("");
-//		this.upfile = this.path + "upload/";
-//
-//		this.url = this.upfile + this.filenm;
-//		this.url2 = this.url.replace("/opete95/tomcat/webapps", ".");
-//		this.is = this.r_part.getInputStream();
-//		this.fos = new FileOutputStream(this.url);
-//		byte[] bf = new byte[1024];
-//		int r =0;
-//		while((r=this.is.read(bf))!=-1) {
-//			this.fos.write(bf,0,r);
-//		}
-//		try {
-//			wm.insert(list, this.url2);							
-//		} catch (Exception e) {
-//
-//		}
-////		this.msg = wm.join_msg().intern();
-//
-//		if(this.msg =="success"){
-//			this.pr.print("<script>"
-//					+ "alert('리뷰 작성이 완료 되었습니다.');"
-//					+ "location.href='./review_write.html';"
-//					+ "</script>");
-//		}else {
-//			this.pr.print("<script>"
-//					+ "alert('올바른 값이 아닙니다.');"
-//					+ "location.href='./review_write.html';"
-//					+ "</script>");
-//		}
-//		this.fos.close();
-//		this.is.close();
+
 	}
 	
 }

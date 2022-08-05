@@ -13,29 +13,30 @@ public class dataload {
 	private String r_text;
 	private String r_date;
 	private String imgs;
-
-	protected void setridx(String ridx) {
+	//set Servlet에서 입력시키기 위한 부분(인스턴스)
+	private void setridx(String ridx) {
 		this.ridx = ridx;
 	}
-	protected void setrname(String rname) {
+	private void setrname(String rname) {
 		this.rname = rname;
 	}
-	protected void setrproduct(String rproduct) {
+	private void setrproduct(String rproduct) {
 		this.rproduct = rproduct;
 	}
-	protected void setrscore(String rscore) {
+	private void setrscore(String rscore) {
 		this.rscore = rscore;
 	}
-	protected void setr_text(String r_text) {
+	private void setr_text(String r_text) {
 		this.r_text = r_text;
 	}	
-	protected void setr_date(String r_date) {
+	private void setr_date(String r_date) {
 		this.r_date = r_date;
 	}	
-	protected void setimgs(String imgs) {
+	private void setimgs(String imgs) {
 		this.imgs = imgs;
 	}	
 	
+	//get JSP로 출력하기 위해서 사용
 	
 	public String getridx() {
 		return this.ridx;
@@ -59,8 +60,8 @@ public class dataload {
 		return this.imgs;
 	}	
 	
-	public ArrayList<dataload> all_list(){
-		ArrayList<dataload> list = new ArrayList<dataload>();
+	public ArrayList<dataload> all_lists(){ //배열자료형에 메소드 형태
+		ArrayList<dataload> list = new ArrayList<dataload>(); //배열자료형 생성
 		
 		try {
 			dbconfig db = new dbconfig();
@@ -77,12 +78,12 @@ public class dataload {
 				dl.setr_text(rs.getString("r_text"));
 				dl.setr_date(rs.getString("r_date"));
 				dl.setimgs(rs.getString("imgs"));
-				list.add(dl);
+				list.add(dl); //최종 DB값을 받아서 배열로 처리
 				
 			}
 		}
 		catch (Exception e) {
 		}
-		return list;
+		return list; //최종 DB 배열값을 return JSP에게 전달하기 위해서 사용
 	}
 }

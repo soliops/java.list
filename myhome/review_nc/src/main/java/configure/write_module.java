@@ -5,15 +5,26 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 public class write_module {
 	static String call_sign = null;
-	public void insert(ArrayList<String> data) {
+	protected LocalDateTime now = null;
+	protected String timer =null;
+	protected String nowtimer() { //현재 서버 시간 관련 정보 
+			this.now = LocalDateTime.now();
+			DateTimeFormatter fm = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+			this.timer = this.now.format(fm);
+		return this.timer;
+	}
+	public void insert(ArrayList<String> data) { //insert만 사용되는 list정보
 		try {
-			LocalDateTime time = LocalDateTime.now();
-			DateTimeFormatter dt = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-			String today = time.format(dt);
 			dbconfig dbc = new dbconfig();
 			Connection ct = dbc.dbc();
-			
-			String sql = "insert into pd_review values('0',?,?,?,?,?,?,?)";
+			int ww = 1;
+			String sql ="insert into pd_review values('0',";
+			while(ww<data.size()) {
+				if(ww==data.size()-1) {sql+="?)";
+				}else {sql+="?,";}
+				ww++;
+			}
+
 			PreparedStatement ps = ct.prepareStatement(sql);
 			for(int w=1;w<data.size();w++) {
 				ps.setString(w, data.get(w));
