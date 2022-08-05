@@ -20,7 +20,10 @@ function faq_write(){
 </script>
 </head>
 <body>
-<%ArrayList<select_sql> sel_datas = (ArrayList<select_sql>)request.getAttribute("list");%>
+<%
+ArrayList<select_sql> sel_datas = (ArrayList<select_sql>)request.getAttribute("list2");
+%>
+<%=sel_datas.size()%>
 <section class="faq_view">
 	<div class="faq_list">
 		<p>FAQ LIST</p>

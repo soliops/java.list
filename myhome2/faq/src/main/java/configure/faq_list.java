@@ -23,13 +23,13 @@ public class faq_list extends HttpServlet {
 	}
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		try {
-			select_sql ss =new select_sql();
+		try {		
+			select_sql ss = new select_sql();
 			ArrayList<select_sql> sel_faqdata = ss.viewdata();
-			req.setAttribute("list", sel_faqdata);
+			req.setAttribute("list2", sel_faqdata);
+			System.out.println(sel_faqdata);
 			RequestDispatcher rd = req.getRequestDispatcher("./faq_list.jsp");
 			rd.forward(req, resp);
-			
 			
 		} catch (Exception e) {
 
