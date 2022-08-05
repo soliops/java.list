@@ -1,0 +1,211 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+/* font-family: 'Noto Sans KR', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
+/* font-family: 'Nanum Gothic', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
+/* font-family: 'Black Han Sans', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+/* font-family: 'Roboto', sans-serif; */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html, div, span, label, section, aside, footer, header, nav, video, table, tr, td, th {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+     -moz-text-size-adjust: 100%;
+          text-size-adjust: 100%;
+}
+
+a {
+  background-color: transparent;
+  color: black;
+  text-decoration: none;
+}
+
+a:active, a:hover {
+  outline: 0;
+  color: black;
+}
+
+a:visited {
+  text-decoration: none;
+  color: black;
+}
+
+input, textarea {
+  outline: 0;
+}
+
+input:focus, textarea:focus {
+  outline: 0;
+}
+
+button, input[type=button], input[type=submit], input[type=reset],
+input[type=checkbox], input[type=radio] {
+  cursor: pointer;
+}
+
+legend {
+  border: 0;
+  padding: 0;
+}
+
+textarea {
+  overflow: auto;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+ul, ol, dt, dl {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.clear {
+  clear: both;
+}
+
+address, caption, cite, code, dfn, em, var {
+  font-style: normal;
+  display: block;
+}
+
+select {
+  margin: 0;
+}
+p {
+  margin: 0;
+  padding: 0;
+  word-break: break-all;
+}
+
+.faq_view { 
+	height:auto;	
+}
+.faq_view > .faq_list { 
+	width:1100px;
+	height:auto;
+	margin:0 auto;	
+}
+.faq_list > p {
+	height:40px;
+	font-size:20px;
+	font-family: 'Noto Sans KR', sans-serif;
+	font-weight: bold;
+	line-height: 40px;
+	text-decoration: underline;
+	text-indent: 10px;
+}
+.faq_content, .faq_content_view {
+	width:100%;
+	height:30px;
+	font-family: 'Noto Sans KR', sans-serif;
+	font-size:13px;
+}
+.faq_content > ul, .faq_content_view > ul {
+	width: inherit;
+	height: inherit;
+}
+.faq_content > ul > li, .faq_content_view > ul > li {
+	float: left;
+	background-color: #cfcfcf;
+	font-weight: bold;	
+	height:inherit;
+	line-height: 30px;
+	text-align: center;
+	position: relative;
+	cursor: pointer;
+}
+.faq_content_view > ul > li { 
+	background-color: white;	
+	border:1px solid #cfcfcf;
+	font-weight: normal;	
+}
+
+.faq_content > ul > li:after{
+	position:absolute;
+	content:"|";
+	right: 0;
+}
+.faq_content > ul > li:last-of-type:after{
+	content: "";
+}
+
+
+.faq_content > ul > li:nth-of-type(1), .faq_content_view > ul > li:nth-of-type(1) {
+	width:150px;
+}
+
+.faq_content > ul > li:nth-of-type(2), .faq_content_view > ul > li:nth-of-type(2) {
+	width:650px;
+}
+
+.faq_content > ul > li:nth-of-type(3), .faq_content_view > ul > li:nth-of-type(3) {
+	width:150px;
+}
+
+.faq_content > ul > li:nth-of-type(4), .faq_content_view > ul > li:nth-of-type(4) {
+	width:150px;
+}
+
+.faq_content_view > .nodata > li:nth-of-type(1) { 
+	width:1100px;
+}
+.pageing { 
+	width:1100px;
+	height:40px;
+	margin:0 auto;
+	text-align: center;
+	margin-top:10px;
+}
+.pageing > ol { 
+	display:inline-block;
+	height:40px;
+	box-sizing: border-box;
+	padding-top:5px;
+}
+.pageing > ol > li {
+	display:inline-block;
+	width:30px;
+	height:30px;
+	border-radius: 5px;
+	line-height: 30px;
+	text-align: center;
+	background-color: #ccc;
+	cursor: pointer;
+}
+
+.page_btn { 
+	position:relative;
+	width: 1100px;
+	height: 30px;
+	margin:0 auto;
+	margin-top:10px;
+}
+
+.faq_btn { 
+	position:absolute;
+	width:100px;
+	height:30px;
+	background-color: #000;
+	color:#fff;
+	font-family: 'Noto Sans KR', sans-serif;
+	font-size:13px;
+	border-radius: 2px;
+	right:0;
+}
+.faq_content_view > ul > .left_text { 
+	text-align: left;	
+	text-indent: 5px;
+}
