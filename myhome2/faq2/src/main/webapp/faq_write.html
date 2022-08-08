@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" >
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ 리스트 등록</title>
+
+<script src="./js/jquery.js"></script>
+<script>
+$(function(){
+	$("#faq_finish").click(function(){
+		if($("#choice").val()=="0"){
+			alert("카테고리를 설정해 주세요.");
+		}
+		else if($("#faq_qtext").val()==""){
+			alert("질문내용을 입력해 주세요.");			
+		}
+		else if($("#faq_atext").val()==""){
+			alert("답변내용을 입력해 주세요.");	
+			$("#faq_atext").focus();
+		}
+		else{
+			frm.method="POST";
+			frm.action="./faq_writeok.do";
+			frm.enctype="application/x-www-form-urlencoded";
+			frm.submit();	
+		}
+	});
+	
+}); 
+	function faq_cancel(){//취소
+		if(confirm("FAQ 입력을 취소하시겠습니까?")){
+			location.href='./faq_list.jsp';
+		}
+	}
+	function del_faq(){ //데이터 삭제 페이지 연결
+		if(confirm("해당 내용을 삭제 하시겠습니까? 데이터 삭제시 복구 되지 않습니다.")){
+		var uri = window.location.search;
+		var idx =uri.split("?idx=");
+		location.href="./faq_del.do?idx=" + idx[1];	
+		}
+	}
+</script>
+</head>
+<body>
+<form name="frm" id="frm">
+FAQ 입력페이지 <br> <br>
+<table border="1" cellpadding="3px" cellspacing="0">
+<tr>
+<td >카테고리</td>
+<td>
+<select name="choice" id="choice">
+<option value="0">카테고리를 입력하세요.</option>
+<option value="1">배송문의</option>
+<option value="2">반품/교환/환불</option>
+<option value="3">주문/결제</option>
+<option value="4">회원서비스</option>
+<option value="5">안전거래</option>
+</select>
+<label><input type="checkbox" name="" value="Y" >리스트 출력 여부</label>
+</td>
+</tr>
+<tr>
+<td>글쓴이</td>
+<td>
+<input type="text" name="usernm" id="usernm" value="관리자" readonly>
+</td>
+</tr>
+<tr>
+<td>질문내용</td>
+<td>
+<input type="text" name="faq_qtext" id="faq_qtext" style="width:680px;">
+</td>
+</tr>
+<tr>
+<td>답변내용</td>
+<td >
+<textarea rows="10" cols="100" name="faq_atext" id="faq_atext" placeholder="답변내용을 입력해 주세요." ></textarea>
+</td>
+</tr>
+</table>
+<input type="button" value="입력취소"  onclick="faq_cancel();" title="입력취소">
+<input type="button" value="입력취소"  onclick="faq_cancel();" title="입력취소">
+<input type="button" value="FAQ등록"  id ="faq_finish" title="FAQ등록">
+
+</form>
+</body>
+</html>
