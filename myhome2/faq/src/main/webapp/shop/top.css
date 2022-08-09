@@ -1,0 +1,46 @@
+@charset "UTF-8";
+.event_top { width:1200px; height: auto; margin: 0 auto; }
+/* 상단 이벤트 배너 파트 */
+.top1{
+    width: 100%;
+    height: 70px;
+}
+.top_banner { height: 70px; cursor: pointer; }
+.top_banner > li { float: left; width: 490px; height: 70px;}
+.top_banner > li:nth-child(3) { width: 220px; position: relative;}
+.close { position: absolute; right: 0; height: 70px; line-height: 70px;
+font-size: 30px; font-weight: bold;
+}
+/* 상단 이벤트 배너 파트 끝 */
+
+
+.top2{
+    width: 100%;
+    height: 30px;
+    background-color:#ccc;
+}
+.ul_left {
+    width:120px;
+    height: 30px;
+    float: left;
+}
+.ul_right {
+    width:180px;
+    height: 30px;
+    float: right;
+}
+
+.top2 > ul > li {
+    width:60px;
+    height:30px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+    text-align: center;
+    line-height:30px;
+    float:left;
+    cursor: pointer;
+}
+.top2 > ul > li:hover {
+    color:blue;
+}

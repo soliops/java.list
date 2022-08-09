@@ -64,7 +64,7 @@ public class faq_writeok extends HttpServlet {
 			if(this.msg=="success") {
 			this.pr.write("<script>"
 					+ "alert('FAQ 등록이 완료 되었습니다.');"
-					+ "location.href='./faq_list.jsp';"
+					+ "location.href='./faq_list.html';"
 					+ "</script>");
 		}else {
 			throw new Exception("error");

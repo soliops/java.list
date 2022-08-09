@@ -1,0 +1,71 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%
+request.setCharacterEncoding("UTF-8");
+%>
+<meta charset="UTF-8">
+<script>
+    $(document).ready(function(){
+
+        $("#f").submit(function(){
+            //jquery submit form 태그의 id를 기준으로 적용됩니다.
+           var $search = $("#search").val();
+           
+           if($search==""){
+            alert("검색할 상품명을 입력해 주시길 바랍니다.");
+            return false;
+           }
+           else{
+               //form id 기준으로 submit 사용해야 합니다. 
+               //(jqery name사용못함)
+                $("#f").submit();
+           }   
+        });
+
+        /* 나중에 수정이 꼭 필요함 */
+        $("#menu_cate>li").eq(0).click(function(){
+             $("#menu_cate>li:eq(0)>ol").slideDown();
+             //eq 사용법은 ()안에 사용은 :eq() ()밖에 사용 .eq()
+        });
+    });
+</script>
+<div class="menu_div">
+<!--CI & BI 무슨뜻??-->
+<label class="menu_logo">
+    <img src="./image/logo.png">
+</label>
+<!--상품검색 파트-->
+<form id="f" method="GET" action="https://coupang.com/np/search">
+<label class="menu_search">
+    <input type="text" name="q" id="search" placeholder="검색할 상품명을 입력해 주시길 바랍니다">
+    <input type="submit" value="상품검색">
+</label>
+</form>
+<!-- 대메뉴 파트 -->
+<label class="menu_part">
+    <ul id="menu_cate">
+        <li>카테고리
+            <ol>
+                <li>가전제품</li>
+                <li>패션의류/잡화</li>
+                <li>주방용품</li>
+            </ol>
+        </li>
+        <li>로켓배송</li>
+        <li>로켓프레시</li>
+        <li>2022설날</li>
+        <li>로켓직구</li>
+        <li>골드박스</li>
+        <li>정기배송</li>
+        <li>이벤트/쿠폰
+            <ol>
+                <li>가전제품</li>
+                <li>패션의류/잡화</li>
+                <li>주방용품</li>
+            </ol>
+        </li>
+        <li>기획전</li>
+        <li>여행/티켓</li>
+    </ul>
+</label>
+</div>

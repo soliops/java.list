@@ -9,6 +9,14 @@
     <welcome-file>default.jsp</welcome-file>
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
+  <error-page>
+  <error-code>500</error-code>
+  <location>/error.jsp</location>
+  </error-page>
+    <error-page>
+  <error-code>404</error-code>
+  <location>/error.jsp</location>
+  </error-page>
   <servlet>
   <servlet-name>faq_write</servlet-name>
   <servlet-class>configure.faq_writeok</servlet-class>
@@ -25,5 +33,28 @@
   <servlet-name>faq_list</servlet-name>
 <url-pattern>/faq_list.html</url-pattern>
   </servlet-mapping>
-  
+   <servlet>
+  <servlet-name>faq_del</servlet-name>
+  <servlet-class>configure.faq_del</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>faq_del</servlet-name>
+<url-pattern>/faq_del.do</url-pattern>
+  </servlet-mapping> 
+  <servlet>
+  <servlet-name>faq_view</servlet-name>
+  <servlet-class>configure.faq_view</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>faq_view</servlet-name>
+<url-pattern>/faq_view.html</url-pattern>
+  </servlet-mapping>   
+    <servlet>
+  <servlet-name>faq_update</servlet-name>
+  <servlet-class>configure.faq_updateok</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>faq_update</servlet-name>
+<url-pattern>/faq_updateok.do</url-pattern>
+  </servlet-mapping>  
 </web-app>

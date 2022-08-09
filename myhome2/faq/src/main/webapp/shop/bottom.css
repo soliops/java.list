@@ -1,0 +1,33 @@
+@charset "UTF-8";
+.copyright { width: 1200px; height: 150px;
+ margin: 0 auto;
+background-color: #DCDCDC;
+}
+.cp1{ width: 100%; height: 30px; border-bottom: 2px solid black; }
+.cp1 > ul { 
+    width: 100%;
+    height: 30px;
+}
+.cp1 > ul > li { 
+    width: 120px;
+    height: 30px;
+    float: left;
+    text-align: center;
+    line-height: 30px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.cp2{ width: 100%; height: 120px; position: relative; }
+.cp2 > label{
+    width: 100%;
+    height: 30px;
+    position: absolute;
+    bottom: 5px;
+    text-align: center;
+    line-height: 30px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+}

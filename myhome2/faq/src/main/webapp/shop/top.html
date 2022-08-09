@@ -1,0 +1,35 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%
+request.setCharacterEncoding("UTF-8");
+%>
+<meta charset="UTF-8">
+<script>
+    $(document).ready(function(){
+        $("#close").click(function(){
+            $("#top1").slideUp(1000);
+        });
+    });
+</script>
+<div class="event_top">
+    <!--이벤트 배너-->
+    <label class="top1" id="top1">
+        <ul class="top_banner">
+            <li><img src="./image/topbanner1.jpg"></li>
+            <li><img src="./image/topbanner2.jpg"></li>
+            <li><span class="close" id="close">X</span></li>
+        </ul>
+    </label>
+    <!--탑 메뉴 : 즐겨찾기~고객센터-->
+    <label class="top2">
+        <ul class="ul_left">
+            <li>즐겨찾기</li>
+            <li>입장신청▼</li>
+        </ul>
+        <ul class="ul_right">
+            <li><a href="./member_login.jsp">로그인</a></li>
+            <li>회원가입</li>
+            <li>고객센터</li>
+        </ul>
+    </label>
+</div>

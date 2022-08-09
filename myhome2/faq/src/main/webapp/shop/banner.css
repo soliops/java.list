@@ -1,0 +1,55 @@
+@charset "UTF-8";
+.banner_outline {
+    width: 1200px;
+    height: 500px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+.banner_view {
+    width: 2400px;
+    height: 500px;
+    position: absolute;
+}
+.banner_view > li {
+    width: 1200px;
+    height: 500px;
+    float: left;
+}
+.banner_outline > span {
+    top:50%;
+    margin-top: -37px;
+}
+.leftcss{
+    position: absolute;
+    left:10px;
+    display: none;
+}
+.rightcss{
+    position: absolute;
+    right: 10px;
+    display: none;
+}
+.disc{
+    width: 100%;
+    height: auto;
+    position: absolute;
+    bottom: 30px;
+}
+.disc > ul{
+    height: 100%;
+    text-align: center;
+}
+.disc > ul > li{
+    display: inline-block;
+    /* inline-block란? float:left 기능 + margin-left + 객체가 텍스트화됨 */
+    width: 15px;
+    height: 15px;
+    background-color: red;
+    border-radius: 15px;
+    margin-left:10px;
+}
+.disc > ul > li:nth-child(1){
+    background-color: black;
+    margin-left:0px;
+}

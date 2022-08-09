@@ -15,15 +15,20 @@
 function faq_write(){
 	location.href="./faq_write.html";
 }
+function faq_modify(fidx){
+	location.href="./faq_view.html?idx="+fidx;
+}
 //faq.jsp 파일 참고해서 수정 http://mekeyace.kbsn.or.kr/faqjsp.txt
 //http://mekeyace.kbsn.or.kr/faq.pdf
+	
+
+
 </script>
 </head>
 <body>
 <%
 ArrayList<select_sql> sel_datas = (ArrayList<select_sql>)request.getAttribute("list2");
 %>
-<%=sel_datas.size()%>
 <section class="faq_view">
 	<div class="faq_list">
 		<p>FAQ LIST</p>
@@ -43,14 +48,33 @@ ArrayList<select_sql> sel_datas = (ArrayList<select_sql>)request.getAttribute("l
 		</span>
 			<%
 		} else {
-			for(select_sql fetch : sel_datas){
-		%>
-		<span class="faq_content_view" onclick="modify(<%=fetch.getFidx()%>);">
+			for(select_sql fetch2 : sel_datas){	
+				String cate= fetch2.getFcategory();
+				String cate_nm = null;
+				switch (cate) {
+				case "1": 
+					cate_nm="배송/문의"; 
+ 					break; 
+				case "2": 
+ 					cate_nm = "반품/교환/환불";	 
+ 					break; 
+				case "3": 
+ 					cate_nm = "주문/결제"; 
+ 					break; 
+ 				case "4": 
+					cate_nm = "회원서비스";	
+					break; 
+				case "5": 
+					cate_nm = "안전거래"; 
+					break;	
+ 				} 
+			%>
+		<span class="faq_content_view" onclick="faq_modify(<%=fetch2.getFidx()%>);">
 			<ul>
-				<li><%=fetch.getFcategory()%></li>
-				<li class="left_text"><%=fetch.getF_qtext()%></li>
-				<li><%=fetch.getFname()%></li>
-				<li><%=fetch.getF_indate()%></li>
+				<li><%=cate_nm%></li>
+				<li class="left_text"><%=fetch2.getF_qtext()%></li>
+				<li><%=fetch2.getFname()%></li>
+				<li><%=fetch2.getF_indate()%></li>
 			</ul>
 		</span>
 		<%

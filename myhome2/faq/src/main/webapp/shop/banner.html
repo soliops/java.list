@@ -1,0 +1,37 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%
+request.setCharacterEncoding("UTF-8");
+%>
+<meta charset="UTF-8">
+<script>
+    $(document).ready(function(){
+
+        $("#banner_outline").mouseover(function(){
+            $("#banner_outline > span").stop().fadeIn();
+        });
+
+        $("#banner_outline").mouseout(function(){
+            $("#banner_outline > span").stop().fadeOut();
+        });
+        //mouseover, mouseout 마우스 핸들링 이벤트 함수
+        //stop() : 중복되는 효과를 방지할 때 사용합니다. 효과를 중지 사용할때 이용함
+
+    });
+</script>
+<div class="banner_outline" id="banner_outline">
+    <ul class="banner_view">
+    <li><img src="./banner/banner.png"></li>
+    <li><img src="./banner/banner.png"></li>
+    </ul>
+    <span class="leftcss"><img src="./banner/leftbtn.png"></span>
+    <span class="rightcss"><img src="./banner/rightbtn.png"></span>
+    <label class="disc">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </label>
+</div>

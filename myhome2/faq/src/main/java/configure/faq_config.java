@@ -12,8 +12,9 @@ public class faq_config {
 		try {
 			dbconfig dbc = new dbconfig();
 			Connection ct = dbc.cafe24();
+			String table_nm = data.get(0);
 			int w = 1;
-			String sql = "insert into faq_list values('0',";
+			String sql = "insert into "+table_nm+" values('0',";
 			while(w<data.size()) {
 				if(w==data.size()-1) {sql+="?)";}
 				else{sql+="?,";} 

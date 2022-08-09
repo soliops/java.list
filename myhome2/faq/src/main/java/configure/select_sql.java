@@ -1,6 +1,5 @@
 package configure;
 
-import java.sql.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -9,14 +8,12 @@ import java.util.ArrayList;
 
 public class select_sql {
 	private String fidx = null;
-
 	private String fcategory = null;
 	private String fname= null;
 	private String f_qtext = null;
-	private String check= null;
+	private String f_check= null;
 	private String f_indate = null;
 	public ArrayList<select_sql> sel_faqdata = null;
-
 	
 	public String getFidx() {
 		return this.fidx;
@@ -42,11 +39,11 @@ public class select_sql {
 	public void setF_qtext(String f_qtext) {
 		this.f_qtext = f_qtext;
 	}
-	public String getCheck() {
-		return this.check;
+	public String getF_check() {
+		return this.f_check;
 	}
-	public void setCheck(String check) {
-		this.check = check;
+	public void setF_check(String f_check) {
+		this.f_check = f_check;
 	}
 	public String getF_indate() {
 		return this.f_indate;
@@ -56,28 +53,30 @@ public class select_sql {
 	}
 	
 	public ArrayList<select_sql> viewdata() throws ClassNotFoundException, SQLException {
-		this.sel_faqdata = new ArrayList<select_sql>();
 		try {
+			this.sel_faqdata = new ArrayList<select_sql>();
 		dbconfig db = new dbconfig();
-		Connection conn = db.cafe24();
-		String sql = "select * from faq_list order by faq_list desc";
-		PreparedStatement ps = conn.prepareStatement(sql);
-		ResultSet rs = ps.executeQuery();
+		Connection ct = db.cafe24();
+		String sql = "select * from faq_list order by fcategory asc;";
+		// order by faq_list desc;
+		PreparedStatement pss = ct.prepareStatement(sql);
+		ResultSet rs = pss.executeQuery();
 		while(rs.next()) {
-			select_sql ss = new select_sql();
-			ss.setFidx(rs.getString("fidx"));
-			ss.setFcategory(rs.getString("fcategory"));
-			ss.setFname(rs.getString("fname"));
-			ss.setF_qtext(rs.getString("f_qtext"));
-			ss.setCheck(rs.getString("f_check"));
-			ss.setF_indate(rs.getString("f_indate"));
-			this.sel_faqdata.add(ss);
+			select_sql sels = new select_sql();
+			sels.setFidx(rs.getString("fidx"));
+			sels.setFcategory(rs.getString("fcategory"));
+			sels.setFname(rs.getString("fname"));
+			sels.setF_qtext(rs.getString("f_qtext"));
+			sels.setF_check(rs.getString("f_check"));
+			sels.setF_indate(rs.getString("f_indate"));
+			this.sel_faqdata.add(sels);
 		}
+
 		}
 		catch(Exception e) {
 			
 		}
-		System.out.println(this.sel_faqdata);
+
 		return this.sel_faqdata;
 	}
 	
