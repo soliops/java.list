@@ -8,6 +8,10 @@
 // * : 모든 IP를 받겠다는 것, 특정 IP만 입력하면 특정 IP만 받는다
 	response.addHeader("Access-Control-Allow-Credentials", "true");
 //모든 IP를 허용한다는 의미?
+	//response.addHeader : .bashrc(서버) 입력하게 되어 있음
+	//JSP에 코드를 입력해서 Access-Control-Allow 이용해서 허락을 적용함
+	
+	//A서버에서 자신의 서버로 적용시 허락된 파라미터명 + 파라미터 값을 확인함
 	String aa =request.getParameter("apikey").intern();
 	if(aa=="abcd"){
 	String arr[][] = {
@@ -24,6 +28,6 @@
 		js.put("mname",arr[k][1]);		
 		ar.add(js);
 	}
-	out.print(ar);
+	out.print(ar); //배열값을 전송시켜줌
 	}
 %>
