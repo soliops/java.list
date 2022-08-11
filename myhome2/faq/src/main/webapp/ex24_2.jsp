@@ -21,11 +21,11 @@
 	boolean ck = false;//검색 상품 결과 유/무
 	
 	%>
-<jsp:include page="ex24_1.jsp"> 
+<%-- <jsp:include page="ex24_1.jsp">  --%>
 <!-- 지속적으로 검색을 할 수 있도록 하기 위함 -->
-<jsp:param value="<%=pronm %>" name="search"/>
+<%-- <jsp:param value="<%=pronm %>" name="search"/> --%>
 <!-- 검색 받은 값을 return //name값은 절대 중복되어선 안된다. -->
-</jsp:include>	
+<%-- </jsp:include>	 --%>
 <body>
 	<%
 	int w=0;

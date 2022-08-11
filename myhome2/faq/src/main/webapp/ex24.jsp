@@ -46,6 +46,7 @@
 }else{
  %>
 <% }%> 
+
 <form name="frm" id="frm" method="post" action="./ex24.jsp">
 <input type="text" name="search" id="search">
 <input type="submit" value="검색">
