@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>설문조사</title>
+<script>
+	function fin(){
+		if(frm.usernm.value==""){
+			alert("고객명을 입력해 주세요.");
+			frm.usernm.focus();
+		}
+		else if(frm.userids.value==""){
+			alert("아이디를 입력해 주세요.");
+			frm.userid.focus();
+		}
+		else if(frm.userptel.value==""){
+			alert("연락처를 입력해 주세요.");
+			frm.usertel.focus();
+		}
+		else if(frm.usersel.value==""){
+			alert("과목을 선택해 주세요.");
+		}
+		else{
+				frm.submit();
+		}
+	}
+</script>
+</head>
+<body>
+<form name="frm" id="frm" method="post" action="./pollok.jsp" enctype="application/x-www-form-urlencoded">
+<p>[가장 어려운 Back-end 과목은?]</p> 
+고객명 : <input type="text" name="usernm"> <br>
+아이디 : <input type="text" name="userids"> <br>
+연락처 : <input type="text" name="userptel"> <br>
+<ul style="list-style:none;margin:0;padding:0;">
+<li><label><input type="radio" name="usersel" value="0"> JAVA</label></li>
+<li><label><input type="radio" name="usersel" value="1"> JAVA Servlet</label></li>
+<li><label><input type="radio" name="usersel" value="2"> Javascript</label></li>
+<li><label><input type="radio" name="usersel" value="3"> AJAX</label></li>
+<li><label><input type="radio" name="usersel" value="4"> JSP</label></li>
+</ul><br>
+<input type="button" value="설문조사 참여" onclick="fin();"> <br>
+</form>
+</body>
+</html>
