@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>관리자 등록 페이지</title>
+    <link rel="stylesheet" type="text/css" href="./css/basic.css">
+    <link rel="stylesheet" type="text/css" href="./css/login.css?v=1">
+    <link rel="icon" href="./img/logo.png" sizes="128x128">
+    <link rel="icon" href="./img/logo.png" sizes="64x64">
+    <link rel="icon" href="./img/logo.png" sizes="32x32">
+    <link rel="icon" href="./img/logo.png" sizes="16x16">
+    <script src="./js/jquery.js"></script>
+    <script>
+   	$(function(){
+   		var $id_check = false;
+   		var $pw_check = false;
+   		$("#admin_id_check").click(function(){ //중복체크		
+	   	var $admin_id=null;
+   			if($("#admin_id").val()==""){
+   				alert("생성할 관리자 아이디를 입력하세요");
+   				$("#admin_id").focus();
+   			}
+   			else{	//ajax로 다시 수정해야함
+   				$admin_id= $("#admin_id").val();
+   				$.ajax({
+   					url:"../add_idcheck.do",
+   					data:{admin_id:$admin_id},
+   					cache:false,
+   					method:"POST",
+   					datatype:"text",
+   					enctype:"application/x-www-form-urlencoded",
+   					success: function($data){
+   						if($data=="true"){
+   							alert("해당 아이디는 사용 불가능합니다.");   
+   							$id_check=false;
+   						}else if($data=="false"){
+   							alert("해당 아이디는 사용 가능합니다.");
+   							$id_check=true;
+   						}
+   					},
+   					error: function(){
+   						alert("중복체크 오류");
+   					}
+   					
+   				});
+   			}
+   		})
+   		function $pass_check(){
+   			if($("#admin_pw").val()==""){
+   				alert("접속할 패스워드를 입력하세요");
+   				$("#admin_pw").focus();
+   				return false;
+   			}
+   			else if($("#admin_pw2").val()==""){
+   				alert("동일한 패스워드를 입력하세요");
+   				$("#admin_pw2").focus();
+   				return false;
+   			}
+   			else if($("#admin_pw").val().length<4 || $("#admin_pw").val().length>17){
+					alert("패스워드는 최소 4~16 이하로 입력하셔야 합니다.");
+	   				$("#admin_pw").focus();
+	   				return false;
+				}
+			else if($("#admin_pw").val()!=$("#admin_pw2").val()){
+				alert("패스워드를 다시 확인해 주세요.");
+				$("#admin_pw").focus();
+				return false;
+			}
+			else{
+				$pw_check=true;
+				return true;
+			}
+   		}
+   		$("#admin_add_fin").click(function(){
+   			if($("#admin_id").val()=="" || $id_check==false){
+   				alert("아이디 중복체크를 진행하셔야 합니다.");
+   				$("#admin_id").focus();
+   				}
+   			else if($pass_check()==false){
+   				
+   			}
+   			else if($("#admin_nm").val()==""){
+   				alert("담당자 이름을 입력하세요");
+   				$("#admin_nm").focus();
+   			}
+   			else if($("#admin_email").val()==""){
+   				alert("담당자 이메일을 입력하세요");
+   				$("#admin_email").focus();
+   			}
+   			else if($("#admin_tel1").val()==""){
+   				alert("담당자 연락처를 입력하세요");
+   				$("#admin_tel1").focus();
+   			}
+   			else if($("#admin_tel2").val()==""){
+   				alert("담당자 연락처를 입력하세요");
+   				$("#admin_tel2").focus();
+   			}
+   			else if($("#admin_tel3").val()==""){
+   				alert("담당자 연락처를 입력하세요");
+   				$("#admin_tel3").focus();
+   			}
+   			else if($("#admin_part").val()=="0"){
+   				alert("담당자 부서를 선택하세요");
+   				$("#admin_part").focus();
+   			}
+   			else if($("#admin_position").val()=="0"){
+   				alert("담당자 직책를 선택하세요");
+   				$("#admin_position").focus();
+   			}
+   			else{
+   					add_master_frm.method="POST";
+   	    			add_master_frm.enctype="application/x-www-form-urlencoded";
+   	    			add_master_frm.action="../add_masterok.do";
+   	    			add_master_frm.submit();
+   				
+   			}
+   			});
+   	
+   		$("#admin_add_cancel").click(function(){
+   			if(confirm("관리자 등록을 취소하시겠습니까?")){
+   			location.href = "./index.html";   				
+   			}
+   		});
+   	});
+    </script>
+</head>
+<body>
+    <header class="admin_title_add">
+        <p><img src="./img/logo.png" class="logo_sm"> ADMINISTRATOR ADD</p>
+    </header>
+
+    <section class="admin_bgcolor_add">
+	    <form name="add_master_frm" id="add_master_frm">
+        <div class="admin_login_add">
+            <ul>
+                <li class="font_color1">아이디 및 패스워드 정보</li>
+                <li>
+                <input type="text" class="add_input1" name="admin_id" id="admin_id" placeholder="생성할 관리자 아이디를 입력하세요">
+                <button type="button"  class="btn_button" name="admin_id_check" id="admin_id_check">중복체크</button>
+                </li>
+                <li>
+                    <input type="password" class="add_input1"  name="admin_pw" id="admin_pw" placeholder="접속할 패스워드를 입력하세요">
+                    <input type="password" class="add_input1"  name="admin_pw2" id="admin_pw2" placeholder="동일한 패스워드를 입력하세요">
+                </li>
+                <li class="font_color1">관리자 기본정보 입력</li>
+                <li>
+                    <input type="text" class="add_input1" name="admin_nm" id="admin_nm" placeholder="담당자 이름을 입력하세요">
+                </li>
+                <li>
+                <input type="text" class="add_input1 emails" name="admin_email" id="admin_email"  placeholder="담당자 이메일을 입력하세요">
+                </li>
+                <li class="font_color1">
+                <input type="text" class="add_input1 hp1" name="admin_tel1" id="admin_tel1"  placeholder="HP" value="010" maxlength="3">
+                -
+                <input type="text" class="add_input1 hp2" name="admin_tel2" id="admin_tel2" placeholder="1234" maxlength="4">
+                -
+                <input type="text" class="add_input1 hp2" name="admin_tel3" id="admin_tel3" placeholder="5678" maxlength="4">
+                </li>
+                <li class="font_color1">관리자 담당부서 및 직책</li>
+                <li>
+                    <select name="admin_part" id="admin_part" class="add_select1">
+                        <option name="admin_part" value="0">담당자 부서를 선택하세요</option>
+                        <option name="admin_part" value="임원" >임원</option>
+                        <option name="admin_part" value="전산팀" >전산팀</option>
+                        <option name="admin_part" value="디자인팀" >디자인팀</option>
+                        <option name="admin_part" value="CS팀" >CS팀</option>
+                        <option name="admin_part" value="MD팀" >MD팀</option>
+                    </select>
+                    <select name="admin_position" id="admin_position" class="add_select1">
+                        <option name="admin_position" value="0" >담당자 직책을 선택하세요</option>
+                        <option name="admin_position" value="대표" >대표</option>
+                        <option name="admin_position" value="부장" >부장</option>
+                        <option name="admin_position" value="팀장" >팀장</option>
+                        <option name="admin_position" value="과장" >과장</option>
+                        <option name="admin_position" value="대리" >대리</option>
+                        <option name="admin_position" value="사원" >사원</option>
+                    </select>
+                </li>
+                <li class="font_color1">※ 가입완료 후 전산 담당자가 확인 후 로그인 할 수 있습니다.</li>
+            </ul>
+            <span class="admin_addbtn">
+                <button type="button" class="btn_button btncolor1" name="admin_add_fin" id="admin_add_fin" title="관리자 등록">관리자 등록</button>
+                <button type="button" class="btn_button btncolor2" name="admin_add_cancel" id="admin_add_cancel" title="관리자 취소">등록 취소</button>
+            </span>
+        </div>
+	    </form>
+    </section>
+    <footer class="admin_copy">
+        <div>
+            Copyright ⓒ 2022 webshopping All rights reserved.
+        </div>
+    </footer>
+</body>
+</html>
