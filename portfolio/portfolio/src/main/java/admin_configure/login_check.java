@@ -7,9 +7,9 @@ import java.sql.SQLException;
 import java.util.Arrays;
 
 public class login_check {
-	String[] list =null;
 	Connection ct =null;
-	public String[] logindata (String id,String pw) throws ClassNotFoundException, SQLException {
+	static String msg = null;
+	public void logindata (String id,String pw) throws ClassNotFoundException, SQLException {
 		try {
 			dbconfig db = new dbconfig();
 			ct = db.cafe24();
@@ -18,16 +18,30 @@ public class login_check {
 			ResultSet rs = ps.executeQuery();
 			String id_data = null;
 			String pw_data = null;
+
 			while(rs.next()) {
 				id_data = rs.getString("admin_id");
 				pw_data = rs.getString("admin_pw");
 			}
-			String[] data = {id_data,pw_data};
-			list=data; 
+			if(id.equals(id_data) && pw.equals(pw_data)) {
+					this.msg="success";					
+			}else {
+				throw new Exception("error");
+			}		
 		} catch (Exception e) {
-
+			this.msg="fail";
 		}
-		return list;
+		finally {
+			try {
+				if(ct!=null) {
+					ct.close();
+				}
+			} catch (Exception e2) {
+			}
+		}
+		
 	}
-	
+	public String call_msg() {
+		return this.msg;
+	}
 }

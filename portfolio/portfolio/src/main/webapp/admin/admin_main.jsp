@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%-- <%@ inclue file="./session.jsp" %> --%>
+    <%-- <%@ include file="./session.jsp" %> --%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -16,6 +16,7 @@
     <link rel="icon" href="./img/logo.png" sizes="32x32">
     <link rel="icon" href="./img/logo.png" sizes="16x16">
     <script src="./js/jquery.js"></script>
+
 </head>
     <% request.setCharacterEncoding("UTF-8"); %>
 <body>
@@ -26,7 +27,7 @@
 <%@ include file="./admin_menu.html" %>
 </nav>
 <main class="maincss">
-<section><%@ include file="./admin_list.html" %></section>
+<section><%@ include file="./admin_list.jsp" %></section>
 <section></section>
 <section></section>
 </main>

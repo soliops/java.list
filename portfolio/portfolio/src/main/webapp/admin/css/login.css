@@ -85,7 +85,7 @@
     width: 550px;
     height: 40px;
 }
-.admin_info > li { 
+.admin_info > li >input{ 
     font-size: 12px;
     color: #fff;
     float: left;
@@ -94,12 +94,22 @@
     line-height: 40px;
     cursor: pointer;
 }
-.admin_info > li:nth-of-type(1) {
+.admin_info > li:nth-of-type(1) > .admin_info_input1{
     text-indent: 10px;
+    color: #fff;
+    border:0px;
+    background-color: rgb(61, 60, 60);
+    cursor: pointer;
+  	float: left;
 }
-.admin_info > li:nth-of-type(2) {
+.admin_info > li:nth-of-type(2) > .admin_info_input2 {
     padding-right: 10px;
     text-align: right;
+    color: #fff;
+    border:0px;
+    background-color: rgb(61, 60, 60);
+    cursor: pointer;
+
 }
 .admin_copy_login {
     width: 100%;

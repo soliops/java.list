@@ -14,7 +14,7 @@
     <script src="./js/jquery.js"></script>
     <script>
     $(function(){
-    	$("#admin_login").click(function(){ //로그인
+    	$("#admin_login").click(function(){ 
     		if($("#admin_log_id").val()==""){
     			alert("관리자 아이디를 입력하세요.");
     		}
@@ -29,10 +29,10 @@
     		}
     	})
     	
-    	$("#admin_new").click(function(){ //신규 관리자 등록
+    	$("#admin_new").click(function(){ 
     		location.href="./add_master.html";
     	})
-    	$("#admin_find").click(function(){ //아이디/패스워드 찾기
+    	$("#admin_find").click(function(){ 
     		location.href="./add_master_search.html";
     	})
     });
@@ -40,6 +40,7 @@
     </script>
 </head>
 <body>
+<!-- 로그인할때 세션 걸어놓고, null이면 로그인 화면, null이 아니면 다시 redirect로 메인페이지로 -->
     <header class="admin_title">
         <p><img src="./img/logo.png" class="logo_sm"> ADMINISTRATOR</p>
     </header>
@@ -62,7 +63,7 @@
             <span>
                 <ol class="admin_info">
                    	<li title="신규 관리자 등록요청"><input type="button" value="신규 관리자 등록요청" class="admin_info_input1" id="admin_new"></li>
-                    <li title="아이디/패스워드 찾기"><input type="button" value="아이디/패스워드 찾기" class="admin_info_input2" id="admin_find"></a></li>
+                    <li title="아이디/패스워드 찾기"><input type="button" value="아이디/패스워드 찾기" class="admin_info_input2" id="admin_find"></li>
                 </ol>                
             </span>
         </div>

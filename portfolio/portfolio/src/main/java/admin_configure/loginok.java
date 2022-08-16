@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 public class loginok extends HttpServlet {
 	PrintWriter pr = null;
+	String msg =null;
 	private static final long serialVersionUID = 1L;
        
     
@@ -27,18 +28,22 @@ public class loginok extends HttpServlet {
 		response.setContentType("text/html; charset=utf-8");
 		this.pr = response.getWriter();
 		timer time = new timer();
-		String admin_indate = time.now_datetime();
+		String indate = time.now_datetime();
 		try {
-		String id = request.getParameter("admin_log_id").intern();
-		String pw = request.getParameter("admin_log_pw").intern();
+			String id = request.getParameter("admin_log_id").intern();
+			String pw = request.getParameter("admin_log_pw").intern();
 			login_check lc = new login_check();
-			String[] data = lc.logindata(id,pw);
-//			String id_check = data[0];
-//			String pw_check = data[1];
-			if(id== data[0] && pw== data[1]) {
+			lc.logindata(id,pw);
+			this.msg = lc.call_msg();
+			if(this.msg=="success") {
+				login_loghistory lh = new login_loghistory();
+				lh.loghistory(id,indate);
+				String lhmsg = lh.call_msg();
+				if(lhmsg=="good") {
 				pr.print("<script>alert('로그인에 성공하셨습니다.');"
-//						+ "location.href='./admin_main.html?admin_id="+data[0]+"';"
+						+ "location.href='./admin/session.jsp?admin_id="+id+"';"
 						+ "</script>");
+				}
 			}
 			else {
 				throw new Exception("error");

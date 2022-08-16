@@ -47,6 +47,9 @@
    				});
    			}
    		})
+   		var $code2 = /[ㄱ-ㅎ가-힣ㅏ-ㅣ]/g;
+		var $code = /^[a-zA-Z0-9ㄱ-ㅎ가-힣ㅏ-ㅣ]/g;
+		var $ck = $("#admin_pw").val().match($code);	
    		function $pass_check(){
    			if($("#admin_pw").val()==""){
    				alert("접속할 패스워드를 입력하세요");
@@ -58,6 +61,7 @@
    				$("#admin_pw2").focus();
    				return false;
    			}
+   		
    			else if($("#admin_pw").val().length<4 || $("#admin_pw").val().length>17){
 					alert("패스워드는 최소 4~16 이하로 입력하셔야 합니다.");
 	   				$("#admin_pw").focus();
