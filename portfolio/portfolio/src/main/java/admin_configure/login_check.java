@@ -18,12 +18,13 @@ public class login_check {
 			ResultSet rs = ps.executeQuery();
 			String id_data = null;
 			String pw_data = null;
-
+			String ck_data =null;
 			while(rs.next()) {
 				id_data = rs.getString("admin_id");
 				pw_data = rs.getString("admin_pw");
+				ck_data = rs.getString("admin_check");
 			}
-			if(id.equals(id_data) && pw.equals(pw_data)) {
+			if(id.equals(id_data) && pw.equals(pw_data) && ck_data.equals("Y")) {
 					this.msg="success";					
 			}else {
 				throw new Exception("error");

@@ -30,6 +30,7 @@ function abc(){
 	
 	/* 특문자 조합 */ //예시: 이메일
 // 	var code = /[?/\@#$%`~^&*,.=;:_]/;
+
 // 	var code = /^[a-z|A-Z|0-9\\d_-]/g; // g : 문자열 전체를 말함
 	//    \\d  특수문자와 함께 사용한다는 의미
 // 	console.log(z.value.match(code));

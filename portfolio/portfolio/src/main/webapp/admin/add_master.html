@@ -15,7 +15,6 @@
     <script>
    	$(function(){
    		var $id_check = false;
-   		var $pw_check = false;
    		$("#admin_id_check").click(function(){ //중복체크		
 	   	var $admin_id=null;
    			if($("#admin_id").val()==""){
@@ -47,34 +46,29 @@
    				});
    			}
    		})
-   		var $code2 = /[ㄱ-ㅎ가-힣ㅏ-ㅣ]/g;
-		var $code = /^[a-zA-Z0-9ㄱ-ㅎ가-힣ㅏ-ㅣ]/g;
-		var $ck = $("#admin_pw").val().match($code);	
    		function $pass_check(){
-   			if($("#admin_pw").val()==""){
-   				alert("접속할 패스워드를 입력하세요");
+   		var $code2 = /[ㄱ-ㅎ가-힣ㅏ-ㅣ]/g;
+		var $code = /^[a-z|A-Z|0-9|ㄱ-ㅎ|가-힣|ㅏ-ㅣ]/g;	
+		var $word = $("#admin_pw").val();
+		var $ck = $word.match($code);
+		console.log($ck);
+   			if($code2.test($word)==true){
+   				alert("패스워드는 한글을 입력할 수 없습니다.");
    				$("#admin_pw").focus();
    				return false;
    			}
-   			else if($("#admin_pw2").val()==""){
-   				alert("동일한 패스워드를 입력하세요");
-   				$("#admin_pw2").focus();
+   			else if($ck==null){
+   				alert("패스워드는 특수문자를 포함해야 합니다.");
+				$("#admin_pw").focus();
    				return false;
    			}
-   		
-   			else if($("#admin_pw").val().length<4 || $("#admin_pw").val().length>17){
-					alert("패스워드는 최소 4~16 이하로 입력하셔야 합니다.");
-	   				$("#admin_pw").focus();
-	   				return false;
-				}
-			else if($("#admin_pw").val()!=$("#admin_pw2").val()){
-				alert("패스워드를 다시 확인해 주세요.");
+   			else if($ck!=null && $ck.length <2 ){
+   				alert("패스워드는 특수문자 2자 이상 입력하세요");
 				$("#admin_pw").focus();
-				return false;
-			}
+   				return false;
+   			}
 			else{
-				$pw_check=true;
-				return true;
+				return true;					
 			}
    		}
    		$("#admin_add_fin").click(function(){
@@ -82,9 +76,28 @@
    				alert("아이디 중복체크를 진행하셔야 합니다.");
    				$("#admin_id").focus();
    				}
+   			else if($("#admin_pw").val()==""){
+   				alert("접속할 패스워드를 입력하세요");
+   				$("#admin_pw").focus();
+   			
+   			}
+   			else if($("#admin_pw2").val()==""){
+   				alert("동일한 패스워드를 입력하세요");
+   				$("#admin_pw2").focus();
+   			
+   			}
+   			else if($("#admin_pw").val().length<4 || $("#admin_pw").val().length>17){
+					alert("패스워드는 최소 4~16 이하로 입력하셔야 합니다.");
+	   				$("#admin_pw").focus();	   			
+				}
    			else if($pass_check()==false){
    				
    			}
+			else if($("#admin_pw").val()!=$("#admin_pw2").val()){
+				alert("패스워드를 다시 확인해 주세요.");
+				$("#admin_pw").focus();
+			
+			}
    			else if($("#admin_nm").val()==""){
    				alert("담당자 이름을 입력하세요");
    				$("#admin_nm").focus();
@@ -124,7 +137,7 @@
    	
    		$("#admin_add_cancel").click(function(){
    			if(confirm("관리자 등록을 취소하시겠습니까?")){
-   			location.href = "./index.html";   				
+   			location.href = "./index.jsp";   				
    			}
    		});
    	});

@@ -56,7 +56,7 @@ public class add_masterok extends HttpServlet {
 			w++;
 		}
 		admin_list.add(admin_indate);
-		if(admin_check!=null) {
+		if(admin_check==null) {
 			admin_check="N";
 		}else {
 			admin_check="Y";
@@ -69,7 +69,7 @@ public class add_masterok extends HttpServlet {
 			if(msg=="success") {
 				pr.write("<script>"
 						+ "alert('새로운 관리자 등록이 완료 되었습니다.');"
-						+ "location.href='./admin/index.html';"
+						+ "location.href='./admin/index.jsp';"
 						+ "</script>");
 			}
 			else {

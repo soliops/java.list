@@ -42,8 +42,8 @@ String data[] = {"홍길동","이순신","강감찬","유관순"};
 <%-- <jh:forEach var ="nm" items="${user}"> --%>
 <%-- 고객명 : ${nm} <br> --%>
 <%-- </jh:forEach> --%>
-<jh:forEach var ="nm" begin="0" end="<%=data.length-1%>">
-고객명 : ${user} <br>
+<jh:forEach var ="nm" begin="0" end="${fn:length(user)-1}">
+고객명 : ${nm } <br>
 </jh:forEach>
 </body>
 </html>
