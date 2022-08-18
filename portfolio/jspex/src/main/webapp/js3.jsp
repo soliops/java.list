@@ -46,7 +46,7 @@ function abc(){
 	if(code2.test(z.value)==true){
 		alert("올바른 패스워드가 아닙니다.");
 	}else{		
-		var code = /^[a-zA-Z0-9ㄱ-ㅎ가-힣ㅏ-ㅣ]/g;
+		var code = /[^a-zA-Z0-9ㄱ-ㅎ가-힣ㅏ-ㅣ]/g;
 		var ck = z.value.match(code);
 		if(ck!=null){
 			if(ck.length<2){
