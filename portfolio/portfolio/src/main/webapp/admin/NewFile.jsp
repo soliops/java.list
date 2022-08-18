@@ -16,10 +16,20 @@ $(function(){
 // Jquery 비밀번호 체크 
 $("#btn").click(function(){	
 var $code2 = /[ㄱ-ㅎ가-힣ㅏ-ㅣ]/g;
-var $code = /^[a-z|A-Z|0-9|ㄱ-ㅎ|가-힣|ㅏ-ㅣ]/g;
-var $word = $("#number").val();
-var $ck = $word.match("/^[a-z|A-Z|0-9|ㄱ-ㅎ|가-힣|ㅏ-ㅣ]/g");
-console.log($ck);
+// var $code = /[^a-zA-Z0-9ㄱ-ㅎ가-힣ㅏ-ㅣ]/g;
+// var $code = /^[0-9]/;
+// var $code = /^[0-9]\d{2,3}$/;
+// var $code = /^[a-zA-Z가-힣]/g;
+// var $code = /^[0-9a-zA-Z]*@[0-9a-zA-Z]*\.[a-zA-Z]{2,3}$*\[a-zA-Z\\d.]{0,3}$*/g;
+//   /^[0-9a-zA-Z]*@[0-9a-zA-Z]*\.[a-zA-Z]{2,3}$/i;
+// var code=  /^[0-9a-zA-Z]*@[0-9a-zA-Z]*\.[a-zA-Z\\d.]{2,5}$/i;
+// var code=  /^[0-9a-zA-Z]*@[0-9a-zA-Z]*\.[a-zA-Z]{2,3}*[a-zA-Z\\d.]{0,3}$/i;
+// var code=   /^[0-9a-zA-Z]*@[0-9a-zA-Z]*\.[a-zA-Z]{2,3}*\.*[a-zA-Z]{0,3}$/i;
+// var $word = $("#number").val();
+// var $ck = $("#number").val().match($code);
+var $code = /^[0-9a-zA-Z]*@[0-9a-zA-Z]*\.[a-zA-Z]{2,3}*(\.[a-zA-Z]{2,2})$*/g;
+console.log($code.test($("#number").val()));
+// console.log($ck.length);
 // code.exec(z.value)
 //console.log($code.exec($("#number").val()));
 // if($code2.test($("#number").val())==true){

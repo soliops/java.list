@@ -17,8 +17,15 @@
     <link rel="icon" href="./img/logo.png" sizes="16x16">
     <script src="./js/jquery.js"></script>
 
+<%		request.setCharacterEncoding("UTF-8");
+		session.setMaxInactiveInterval(5);
+		String admin_main_id = (String)session.getAttribute("admin_id");		
+		String admin_main_nm = (String)session.getAttribute("admin_nm");
+// 		if(admin_main_id==""||admin_main_id==null){
+// 			out.print("<script>alert('자동으로 로그아웃되었습니다.'); location.href='./index.jsp'; <script>");
+// 		}
+		%>
 </head>
-    <% request.setCharacterEncoding("UTF-8"); %>
 <body>
 <header class="headercss">
 <%@ include file="./admin_header.html" %>

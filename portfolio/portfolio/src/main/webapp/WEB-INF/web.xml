@@ -25,12 +25,20 @@
   <servlet-name>add_idcheck</servlet-name>
   <url-pattern>/add_idcheck.do</url-pattern>
   </servlet-mapping> 
-     <servlet>
+  <servlet>
   <servlet-name>loginok</servlet-name>
   <servlet-class>admin_configure.loginok</servlet-class>
   </servlet>
   <servlet-mapping>
   <servlet-name>loginok</servlet-name>
   <url-pattern>/loginok.do</url-pattern>
+  </servlet-mapping> 
+  <servlet>
+  <servlet-name>admin_listok</servlet-name>
+  <servlet-class>admin_configure.admin_listok</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>admin_listok</servlet-name>
+  <url-pattern>/admin_listok.do</url-pattern>
   </servlet-mapping> 
 </web-app>

@@ -22,9 +22,9 @@
 		while(rs.next()){
 			nm = rs.getString("admin_nm");			
 		}
+		session.setMaxInactiveInterval(20*60);
 		session.setAttribute("admin_id", id);
 		session.setAttribute("admin_nm", nm);
-		session.setMaxInactiveInterval(20*60);
 	if(id.equals(null)||id==""){
 		out.print("<script>alert('로그인 하셔야만 접근이 됩니다.'); location.href='/index.html';</script>");
 	}

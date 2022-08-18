@@ -43,6 +43,11 @@
 	}
 
 %>
+<script>
+function approval(approval_id,approval_ck) {
+	location.href="../admin_listok.do?admin_id="+approval_id+"&admin_check="+approval_ck;
+}
+</script>
 <p>신규등록 관리자</p>
 <ol class="new_admin_title">
     <li>NO</li>
@@ -77,8 +82,8 @@ while(w<al.size()){
 	 <% String indate = (String)al.get(w).get("admin_indate"); %>
     <li><%=indate.substring(0,19) %></li>
     <li>
-        <input type="button" value="승인" class="new_addbtn1" title="승인">
-        <input type="button" value="미승인" class="new_addbtn2" title="미승인">
+        <input type="button" value="승인" class="new_addbtn1" title="승인" onclick="approval('<%=al.get(w).get("admin_id") %>','Y');">
+        <input type="button" value="미승인" class="new_addbtn2" title="미승인" onclick="approval('<%=al.get(w).get("admin_id") %>','N');">
     </li>
 </ol>    
  <% w++;

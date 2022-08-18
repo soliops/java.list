@@ -49,7 +49,7 @@ public class loginok extends HttpServlet {
 				throw new Exception("error");
 			}
 		} catch (Exception e) {
-			pr.print("<script>alert('로그인 오류');"
+			pr.print("<script>alert('로그인에 실패하셨습니다.');"
 					+ "history.go(-1);"
 			+ "</script>");
 		}
