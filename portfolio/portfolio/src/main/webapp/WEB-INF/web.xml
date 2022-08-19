@@ -41,4 +41,20 @@
   <servlet-name>admin_listok</servlet-name>
   <url-pattern>/admin_listok.do</url-pattern>
   </servlet-mapping> 
+  <servlet>
+  <servlet-name>admin_siteinfook</servlet-name>
+  <servlet-class>admin_configure.admin_siteinfook</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>admin_siteinfook</servlet-name>
+  <url-pattern>/admin_siteinfook.do</url-pattern>
+  </servlet-mapping>   
+  <servlet>
+  <servlet-name>admin_config</servlet-name>
+  <servlet-class>admin_configure.admin_config</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>admin_config</servlet-name>
+  <url-pattern>/admin/admin_config.do</url-pattern>
+  </servlet-mapping>   
 </web-app>

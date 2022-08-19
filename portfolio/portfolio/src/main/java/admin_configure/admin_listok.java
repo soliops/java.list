@@ -24,7 +24,24 @@ public class admin_listok extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html;charset=utf-8");
 		String admin_id= request.getParameter("admin_id");
-		String admin_ck= request.getParameter("admin_check");
+		String admin_ck= request.getParameter("admin_check").intern();
+		try {
+			admin_list_update alu = new admin_list_update();
+			alu.list_update(admin_id,admin_ck);
+			String msg = alu.call_sign();
+			pw = response.getWriter();
+			if(admin_ck=="Y" && msg=="success") {
+				pw.print("<script>alert('해당 관리자를 승인하였습니다.'); location.href='./admin/admin_main.jsp';</script>");
+			}
+			else if(admin_ck=="N" && msg=="success") {
+				pw.print("<script>alert('해당 관리자를 미승인하였습니다.'); location.href='./admin/admin_main.jsp';</script>");
+			}
+			else {
+				throw new Exception("error");
+			}
+		} catch (Exception e) {
+			pw.print("<script>alert('승인 오류가 발생하였습니다.'); history.go(-1);</script>");
+		}
 	}
 
 	

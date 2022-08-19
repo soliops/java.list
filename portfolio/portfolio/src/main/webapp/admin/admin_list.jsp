@@ -29,7 +29,7 @@
 		}
 	}
 	catch(Exception e){
-		out.print("<script></script>");	
+	
 	}
 	finally{
 		try{
@@ -43,11 +43,7 @@
 	}
 
 %>
-<script>
-function approval(approval_id,approval_ck) {
-	location.href="../admin_listok.do?admin_id="+approval_id+"&admin_check="+approval_ck;
-}
-</script>
+
 <p>신규등록 관리자</p>
 <ol class="new_admin_title">
     <li>NO</li>

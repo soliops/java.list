@@ -69,8 +69,8 @@
             </span>
             <span>
                 <ol class="admin_info">
-                   	<li title="신규 관리자 등록요청"><input type="button" value="신규 관리자 등록요청" class="admin_info_input1" id="admin_new"></li>
-                    <li title="아이디/패스워드 찾기"><input type="button" value="아이디/패스워드 찾기" class="admin_info_input2" id="admin_find"></li>
+                   	<li title="신규 관리자 등록요청" id="admin_new">신규 관리자 등록요청</li>
+                    <li title="아이디/패스워드 찾기" id="admin_find">아이디/패스워드 찾기</li>
                 </ol>                
             </span>
         </div>

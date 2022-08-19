@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -35,6 +36,9 @@ public class add_idcheck extends HttpServlet {
 		Connection ct = null;
 		String ck = "false";
 		try {
+			admin_siteinfo_select ass = new admin_siteinfo_select();
+			ArrayList<admin_siteinfo_select> se = ass.selectdata();
+			System.out.println(se);
 			dbconfig db = new dbconfig();
 			ct = db.cafe24();
 			String sql = "select * from admin_add where admin_id='"+id+"';";
