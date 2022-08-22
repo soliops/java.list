@@ -9,4 +9,20 @@
     <welcome-file>default.jsp</welcome-file>
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
+	<servlet>
+	<servlet-name>mailto</servlet-name>
+	<servlet-class>test.mailto</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	<servlet-name>mailto</servlet-name>
+	<url-pattern>/mailto.jsp</url-pattern>	
+	</servlet-mapping>
+	<servlet>
+	<servlet-name>index</servlet-name>
+	<servlet-class>test.index</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	<servlet-name>index</servlet-name>
+	<url-pattern>/webpage/index.jsp</url-pattern>	
+	</servlet-mapping>	
 </web-app>
