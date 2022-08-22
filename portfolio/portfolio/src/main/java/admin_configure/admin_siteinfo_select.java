@@ -251,7 +251,6 @@ public class admin_siteinfo_select {
 			ct = db.cafe24();
 			String sql = "select * from homepage_config;";
 			PreparedStatement ps = ct.prepareStatement(sql);
-			System.out.println(ps);
 			ResultSet rs = ps.executeQuery();
 			while(rs.next()) {
 				admin_siteinfo_select sel = new admin_siteinfo_select();
@@ -283,6 +282,7 @@ public class admin_siteinfo_select {
 				sel.setHdelidate_use(rs.getString("hdelidate_use"));
 				this.al.add(sel);
 			}
+
 		} 
 		catch (Exception e) {
 

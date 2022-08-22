@@ -42,19 +42,19 @@
     </script>
 </head>
 <body>
-<%    String id = (String)session.getAttribute("admin_id");
+<%   
+String id = (String)session.getAttribute("admin_id");
 		if(id!=null){        
-    	out.print("<script>location.href='./admin_main.jsp';</script>");
+    	out.print("<script>location.href='./admin_main.html';</script>");
     	}
    %>
-<!-- 로그인할때 세션 걸어놓고, null이면 로그인 화면, null이 아니면 다시 redirect로 메인페이지로 -->
     <header class="admin_title">
         <p><img src="./img/logo.png" class="logo_sm"> ADMINISTRATOR</p>
     </header>
     <section class="admin_bgcolor">
+        <form name="admin_log_frm" id="admin_log_frm">
         <div class="admin_login">
             <span>
-        <form name="admin_log_frm" id="admin_log_frm">
                 <div class="left_div">
                 <ul>
                 <li><input type="text" class="input_text1" name="admin_log_id" id="admin_log_id" placeholder="관리자 아이디를 입력하세요"></li>

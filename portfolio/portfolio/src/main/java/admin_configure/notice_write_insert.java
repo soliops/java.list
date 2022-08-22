@@ -1,18 +1,19 @@
 package admin_configure;
 
 import java.sql.*;
-import java.util.*;
+import java.util.ArrayList;
 
-public class admin_siteinfo_insert {
-	static String msg = null;
-	public void siteinfo_insert(ArrayList<String> data) {
-		Connection ct = null;
+public class notice_write_insert {
+	String msg = null;
+	public void notice_insert(ArrayList<String> data) {
+		Connection ct =null;
 		try {
 			dbconfig db = new dbconfig();
 			ct = db.cafe24();
-			String sql ="insert into homepage_config values(";
-			int w=0;
-			while(w<data.size()) {
+			String table_nm= data.get(0);
+			String sql = "insert into "+table_nm+" values ('0',";
+			int w=1;
+			do {
 				if(w==data.size()-1) {
 					sql+="?);";
 				}
@@ -20,10 +21,10 @@ public class admin_siteinfo_insert {
 					sql+="?,";
 				}
 				w++;
-			}
+			}while(w<data.size());
 			PreparedStatement ps = ct.prepareStatement(sql);
-			for(int ww=1;ww<=data.size();ww++) {
-				ps.setString(ww, data.get(ww-1));
+			for(int ww=1; ww<data.size();ww++) {
+				ps.setString(ww, data.get(ww));
 			}
 			int n = ps.executeUpdate();
 			if(n>0) {
@@ -41,6 +42,7 @@ public class admin_siteinfo_insert {
 					ct.close();
 				}
 			} catch (Exception e2) {
+				e2.getMessage();
 			}
 		}
 	}

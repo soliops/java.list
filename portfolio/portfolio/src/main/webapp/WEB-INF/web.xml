@@ -55,6 +55,46 @@
   </servlet>
   <servlet-mapping>
   <servlet-name>admin_config</servlet-name>
-  <url-pattern>/admin/admin_config.do</url-pattern>
+  <url-pattern>/admin/admin_config.html</url-pattern>
   </servlet-mapping>   
+    <servlet>
+  <servlet-name>index</servlet-name>
+  <servlet-class>admin_configure.index</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>index</servlet-name>
+  <url-pattern>/admin/index.html</url-pattern>
+  </servlet-mapping>   
+  <servlet>
+  <servlet-name>admin_main</servlet-name>
+  <servlet-class>admin_configure.admin_main</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>admin_main</servlet-name>
+  <url-pattern>/admin/admin_main.html</url-pattern>
+  </servlet-mapping>   
+  <servlet>
+  <servlet-name>admin_notice_write</servlet-name>
+  <servlet-class>admin_configure.admin_notice_write</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>admin_notice_write</servlet-name>
+  <url-pattern>/admin/admin_notice_write.html</url-pattern>
+  </servlet-mapping>   
+  <servlet>
+  <servlet-name>admin_notice</servlet-name>
+  <servlet-class>admin_configure.admin_notice</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>admin_notice</servlet-name>
+  <url-pattern>/admin/admin_notice.html</url-pattern>
+  </servlet-mapping>  
+  <servlet>
+  <servlet-name>notice_writeok</servlet-name>
+  <servlet-class>admin_configure.notice_writeok</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>notice_writeok</servlet-name>
+  <url-pattern>/notice_writeok.do</url-pattern>
+  </servlet-mapping>  
 </web-app>

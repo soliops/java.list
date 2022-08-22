@@ -32,22 +32,25 @@ public class admin_siteinfook extends HttpServlet {
 			while(em.hasMoreElements()) {
 			String config_check= (String) em.nextElement();
 			String emcheck = request.getParameter(config_check);
-			if(config_check.equals("siteinfo_mobnumber")||config_check.equals("siteinfo_vannumber")) {
-				if(emcheck=="") {
-					emcheck=null;
-				}
-			}
 			config_list.add(emcheck);
 		}
 		this.ps=response.getWriter();		
 		String msg = null; 
 		try {
+			admin_siteinfo_select ass = new admin_siteinfo_select();
+			ArrayList<admin_siteinfo_select> selectdata = ass.selectdata();
+			if(selectdata.size()==0) {				
 			admin_siteinfo_insert asi = new admin_siteinfo_insert();
 			asi.siteinfo_insert(config_list);
-			
 			msg = asi.call_sign().intern();
+			}
+			else {				
+			admin_siteinfo_update asu = new admin_siteinfo_update();
+			asu.siteinfo_update(config_list);
+			msg= asu.call_sign().intern();
+			}
 			if(msg=="success") {
-				this.ps.print("<script>alert('설정이 저장되었습니다.'); location.href='./admin/admin_config.jsp';</script>");
+				this.ps.print("<script>alert('설정이 저장되었습니다.'); location.href='./admin/admin_config.html';</script>");
 			}
 			else {
 				throw new Exception("error");
