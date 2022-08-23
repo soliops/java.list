@@ -25,4 +25,12 @@
 	<servlet-name>index</servlet-name>
 	<url-pattern>/webpage/index.jsp</url-pattern>	
 	</servlet-mapping>	
+		<servlet>
+	<servlet-name>reservesms</servlet-name>
+	<servlet-class>test.reservesms</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	<servlet-name>reservesms</servlet-name>
+	<url-pattern>/sms/reservesms.jsp</url-pattern>	
+	</servlet-mapping>	
 </web-app>

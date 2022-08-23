@@ -10,5 +10,7 @@ Editor -> 게시판 (글자굵게, 기울기, 색상)
      -->
 <p>상품출력</p>
 <div style="height:400px; width:800px;">
-<textarea name="notice_text" id="notice_text"><%=m%><img src="<%=img%>"></textarea>
+<textarea name="notice_text" id="notice_text">
+<%-- <%=m%><img src="<%=img%>"> --%>
+</textarea>
 </div>
