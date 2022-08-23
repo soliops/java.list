@@ -4,8 +4,8 @@ import java.sql.*;
 import java.util.*;
 
 public class admin_list_select {
-	//지울거
-	static ArrayList<Map<String,Object>> al = null;
+	
+	ArrayList<Map<String,Object>> al = null;
 	public void list_data() {
 		Connection ct =null;
 		try{
