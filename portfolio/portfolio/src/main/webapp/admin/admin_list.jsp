@@ -6,44 +6,9 @@
     pageEncoding="UTF-8"%>
     <% request.setCharacterEncoding("UTF-8"); %>
 	<meta charset="UTF-8">
-    <%@ include file="dbconfig.jsp" %>
-<% 
-	String sql = "select * from admin_add order by admin_idx desc;";
-	ArrayList<Map<String,Object>> al = null;
-	try{
-		PreparedStatement ps = ct.prepareStatement(sql);
-		ResultSet rs = ps.executeQuery();
-		al = new ArrayList<>();
-		while(rs.next()){
-			Map<String,Object> m = new HashMap<String,Object>();
-			m.put("admin_idx",rs.getString("admin_idx"));
-			m.put("admin_id",rs.getString("admin_id"));			
-			m.put("admin_nm",rs.getString("admin_nm"));
-			m.put("admin_email",rs.getString("admin_email"));
-			m.put("admin_tel",rs.getString("admin_tel"));
-			m.put("admin_part",rs.getString("admin_part"));
-			m.put("admin_position",rs.getString("admin_position"));
-			m.put("admin_indate",rs.getString("admin_indate"));
-			m.put("admin_check",rs.getString("admin_check"));
-			al.add(m);
-		}
-	}
-	catch(Exception e){
-	
-	}
-	finally{
-		try{
-			if(ct!=null){
-				ct.close();
-			}
-		}
-		catch(Exception f){
-			
-		}
-	}
-
-%>
-
+<%
+ArrayList<Map<String,Object>> al = (ArrayList<Map<String,Object>>)request.getAttribute("als");
+%>	
 <p>신규등록 관리자</p>
 <ol class="new_admin_title">
     <li>NO</li>
@@ -65,7 +30,6 @@ else{
 int w = 0;
 int c = 1;
 while(w<al.size()){
-
 %>
 <ol class="new_admin_lists">
     <li><%=al.get(w).get("admin_idx") %></li>

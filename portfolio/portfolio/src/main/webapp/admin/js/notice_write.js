@@ -26,3 +26,4 @@ function notice_save(){
 		
 	}
 }
+CKEDITOR.replace("notice_text");

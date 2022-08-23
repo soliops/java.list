@@ -25,6 +25,7 @@
 		if(admin_main_id==null){
 			out.print("<script>location.href='./index.html';</script>");
 		}
+
 		%>
 <body>
 <header class="headercss">
@@ -35,7 +36,7 @@
 </nav>
 <main class="maincss">
 <section style="height: auto;">
-      <%@ include file="./notice_list.html" %>
+      <%@ include file="./notice_list.jsp" %>
 </section>
 </main>
 <footer class="main_copyright">

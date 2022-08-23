@@ -22,7 +22,7 @@
 		String admin_main_id = (String)session.getAttribute("admin_id");		
 		String admin_main_nm = (String)session.getAttribute("admin_nm");
 		if(admin_main_id==null){
-			out.print("<script>location.href='./index.html';</script>");
+			out.print("<script>alert('자동으로 로그아웃 되었습니다.');location.href='./index.html';</script>");
 		}
 		%>
 </head>
