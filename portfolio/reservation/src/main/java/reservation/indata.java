@@ -43,7 +43,7 @@ public class indata extends HttpServlet {
 		ip.indata(ar);
 		String msg=ip.call_sign();
 		if(msg=="success") {
-			pw.print("<script>alert('입력 완료했습니다.'); location.href='http://192.168.100.210:8080/list.html';</script>");
+			pw.print("<script>alert('입력 완료했습니다.'); location.href='http://192.168.100.210:8080/reservation/list.html';</script>");
 		}
 		else {
 			pw.print("<script>alert('입력 실패했습니다.'); history.go(-1);</script>");			
