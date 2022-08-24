@@ -89,6 +89,14 @@
   <servlet-name>admin_notice</servlet-name>
   <url-pattern>/admin/admin_notice.html</url-pattern>
   </servlet-mapping>  
+    <servlet>
+  <servlet-name>notice_list</servlet-name>
+  <servlet-class>admin_configure.notice_list</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>notice_list</servlet-name>
+  <url-pattern>/admin/notice_list.html</url-pattern>
+  </servlet-mapping>  
   <servlet>
   <servlet-name>notice_writeok</servlet-name>
   <servlet-class>admin_configure.notice_writeok</servlet-class>
