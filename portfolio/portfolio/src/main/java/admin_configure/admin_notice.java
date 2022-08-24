@@ -27,11 +27,13 @@ public class admin_notice extends HttpServlet {
     		nls.list_select();
     		ArrayList<Map<String,Object>> notice_list = nls.select_list();
     		req.setAttribute("notice_list", notice_list);
-
-    		nls.nlist_select();
+			String pgno = req.getParameter("page");
+    		
+			nls.nlist_select(pgno);
     		ArrayList<Map<String,Object>> notice_nlist = nls.select_list();
     		req.setAttribute("notice_nlist", notice_nlist);
-
+    		ArrayList<Object> page_data = nls.page_data();
+    		req.setAttribute("page_data", page_data);
     		RequestDispatcher rd = req.getRequestDispatcher("./admin_notice.jsp");
     		rd.forward(req, resp);
     		
