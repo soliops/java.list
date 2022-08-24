@@ -36,7 +36,9 @@
 </nav>
 <main class="maincss">
 <section style="height: auto;">
+<form name="f" id="f" method="post" enctype="application/x-www-form-urlencoded">
       <%@ include file="./notice_list.jsp" %>
+</form>
 </section>
 </main>
 <footer class="main_copyright">

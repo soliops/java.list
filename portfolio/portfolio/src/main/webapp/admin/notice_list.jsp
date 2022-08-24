@@ -5,6 +5,10 @@
 <%
 ArrayList<Map<String,Object>> notice_list =(ArrayList<Map<String,Object>>)request.getAttribute("notice_list");
 ArrayList<Map<String,Object>> notice_nlist =(ArrayList<Map<String,Object>>)request.getAttribute("notice_nlist");		
+ArrayList<Object> page_data = (ArrayList<Object>)request.getAttribute("page_data");
+int total = (int)page_data.get(3);
+int startpage = (int)page_data.get(1);
+double pagenumber= (double)page_data.get(2);
 %>
 <p>공지사항 관리페이지</p>
 <div class="subpage_view">
@@ -20,10 +24,9 @@ ArrayList<Map<String,Object>> notice_nlist =(ArrayList<Map<String,Object>>)reque
 	int t=0;
 	do{
 	
-	
  %>
 <ol>
-    <li><input type="checkbox" name="view_check"></li>
+    <li><input type="checkbox" name="view_check" id="view_check<%=notice_list.get(t).get("notice_idx")%>" value="<%=notice_list.get(t).get("notice_idx")%>" onclick="view_allchange();"></li>
     <li>공지 사항</li>
     <li><%=notice_list.get(t).get("notice_title")%></li>
     <li><%=notice_list.get(t).get("notice_writer")%></li>
@@ -34,11 +37,13 @@ ArrayList<Map<String,Object>> notice_nlist =(ArrayList<Map<String,Object>>)reque
 	t++;
 	}while(t<notice_list.size());
 	int r=0;
+	int no = 0;
 	do{
+		no=total-startpage-r;
 %>
 <ol>
-   <li><input type="checkbox" name="view_check"></li>
-   <li><%=notice_nlist.get(r).get("notice_idx")%></li>
+   <li><input type="checkbox" name="view_check"  id="view_check<%=notice_nlist.get(r).get("notice_idx")%>" value="<%=notice_nlist.get(r).get("notice_idx")%>" onclick="view_allchange();"></li>
+   <li><%=no%></li>
    <li><%=notice_nlist.get(r).get("notice_title")%></li>
    <li><%=notice_nlist.get(r).get("notice_writer")%></li>
    <li><%=notice_nlist.get(r).get("notice_date").toString().substring(0,10)%></li>
@@ -62,10 +67,18 @@ else{
 </div>
 <div class="border_page">
     <ul class="pageing">
-        <li><img src="./ico/double_left.svg"></li>
-        <li><img src="./ico/left.svg"></li>
-        <li>1</li>
-        <li><img src="./ico/right.svg"></li>
-        <li><img src="./ico/double_right.svg"></li>
+<%
+int p=1;
+do{
+ 	%>
+        <li onclick="pagefirst();"><img src="./ico/double_left.svg"></li>
+        <li onclick="pagebefore(<%=p-1%>);"><img src="./ico/left.svg"></li>
+        <li onclick="pagego(<%=p%>);"><%=p%></li>        
+        <li onclick="pagenext(<%=p+1%>,<%=pagenumber%>);"><img src="./ico/right.svg"></li>
+        <li onclick="pageend(<%=pagenumber%>);"><img src="./ico/double_right.svg"></li>
+<%
+p++;
+}while(p<=pagenumber);
+%>
     </ul>
 </div>
