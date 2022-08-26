@@ -10,11 +10,11 @@ public class reserve_sms {
 	static String fmsg = null;
 	public void reser_sms(ArrayList<String> data){
 		
-		String adminmail="opete2012@naver.com";
+		String adminmail="";
 		String postmail = data.get(4);
 		String host = "smtp.naver.com";
-		String user="opete2012";
-		String pw = "soliops5857!@";
+		String user="";
+		String pw = "";
 		
 		Properties pr = new Properties();
 		pr.put("mail.smtp.host", host);
