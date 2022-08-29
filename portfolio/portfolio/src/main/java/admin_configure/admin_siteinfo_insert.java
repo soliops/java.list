@@ -4,7 +4,7 @@ import java.sql.*;
 import java.util.*;
 
 public class admin_siteinfo_insert {
-	static String msg = null;
+	String msg = null;
 	public void siteinfo_insert(ArrayList<String> data) {
 		Connection ct = null;
 		try {

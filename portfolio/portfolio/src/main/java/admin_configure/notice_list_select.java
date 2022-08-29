@@ -48,7 +48,7 @@ public class notice_list_select {
 			while(rsct.next()) {
 				total = rsct.getInt("count");
 			}
-			if( pgno==null||  pgno=="") {
+			if( pgno==null||  pgno==""||pgno=="null") {
 				startpage=0;
 			}
 			else {

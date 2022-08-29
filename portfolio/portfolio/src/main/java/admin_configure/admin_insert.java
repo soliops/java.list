@@ -4,7 +4,7 @@ import java.sql.*;
 import java.util.ArrayList;
 
 public class admin_insert {
-	static String call_msg=null;
+	String call_msg=null;
 	public void insert(ArrayList<String> data) {
 		Connection ct =null;
 		try {

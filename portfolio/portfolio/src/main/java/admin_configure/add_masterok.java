@@ -58,8 +58,6 @@ public class add_masterok extends HttpServlet {
 		admin_list.add(admin_indate);
 		if(admin_check==null) {
 			admin_check="N";
-		}else {
-			admin_check="Y";
 		}
 		admin_list.add(admin_check);
 		try {
