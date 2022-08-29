@@ -13,7 +13,7 @@ double pagenumber= (double)page_data.get(2);
 <p>공지사항 관리페이지</p>
 <div class="subpage_view">
 <ul>
-    <li><input type="checkbox" name="view_allcheck" id="view_allcheck" onclick=all_check();></li>
+    <li><input type="checkbox" name="view_allcheck" id="view_allcheck" onclick="all_check();"></li>
     <li>NO</li>
     <li>제목</li>
     <li>글쓴이</li>

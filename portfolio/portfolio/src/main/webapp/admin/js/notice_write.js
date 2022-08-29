@@ -15,7 +15,7 @@ function notice_save(){
 		frm.notice_text.focus();
 	}
 	else if(frm.notice_print.checked){
-		frm.notice_print_hidden.diabled = true;
+		frm.notice_print_hidden.disabled = true;
 	}
 	else{
 		frm.notice_print.value="N";
