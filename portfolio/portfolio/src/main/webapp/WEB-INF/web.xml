@@ -105,4 +105,52 @@
   <servlet-name>notice_writeok</servlet-name>
   <url-pattern>/notice_writeok.do</url-pattern>
   </servlet-mapping>  
+  <servlet>
+  <servlet-name>amdin_product</servlet-name>
+  <servlet-class>admin_product.admin_product</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>amdin_product</servlet-name>
+  <url-pattern>/admin/admin_product.html</url-pattern>
+  </servlet-mapping>    
+  <servlet>
+  <servlet-name>amdin_category</servlet-name>
+  <servlet-class>admin_product.admin_category</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>amdin_category</servlet-name>
+  <url-pattern>/admin/admin_category.html</url-pattern>
+  </servlet-mapping>      
+  <servlet>
+  <servlet-name>amdin_category_write</servlet-name>
+  <servlet-class>admin_product.admin_category_write</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>amdin_category_write</servlet-name>
+  <url-pattern>/admin/admin_category_write.html</url-pattern>
+  </servlet-mapping> 
+  <servlet>
+  <servlet-name>cate_writeok</servlet-name>
+  <servlet-class>admin_product.cate_writeok</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>cate_writeok</servlet-name>
+  <url-pattern>/admin/cate_writeok.do</url-pattern>
+  </servlet-mapping>     
+  <servlet>
+  <servlet-name>admin_product_write</servlet-name>
+  <servlet-class>admin_product.admin_product_write</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>admin_product_write</servlet-name>
+  <url-pattern>/admin/admin_product_write.html</url-pattern>
+  </servlet-mapping>      
+  <servlet>
+  <servlet-name>product_writeok</servlet-name>
+  <servlet-class>admin_product.product_writeok</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>product_writeok</servlet-name>
+  <url-pattern>/admin/product_writeok.do</url-pattern>
+  </servlet-mapping>   
 </web-app>
