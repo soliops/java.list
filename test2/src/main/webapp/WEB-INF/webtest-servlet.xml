@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/mvc
+        https://www.springframework.org/schema/mvc/spring-mvc.xsd">
+        
+    <bean id="/admin/login.do" class="test2.admin.login"></bean>
+    <bean id="/admin/main.do" class="test2.main"></bean>
+    <bean id="/admin/main_control.do" class="test2.admin.main_control"></bean>    
+    <bean id="/contact/contact.do" class="test2.contact.contact"></bean>    
+    <bean id="/qa/qalist.do" class="test2.qa.qalist"></bean>    
+    <bean id="/info/myinfo.do" class="test2.info.myinfo"></bean>
+    
+    <!-- tiles 라이브러리 로드-->
+   	<bean class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+   	<property name="viewClass" value="org.springframework.web.servlet.view.tiles3.TilesView"></property>
+   	<property name="order" value="1"></property>
+   	</bean>
+   	<bean class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+   	<property name="definitions" value="/WEB-INF/tiles.xml"></property>
+   	</bean>
+   	<!-- order를 이용하여 우선순위를 설정하게 됩니다. order를 사용하지 않고
+   	형태가 비슷한 class를 사용할 경우 아래에 있는 class는 사용하지 않게 됩니다. 
+   	property : 객체지향 언어 (읽기, 쓰기 메소드를 호출) - 파일, 디렉토리, 기준점
+   	-->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+    <property name="prefix" value="/WEB-INF/view/"></property>
+    <property name="suffix" value=".jsp"></property>
+    <property name="order" value="2"></property>    
+    </bean>  
+    <mvc:resources location = "/" mapping="/**"></mvc:resources>  
+</beans>

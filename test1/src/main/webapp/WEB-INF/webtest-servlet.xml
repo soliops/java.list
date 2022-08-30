@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+    	http://www.springframework.org/schema/mvc
+        https://www.springframework.org/schema/mvc/spring-mvc.xsd">
+        
+    <!-- beans : mvc를 사용하도록 적용함 (mvc 태그를 사용하기 위함)  
+    	정적파일 서비스를 하기 위해서 사용합니다. (기본 정적파일 서비스를 사용하지 못함)
+    -->  
+   	<!--  /admin/ : 가상의 디렉토리명 (Controller은 가상의 디렉토리로 움직이게 됨)
+   		view는 실제 디렉토리명-->
+    <bean id="/index" class="test1.index"></bean>
+    <bean id="/main" class="test1.main"></bean>  
+    <bean id="/postok.do" class="test1.postok"></bean>      
+    <!-- Controller와 jsp 이름을 통일화 시키는 작업 입니다. -->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+    <property name="prefix" value="/WEB-INF/view/"></property>
+    <property name="suffix" value=".jsp"></property>
+    </bean>  
+    <!-- HTML 출력 파트 정적파일 서비스 (HTML, JS, JQuery, CSS, IMAGE)-->
+    <mvc:resources location = "/" mapping="/**"></mvc:resources>  
+<!--     <mvc:resources location = "/resource" mapping="/**"></mvc:resources>       -->
+</beans>
