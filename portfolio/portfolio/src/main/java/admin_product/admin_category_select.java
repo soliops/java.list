@@ -65,6 +65,7 @@ public class admin_category_select {
 			this.ar = new ArrayList<Map<String,Object>>();
 			while(rs.next()) {
 				Map<String,Object> m = new HashMap<String, Object>();
+				m.put("cidx",rs.getString("cidx"));
 				m.put("classcode",rs.getString("classcode"));
 				m.put("cbcate_code",rs.getString("cbcate_code"));
 				m.put("cbcate_name",rs.getString("cbcate_name"));
