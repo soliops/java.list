@@ -13,12 +13,16 @@ function notice_delete(){
 		f.submit();
 	}
 }
-function view_allchange(){ //하나라도 체크해제하면 전체체크인거 해제
+function view_allchange(){ 
 	var view_ck = document.getElementsByName("view_check");
 	var all_ch=document.getElementById("view_allcheck");
 	for(var p=0;p<view_ck.length;p++){
 		if(view_ck[p].ckecked==false){
-			all_ch.checked=false;
+			all_ch.checked=view_ck.checked;
+			break;
+		}
+		else{
+			all_ch.checked=view_ck.checked;
 			break;
 		}
 	}
