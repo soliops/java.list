@@ -1,4 +1,4 @@
-package test2;
+package test3;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -6,14 +6,18 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.Controller;
 
-public class main implements Controller{
+public class index implements Controller{
 
-	//Spring MVC Controller에서 사용하는 기본 객체 메소드 입니다.
 	@Override
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("/admin/main");
+		test3.dbservice ds = new dbservice("lee", "qwer1234", "이순신", "01023456789", "30");
+		listdb ld = new listdb();
+		String msg = ld.insert(ds);
+		mv.addObject("msg",msg);
+		mv.setViewName("/index.jsp");
 		return mv;
 	}
-		
+	
 }
