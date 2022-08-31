@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- beans가 기본이 아니고, mvc가 기본이며 해당 태그를 사용하기 위해서 -->
+<beans:beans 
+xmlns="http://www.springframework.org/schema/mvc"
+xmlns:beans="http://www.springframework.org/schema/beans"
+xmlns:context="http://www.springframework.org/schema/context"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="
+http://www.springframework.org/schema/mvc
+https://www.springframework.org/schema/mvc/spring-mvc.xsd
+http://www.springframework.org/schema/beans
+https://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+<!-- 기본 공통적인 부분을 적용시킴(mappinig) -->
+<annotation-driven></annotation-driven>
+<!-- servlet class를 전반적으로 핸들링 하도록 한다라는 지시어 -->
+<default-servlet-handler/>
+<!-- class에서 해당 jsp 로 자동 연결 되도록 하는 설정 태그 -->
+<!-- <view-resolvers> -->
+<!-- <jsp prefix="/WEB-INF/" suffix=".jsp"/> -->
+<!-- </view-resolvers> -->
+<!-- Controller 이름을 정해 주셔야 합니다. -->
+<!-- <beans:bean class="test3.info"></beans:bean> -->
+<!-- <beans:bean class="test3.t1"></beans:bean> -->
+<beans:bean class="test3.api"></beans:bean>
+<!-- <context:component-scan base-package="test3"></context:component-scan> -->
+</beans:beans>

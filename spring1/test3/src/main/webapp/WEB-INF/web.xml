@@ -7,15 +7,45 @@
   metadata-complete="true">
 
   <display-name>Welcome to Tomcat</display-name>
-  <description>
-     Welcome to Tomcat
-  </description>
+  <description>Welcome to Tomcat</description>
 	<servlet>
 	<servlet-name>df</servlet-name>
 	<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+	<init-param>
+	<!-- 
+	contextConfigLocation : 스프링 프에미 워크 전용 위치파일 파라미터 
+	contextLoaderListener : 스프링에서 contextLoader
+	contextListener : 하나로 상속하는 파라미터 부분
+	-->
+	<param-name>contextConfigLocation</param-name>
+	<!-- 어떤 파일과 연결할 것인가?? -->
+	<param-value>
+<!-- 	/WEB-INF/spring/appServlet/servlet-context.xml -->
+		/WEB-INF/fileupload/fileup.xml
+		/WEB-INF/mapping/mapping.xml
+<!-- 	/WEB-INF/sql/sql.xml -->
+	</param-value>
+	</init-param>
+	<load-on-startup>1</load-on-startup>
 	</servlet>
 	<servlet-mapping>
 	<servlet-name>df</servlet-name>
 	<url-pattern>/</url-pattern>
 	</servlet-mapping>
+	
+	<filter>	<!-- 필터를 적용 WEB 환경설정 -->
+	<filter-name>encoding</filter-name>
+	<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+	<init-param>
+	<param-name>encoding</param-name> 
+	<!-- 해당 클래스명 무조건 같은 이름으로 -->
+	<param-value>UTF-8</param-value>
+	<!-- encoding 클래스에 UTF-8 인자값으로 전송 -->
+	</init-param>
+	</filter> 
+	<filter-mapping>
+	<filter-name>encoding</filter-name>
+	<url-pattern>/*</url-pattern>
+	<!-- / : controller에만 적용, *.do : do 파일에만 적용, *.jsp : jsp에만 적용 -->
+	</filter-mapping>
 </web-app>
