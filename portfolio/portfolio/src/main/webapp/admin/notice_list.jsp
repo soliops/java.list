@@ -63,7 +63,7 @@ else{
 </div>
 <div class="board_btn">
     <button class="border_del" onclick="notice_delete();">공지삭제</button>
-    <button class="border_add" onclick="notice_write();">공지등록</button>
+    <input type="button" class="border_add" value="공지등록" onclick="notice_write();">
 </div>
 <div class="border_page">
     <ul class="pageing">

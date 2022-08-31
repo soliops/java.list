@@ -6,19 +6,19 @@
     <ul>
         <li>대메뉴 카테고리</li>
         <li>
-            <input type="text" class="product_input1" name="cbcate_name" id="cbcate_name"> 
+            <input type="text" class="product_input1" name="cbcate_code" id="cbcate_code" maxlength="3"> 
         </li>
     </ul>
     <ul>
         <li>소메뉴 카테고리</li>
         <li>
-            <input type="text" class="product_input1" name="cscate_name" id="cscate_name"> 
+            <input type="text" class="product_input1" name="cscate_code" id="cscate_code" maxlength="3"> 
         </li>
     </ul>
     <ul>
         <li>상품코드</li>
         <li>
-            <input type="text" class="product_input1" name="product_code" id="product_code" maxlength="12"> 
+            <input type="text" class="product_input1" name="product_code" id="product_code" maxlength="8"> 
             <input type="button" value="중복확인" title="중복확인" class="product_btn" onclick="code_check();"> <span class="help_text">※ 상품코드는 절대 중복되지 않도록 합니다.</span>
         </li>
     </ul>
@@ -31,19 +31,19 @@
     <ul>
         <li>상품 부가설명</li>
         <li>
-            <input type="text" class="product_input4" maxlength="200" name="product_addexplain" id="product_addexplain"> <span class="help_text">※ 상품명은 최대 200자까지만 적용할 수 있습니다.</span>
+            <input type="text" class="product_input4" maxlength="200" name="product_addexplain" id="product_addexplain"> <span class="help_text">※ 상품 부가설명은 최대 200자까지만 적용할 수 있습니다.</span>
         </li>
     </ul>
     <ul>
         <li>판매가격</li>
         <li>
-            <input type="text" class="product_input3" maxlength="7" name="product_price" id="product_price"> <span class="help_text">※ , 없이 숫자만 입력하세요 최대 7자리</span>
+            <input type="text" class="product_input3" maxlength="7" name="product_price" id="product_price" onkeyup="price_cal();"> <span class="help_text">※ , 없이 숫자만 입력하세요 최대 7자리</span>
         </li>
     </ul>
     <ul>
         <li>할인율</li>
         <li>
-            <input type="text" class="product_input3" maxlength="2" value="0" name="product_discount" id="product_discount">% <span class="help_text">※ 숫자만 입력하세요</span>
+            <input type="text" class="product_input3" maxlength="2" value="0" name="product_discount" id="product_discount" onkeyup="price_cal();">% <span class="help_text">※ 숫자만 입력하세요</span>
         </li>
     </ul>
     <ul>
@@ -109,5 +109,4 @@
 <div class="subpage_view4" style="text-align:center;">
     <input type="button" value="상품 리스트" title="상품 리스트" class="p_button p_button_color1" style="margin-right: 5px;" onclick="product_list();">
     <input type="button" value="상품 등록" title="상품 등록" class="p_button p_button_color2" onclick="product_add();">
-    </span>
 </div>

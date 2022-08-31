@@ -16,7 +16,8 @@
     <link rel="icon" href="./img/logo.png" sizes="32x32">
     <link rel="icon" href="./img/logo.png" sizes="16x16">
     <script src="./js/jquery.js"></script>
-    <script src="./js/product.write.js"></script>
+    <script src="./js/product_write.js"></script>
+    <script src="./ckeditor/ckeditor.js"></script>
     <%request.setCharacterEncoding("UTF-8");
 	session.setMaxInactiveInterval(30*60);
 	String admin_main_id = (String)session.getAttribute("admin_id");		
@@ -44,4 +45,7 @@
 <%@ include file = "admin_footer.html"  %>
 </footer>
 </body>
+<script>
+CKEDITOR.replace("product_explain");
+</script>
 </html>
