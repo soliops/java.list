@@ -38,7 +38,6 @@ public class add_idcheck extends HttpServlet {
 		try {
 			admin_siteinfo_select ass = new admin_siteinfo_select();
 			ArrayList<admin_siteinfo_select> se = ass.selectdata();
-			System.out.println(se);
 			dbconfig db = new dbconfig();
 			ct = db.cafe24();
 			String sql = "select * from admin_add where admin_id='"+id+"';";
@@ -54,17 +53,9 @@ public class add_idcheck extends HttpServlet {
 				ck="true";
 			}
 			pr.print(ck);
+			ct.close();
 		} catch (Exception e) {
-			
-		}
-		finally {
-			try {
-				if(ct!=null) {
-					ct.close();
-				}				
-			} catch (Exception e2) {
-
-			}
+			pr.write("<script>alert('DB연결 오류'); history.go(-1)</script>");
 		}
 	}
 

@@ -28,7 +28,7 @@ public class admin_category extends HttpServlet {
     	String cate = req.getParameter("cate_search");
     	String search = req.getParameter("p_search");
     	String pgno = req.getParameter("page");
-    	String delck = req.getParameter("cate_delck").intern(); 
+    	String delck = req.getParameter("cate_delck"); 
     	String msg = null;
     	pr = resp.getWriter();  		
     	if(delck!=null||delck!=""||delck!="null") {
