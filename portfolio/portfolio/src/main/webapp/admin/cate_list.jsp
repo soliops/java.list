@@ -2,7 +2,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>  
 <meta charset="UTF-8">
-<% ArrayList<Map<String,Object>> list = (ArrayList<Map<String,Object>>)request.getAttribute("list");
+<% 
+ArrayList<Map<String,Object>> list = (ArrayList<Map<String,Object>>)request.getAttribute("list");
 ArrayList<Object> page_data = (ArrayList<Object>)request.getAttribute("page_data");
 int total = (int)page_data.get(3);
 int startpage = (int)page_data.get(2);
@@ -10,7 +11,12 @@ double pagenumber= (double)page_data.get(1);
 %>
 <p>카테고리관리 페이지</p>
 <div class="subpage_view">
-    <span>등록된 카테고리 <%=list.size() %>건</span>
+<%
+int total_num =0;
+if(list.size()!=0){
+	total_num=list.size();
+}%>
+    <span>등록된 카테고리 <%=total_num%>건</span>
     <span>
         <select class="p_select1" name="cate_search" id="cate_search">
             <option value="0">카테고리명</option>
@@ -37,7 +43,7 @@ double pagenumber= (double)page_data.get(1);
     do{
     	%>
     <ul>
-        <li><input type="checkbox" name="cate_check" id="cate_check<%=list.get(w).get("cidx")%>" value="<%=list.get(w).get("cidx")%>" onclick="cate_change();"></li>
+        <li><input type="checkbox" name="cate_check" id="cate_check<%=list.get(w).get("cidx")%>" value="<%=list.get(w).get("cbcate_code")%><%=list.get(w).get("cscate_code")%>" onclick="cate_change(this);"></li>
         <li style="text-align: left; text-indent: 5px;"><%=list.get(w).get("classcode") %></li>
         <li><%=list.get(w).get("cbcate_code") %></li>
         <li style="text-align: left; text-indent: 5px;"><%=list.get(w).get("cbcate_name") %></li>

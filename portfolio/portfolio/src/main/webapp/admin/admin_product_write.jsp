@@ -16,7 +16,7 @@
     <link rel="icon" href="./img/logo.png" sizes="32x32">
     <link rel="icon" href="./img/logo.png" sizes="16x16">
     <script src="./js/jquery.js"></script>
-    <script src="./js/product_write.js"></script>
+    <script src="./js/product_write.js?v=2"></script>
     <script src="./ckeditor/ckeditor.js"></script>
     <%request.setCharacterEncoding("UTF-8");
 	session.setMaxInactiveInterval(30*60);

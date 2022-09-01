@@ -16,7 +16,7 @@
     <link rel="icon" href="./img/logo.png" sizes="32x32">
     <link rel="icon" href="./img/logo.png" sizes="16x16">
     <script src="./js/jquery.js"></script>
-    <script src="./js/admin_category.js?v=2"></script>
+    <script src="./js/admin_category.js?v=6"></script>
 <%request.setCharacterEncoding("UTF-8");
 	session.setMaxInactiveInterval(30*60);
 	String admin_main_id = (String)session.getAttribute("admin_id");		

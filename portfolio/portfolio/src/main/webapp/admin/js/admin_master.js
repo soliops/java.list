@@ -38,10 +38,10 @@ $(function(){
    			}
    		})
    		function $pass_check(){
-   		var $code2 = /[ㄱ-ㅎ가-힣ㅏ-ㅣ]/gi;
+   		var $code2 = /[^ㄱ-ㅎ가-힣ㅏ-ㅣ]/gi;
 		var $code = /[^a-zA-Z0-9ㄱ-ㅎ가-힣ㅏ-ㅣ]/g;	
 		var $ck = $("#admin_pw").val().match($code);
-			if($code2.test($("#admin_pw").val())==true){
+			if($code2.test($("#admin_pw").val())==false){
    				alert("패스워드는 한글을 입력할 수 없습니다.");
    				$("#admin_pw").focus();
    				return false;
@@ -73,8 +73,8 @@ $(function(){
    		}
    		}
    		function $nm_check(){
-   			var $nm_ck = /^[a-zA-Z가-힣]/g;
-   			if($nm_ck.test($("#admin_nm").val())==false){
+   			var $nm_ck = /[^a-zA-Z가-힣]/g;
+   			if($nm_ck.test($("#admin_nm").val())==true){
    				alert("이름은 영어,한글만 입력하셔야 합니다.");
    				$("#admin_nm").focus();
    				return false;
@@ -95,19 +95,19 @@ $(function(){
    			}
    		}
    		function $tel_check(){
-   			var $tel_ck= /^[0-9]/;
-   			var $tel_ck2=/^[0-9]\d{2,3}$/;
-   			if($tel_ck.test($("#admin_tel1").val())==false){
+   			var $tel_ck= /[^0-9]/;
+   			var $tel_ck2=/[^0-9]\d{2,3}$/;
+   			if($tel_ck.test($("#admin_tel1").val())==true){
    				alert("연락처는 숫자만 입력하셔야 합니다.");
    				$("#admin_tel1").focus();
    				return false;
    			}
-   			else if($tel_ck2.test($("#admin_tel2").val())==false){
+   			else if($tel_ck2.test($("#admin_tel2").val())==true){
    				alert("연락처는 숫자만 입력하셔야 합니다.");
    				$("#admin_tel2").focus();
    				return false;
    			}
-   			else if($tel_ck.test($("#admin_tel3").val())==false){
+   			else if($tel_ck.test($("#admin_tel3").val())==true){
    				alert("연락처는 숫자만 입력하셔야 합니다.");
    				$("#admin_tel3").focus();
    				return false;
