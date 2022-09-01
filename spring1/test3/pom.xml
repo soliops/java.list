@@ -9,6 +9,12 @@
   <maven.compiler.target>1.8</maven.compiler.target>  
   </properties>
   <dependencies>
+  <!-- https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-api -->
+<dependency>
+    <groupId>org.apache.tomcat</groupId>
+    <artifactId>tomcat-api</artifactId>
+    <version>8.5.73</version>
+</dependency>
 <!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
 <dependency>
     <groupId>org.springframework</groupId>
@@ -21,6 +27,11 @@
     <artifactId>tiles-jsp</artifactId>
     <version>3.0.8</version>
 </dependency>
+<dependency>
+    <groupId>javax.servlet</groupId>
+    <artifactId>jstl</artifactId>
+    <version>1.2</version>
+</dependency>
 <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
 <dependency>
     <groupId>mysql</groupId>
@@ -28,16 +39,34 @@
     <version>5.1.49</version>
 </dependency>
 <!-- https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload -->
+<!-- Apache  -->
 <dependency>
     <groupId>commons-fileupload</groupId>
     <artifactId>commons-fileupload</artifactId>
     <version>1.3.2</version>
 </dependency>
-<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+<!-- https://mvnrepository.com/artifact/commons-dbcp/commons-dbcp -->
+<!-- dbcp 연결 라이브러리 (DBCP - 데이터 베이스 커넥션 pool을 사용함) -->
 <dependency>
-    <groupId>commons-io</groupId>
-    <artifactId>commons-io</artifactId>
-    <version>2.5</version>
+    <groupId>commons-dbcp</groupId>
+    <artifactId>commons-dbcp</artifactId>
+    <version>1.4</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
+<!-- Mybatis 연결 라이브러리 
+	->XML에 파일을 설정해서 로드하는 형태
+-->
+<dependency>
+    <groupId>org.mybatis</groupId>
+    <artifactId>mybatis</artifactId>
+    <version>3.4.6</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/org.mybatis/mybatis-spring -->
+<!-- Mybatis Spring -> Controller와 함께 사용 -->
+<dependency>
+    <groupId>org.mybatis</groupId>
+    <artifactId>mybatis-spring</artifactId>
+    <version>1.3.3</version>
 </dependency>
 </dependencies>
 </project>

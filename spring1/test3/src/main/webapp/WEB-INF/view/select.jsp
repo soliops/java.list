@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>파일업로드 완료 페이지</title>
+<title>데이터베이스 연동 IOC 형태 - dbquery.java (controller)</title>
 </head>
 <body>
-성공한 파일명은 : ${result_file}
+데이터 총 갯수는 ${data_rows}
 </body>
 </html>
