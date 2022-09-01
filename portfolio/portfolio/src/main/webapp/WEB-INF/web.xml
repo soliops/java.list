@@ -120,7 +120,7 @@
   <servlet-mapping>
   <servlet-name>amdin_category</servlet-name>
   <url-pattern>/admin/admin_category.html</url-pattern>
-  </servlet-mapping>      
+  </servlet-mapping>        
   <servlet>
   <servlet-name>amdin_category_write</servlet-name>
   <servlet-class>admin_product.admin_category_write</servlet-class>
@@ -152,5 +152,21 @@
   <servlet-mapping>
   <servlet-name>product_writeok</servlet-name>
   <url-pattern>/admin/product_writeok.do</url-pattern>
+  </servlet-mapping>   
+   <servlet>
+  <servlet-name>admin_category_delok</servlet-name>
+  <servlet-class>admin_product.admin_category_delok</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>admin_category_delok</servlet-name>
+  <url-pattern>/admin/admin_category_delok.do</url-pattern>
+  </servlet-mapping> 
+  <servlet>
+  <servlet-name>admin_product_delok</servlet-name>
+  <servlet-class>admin_product.admin_product_delok</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>admin_product_delok</servlet-name>
+  <url-pattern>/admin/admin_product_delok.do</url-pattern>
   </servlet-mapping>   
 </web-app>
