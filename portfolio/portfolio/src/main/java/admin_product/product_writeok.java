@@ -43,6 +43,10 @@ public class product_writeok extends HttpServlet {
 		while(em.hasMoreElements()) {
 			String allcheck = em.nextElement();
 			String emcheck=request.getParameter(allcheck);
+			if(allcheck.equals("product_explain")) {
+				emcheck = emcheck.replace("<p>", "");
+				emcheck = emcheck.replace("</p>", "");				
+			}
 			ar.add(emcheck);
 		}
 			admin_product_check apcs = new admin_product_check();

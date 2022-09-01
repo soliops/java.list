@@ -4,8 +4,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 import admin_configure.dbconfig;
 
@@ -19,10 +17,10 @@ public class admin_category_write_select {
 			ct = db.cafe24();
 			String sql= "";
 			if(data.size()==4) {
-				sql = "select * from category where cscate_code='"+data.get(1)+"'";				
+				sql = "select * from category where cbcate_code='"+data.get(1)+"';";				
 			}
 			else {
-				sql = "select * from category where cscate_code='"+data.get(1)+"' and cbcate_code='"+data.get(3)+"'";
+				sql = "select * from category where cscate_code='"+data.get(1)+"' and cbcate_code='"+data.get(3)+"';";
 			}
 			PreparedStatement ps = ct.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery();

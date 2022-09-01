@@ -46,7 +46,7 @@ public class admin_product_check {
 			while(rs1.next()) {
 				ar1.add(rs1.getString("cbcate_code"));
 			}
-			if(ar1.size()==0) {	
+			if(ar1.size()!=0) {	
 			String sql2 ="select * from category where cbcate_code='"+data2+"' and cscate_code='"+data3+"';";
 			PreparedStatement ps = ct.prepareStatement(sql2);
 			ResultSet rs = ps.executeQuery();
@@ -55,7 +55,7 @@ public class admin_product_check {
 				ar.add(rs.getString("cbcate_code"));
 				ar.add(rs.getString("cscate_code"));
 			}
-			if(ar.size()==0) {
+			if(ar.size()!=0) {
 				this.msg2="success";
 			}
 			else {

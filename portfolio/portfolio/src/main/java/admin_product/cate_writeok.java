@@ -66,8 +66,9 @@ public class cate_writeok extends HttpServlet {
 					+ "alert('이미 있는 소메뉴 코드입니다.');"
 					+ "location.href='./admin_category_write.html';"
 					+ "</script>");
+
 		}
-		else {			
+		else {		
 			cate_write_insert cwi = new cate_write_insert();
 			cwi.write_insert(ar);
 			String msg = cwi.call_sign().intern();
