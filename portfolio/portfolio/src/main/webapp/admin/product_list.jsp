@@ -1,3 +1,4 @@
+<%@page import="com.mysql.jdbc.StringUtils"%>
 <%@page import="java.util.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>   
@@ -44,11 +45,12 @@ if(list.size()!=0){
 <%if(list.size()!=0){ 
 int w=0;
 do{
+	String img = (String)(list.get(w).get("product_img1"));
 %>
     <ul>
         <li><input type="checkbox" name="product_check" id="product_check<%=list.get(w).get("pidx")%>" value="<%=list.get(w).get("pidx")%>" onclick="product_change(this);"></li>
         <li><%=list.get(w).get("product_code")%></li> 
-        <li><img src="<%=list.get(w).get("img1")%>"></li>
+        <li><img src="<%=img%>" style="height:90%; margin-top:1px;" alt="사진 없음"></li>
         <li><%=list.get(w).get("product_name")%></li>
         <li><%=list.get(w).get("cbcate_code")%><%=list.get(w).get("cscate_code")%></li>
         <li><%=list.get(w).get("product_price")%></li>

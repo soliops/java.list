@@ -148,7 +148,7 @@ function product_add(){
 		else{
 			frm.method="post";
 			frm.action="./product_writeok.do";
-			frm.enctype="application/x-www-form-urlencoded";
+			frm.enctype="multipart/form-data";
 			frm.submit();			
 		}
 	}

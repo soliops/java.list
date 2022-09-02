@@ -7418,7 +7418,7 @@ function Datepicker() {
 			// > this are in the previous century,
 			// string value starting with "+" for current year + value
 		minDate: "0", // 오늘 날짜 기준 이전일자 The earliest selectable date, or null for no limit
-		maxDate: "+7D", // 오늘 날짜 기준 이후일자 The latest selectable date, or null for no limit
+		maxDate: "+30D", // 오늘 날짜 기준 이후일자 The latest selectable date, or null for no limit
 		duration: "fast", // Duration of display/closure
 		beforeShowDay: null, // Function that takes a date and returns an array with
 			// [0] = true if selectable, false if not, [1] = custom CSS class name(s) or "",
