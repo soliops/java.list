@@ -169,4 +169,28 @@
   <servlet-name>admin_product_delok</servlet-name>
   <url-pattern>/admin/admin_product_delok.do</url-pattern>
   </servlet-mapping>   
+  <servlet>
+  <servlet-name>admin_shopping</servlet-name>
+  <servlet-class>admin_shopping.admin_shopping</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>admin_shopping</servlet-name>
+  <url-pattern>/admin/admin_shopping.html</url-pattern>
+  </servlet-mapping>  
+  <servlet>
+  <servlet-name>admin_coupon_config</servlet-name>
+  <servlet-class>admin_shopping.admin_coupon_config</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>admin_coupon_config</servlet-name>
+  <url-pattern>/admin/admin_coupon_config.html</url-pattern>
+  </servlet-mapping>    
+  <servlet>
+  <servlet-name>coupon_writeok</servlet-name>
+  <servlet-class>admin_shopping.coupon_writeok</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>coupon_writeok</servlet-name>
+  <url-pattern>/admin/coupon_writeok.do</url-pattern>
+  </servlet-mapping>  
 </web-app>
