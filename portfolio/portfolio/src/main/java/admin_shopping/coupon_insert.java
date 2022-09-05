@@ -1,4 +1,4 @@
-package admin_product;
+package admin_shopping;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -6,14 +6,14 @@ import java.util.ArrayList;
 
 import admin_configure.dbconfig;
 
-public class admin_product_insert {
+public class coupon_insert {
 	String msg = null;
-	public void product_insert(ArrayList<String> data) {
+	public void coupon_insert(ArrayList<String> data) {
 		Connection ct = null;
 		try {
 			dbconfig db = new dbconfig();
 			ct = db.cafe24();
-			String sql = "insert into product values ('0',";
+			String sql = "insert into coupon values ('0',";
 			for(int s=0;s<data.size();s++) {
 				if(s==data.size()-1) {
 					sql+="?);";

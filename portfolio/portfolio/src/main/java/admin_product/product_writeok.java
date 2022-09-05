@@ -1,16 +1,27 @@
 package admin_product;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.PrintWriter;
+import java.net.URLDecoder;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Enumeration;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
 
-
+@MultipartConfig(
+		fileSizeThreshold = 1024*1024*2,
+		maxFileSize = 1024*1024*2,
+		maxRequestSize = 1024*1024*2*3
+		)
 public class product_writeok extends HttpServlet {
 	PrintWriter pr = null;
 	private static final long serialVersionUID = 1L;
@@ -34,20 +45,34 @@ public class product_writeok extends HttpServlet {
 		String ck_msg =null;
 		String api_msg = null;
 		boolean ck = false;
-		String check_code = null;
 		String cate_ck = null;
+		String check_code = null;
 		check_code = request.getParameter("check_code");
 		try {
-		if(check_code==null || check_code=="") {
-		Enumeration<String> em = request.getParameterNames();
-		while(em.hasMoreElements()) {
-			String allcheck = em.nextElement();
-			String emcheck=request.getParameter(allcheck);
-			if(allcheck.equals("product_explain")) {
-				emcheck = emcheck.replace("<p>", "");
-				emcheck = emcheck.replace("</p>", "");				
+			if(check_code==null || check_code=="") {
+			Collection <Part> parts = request.getParts();
+			for(Part file : parts) {
+			String filecheck  =file.getName();
+			String filetext = request.getParameter(filecheck);
+			if(filecheck.equals("product_img1")||filecheck.equals("product_img2")||filecheck.equals("product_img3")) {
+				String originName = file.getSubmittedFileName();
+				String realpath = "C:/portfolio/portfolio/src/main/webapp/admin/product_img/";
+				if(originName==null||originName=="") {						
+					filetext="";
+				}
+				else {
+					filetext= realpath + originName;						
+					File fe = new File(realpath);
+					if(!fe.exists()) {fe.mkdir();}
+					file.write(filetext);
+				}
+				filetext=filetext.replace("C:/portfolio/portfolio/src/main/webapp/admin",".");
 			}
-			ar.add(emcheck);
+			else if(filecheck.equals("product_explain")) {
+				filetext = filetext.replace("<p>", "");
+				filetext = filetext.replace("</p>", "");
+			}
+			ar.add(filetext);
 		}
 			admin_product_check apcs = new admin_product_check();
 			apcs.catecode_check(ar.get(0), ar.get(1));
