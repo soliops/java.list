@@ -1,12 +1,20 @@
 package test3;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.apache.commons.dbcp.BasicDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import mydb.model_dao;
 
 @Controller
 public class dbquerys {
@@ -72,10 +80,28 @@ public class dbquerys {
 	@RequestMapping("/select.do")
 	public String db_select (Model m) {
 		try {
+			//database 로드하는 부분
+			ArrayList<model_dao> list = new ArrayList<model_dao>();
 			ct = dataSource.getConnection();
-			String sql = "select count(*) as cnt from test3;";
+			String sql = "select * from test3";
 			ps = ct.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery();
+			//DAO를 사용하지 않고, 배열형태로 생성 후 view에서 jstl로 출력시키는 형태
+			ArrayList<Map<String,Object>> pso = new ArrayList<Map<String, Object>>();
+			while(rs.next()) {
+				//DB에 있는 필드값을 map으로 이관하는 형태
+				Map<String,Object> mp =new HashMap<String, Object>();
+				mp.put("midx",rs.getString("midx"));
+				mp.put("mid",rs.getString("mid"));
+				mp.put("mpw",rs.getString("mpw"));
+				mp.put("mnm",rs.getString("mnm"));
+				mp.put("mtel",rs.getString("mtel"));
+				mp.put("mage",rs.getString("mage"));
+				pso.add(mp); //모든 데이터를 반복하면 ArrayList 생성
+				}
+				m.addAttribute("pso",pso);
+				rs.close();
+				ct.close();
 			/*
 			 배열을 설정
 			 BO - 정보를 직접 확인해 보시길 
@@ -86,24 +112,19 @@ public class dbquerys {
 			 Data Transfer Object 계층간 데이터 교환
 			 VO (Value Object) 
 			 */
-			while(rs.next()) {
 				//Map (setter, getter)
 				//add (키 배열로 등록)
-				data = rs.getString("cnt");
-				m.addAttribute("data_rows",data);
-			}
+			
+			
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
 		finally {
 			try {
-				if(ps!= null) {
-					ps.close();}
-				if(ct!=null) {
-					ct.close();
-				}
-			} catch (SQLException f) {
-				f.printStackTrace();
+				if(ps !=null)ps.close();
+				if(ct!=null)ct.close();
+			} catch (SQLException e2) {
+				e2.printStackTrace();
 			}
 		}
 		return "view/select";

@@ -17,9 +17,10 @@
 	<!-- 어떤 파일과 연결할 것인가?? -->
 	<param-value>
 <!-- 	/WEB-INF/spring/appServlet/servlet-context.xml -->
-		/WEB-INF/fileupload/fileup.xml
+		/WEB-INF/spring/root-context.xml
 		/WEB-INF/mapping/mapping.xml
-		/WEB-INF/dbconnect/dbconnect.xml		
+<!-- 		/WEB-INF/fileupload/fileup.xml -->
+<!-- 		/WEB-INF/dbconnect/dbconnect.xml		 -->
 <!-- 	/WEB-INF/sql/sql.xml -->
 	</param-value>
 	</init-param>
