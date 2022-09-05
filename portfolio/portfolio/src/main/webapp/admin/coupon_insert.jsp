@@ -30,7 +30,7 @@
         <li>
             <select name="coupon_type" id="coupon_type" class="inputs coupon_intext2">
                 <option value="0">쿠폰 타입 선택</option>
-                <option value="정액할일" >정액할인</option>
+                <option value="정액할인" >정액할인</option>
                 <option value="정률할인" >정률할인</option>
             </select>
              ※ 정액할인 일 경우 할인 금액을 입력해야 하며, 정률 할인 일 경우 할인율 % 값을 입력하세요</li>

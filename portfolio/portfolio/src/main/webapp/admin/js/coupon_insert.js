@@ -38,7 +38,7 @@ $(function (){
 			else{				
 			frm.method="POST";
 			frm.enctype="multipart/form-data";
-			frm.action="./coupon_insertok.do";
+			frm.action="./coupon_writeok.do";
 			frm.submit();
 			}
 		}
@@ -96,7 +96,6 @@ $(function (){
 	function $check(){
 		var $num_ck = /[^0-9]/g;
 		if($("#coupon_kind").val()==0){		
-			console.log($kind);
 			alert("쿠폰종류는 상품할인과 배송비할인 둘 중 하나로 입력하셔야 합니다.");
 			$("#coupon_kind").focus();
 			return false;
@@ -116,8 +115,9 @@ $(function (){
 			$("#coupon_discount").focus();
 			return false;
 		}
-		else if($num_ck.test($("#minmum_price").val())==true){
+		else if($num_ck.test($("#minimum_price").val())==true){
 			alert("숫자만 입력하셔야 합니다.");
+			console.log($num_ck.test($("#minimum_price").val()));
 			$("#minimum_price").focus();
 			return false;
 		}
