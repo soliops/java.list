@@ -11,7 +11,7 @@
   </welcome-file-list>
   <servlet>
   <servlet-name>add_masterok</servlet-name>
-  <servlet-class>admin_configure.add_masterok</servlet-class>
+  <servlet-class>admin_login.add_masterok</servlet-class>
   </servlet>
   <servlet-mapping>
   <servlet-name>add_masterok</servlet-name>
@@ -19,7 +19,7 @@
   </servlet-mapping>
    <servlet>
   <servlet-name>add_idcheck</servlet-name>
-  <servlet-class>admin_configure.add_idcheck</servlet-class>
+  <servlet-class>admin_login.add_idcheck</servlet-class>
   </servlet>
   <servlet-mapping>
   <servlet-name>add_idcheck</servlet-name>
@@ -27,7 +27,7 @@
   </servlet-mapping> 
   <servlet>
   <servlet-name>loginok</servlet-name>
-  <servlet-class>admin_configure.loginok</servlet-class>
+  <servlet-class>admin_login.loginok</servlet-class>
   </servlet>
   <servlet-mapping>
   <servlet-name>loginok</servlet-name>
@@ -35,7 +35,7 @@
   </servlet-mapping> 
   <servlet>
   <servlet-name>admin_listok</servlet-name>
-  <servlet-class>admin_configure.admin_listok</servlet-class>
+  <servlet-class>admin_main.admin_listok</servlet-class>
   </servlet>
   <servlet-mapping>
   <servlet-name>admin_listok</servlet-name>
@@ -43,7 +43,7 @@
   </servlet-mapping> 
   <servlet>
   <servlet-name>admin_siteinfook</servlet-name>
-  <servlet-class>admin_configure.admin_siteinfook</servlet-class>
+  <servlet-class>admin_configpage.admin_siteinfook</servlet-class>
   </servlet>
   <servlet-mapping>
   <servlet-name>admin_siteinfook</servlet-name>
@@ -51,7 +51,7 @@
   </servlet-mapping>   
   <servlet>
   <servlet-name>admin_config</servlet-name>
-  <servlet-class>admin_configure.admin_config</servlet-class>
+  <servlet-class>admin_configpage.admin_config</servlet-class>
   </servlet>
   <servlet-mapping>
   <servlet-name>admin_config</servlet-name>
@@ -59,7 +59,7 @@
   </servlet-mapping>   
     <servlet>
   <servlet-name>index</servlet-name>
-  <servlet-class>admin_configure.index</servlet-class>
+  <servlet-class>admin_login.index</servlet-class>
   </servlet>
   <servlet-mapping>
   <servlet-name>index</servlet-name>
@@ -67,7 +67,7 @@
   </servlet-mapping>   
   <servlet>
   <servlet-name>admin_main</servlet-name>
-  <servlet-class>admin_configure.admin_main</servlet-class>
+  <servlet-class>admin_main.admin_main</servlet-class>
   </servlet>
   <servlet-mapping>
   <servlet-name>admin_main</servlet-name>
@@ -75,7 +75,7 @@
   </servlet-mapping>   
   <servlet>
   <servlet-name>admin_notice_write</servlet-name>
-  <servlet-class>admin_configure.admin_notice_write</servlet-class>
+  <servlet-class>admin_notice.admin_notice_write</servlet-class>
   </servlet>
   <servlet-mapping>
   <servlet-name>admin_notice_write</servlet-name>
@@ -83,7 +83,7 @@
   </servlet-mapping>   
   <servlet>
   <servlet-name>admin_notice</servlet-name>
-  <servlet-class>admin_configure.admin_notice</servlet-class>
+  <servlet-class>admin_notice.admin_notice</servlet-class>
   </servlet>
   <servlet-mapping>
   <servlet-name>admin_notice</servlet-name>
@@ -91,7 +91,7 @@
   </servlet-mapping>  
     <servlet>
   <servlet-name>notice_list</servlet-name>
-  <servlet-class>admin_configure.notice_list</servlet-class>
+  <servlet-class>admin_notice.notice_list</servlet-class>
   </servlet>
   <servlet-mapping>
   <servlet-name>notice_list</servlet-name>
@@ -99,7 +99,7 @@
   </servlet-mapping>  
   <servlet>
   <servlet-name>notice_writeok</servlet-name>
-  <servlet-class>admin_configure.notice_writeok</servlet-class>
+  <servlet-class>admin_notice.notice_writeok</servlet-class>
   </servlet>
   <servlet-mapping>
   <servlet-name>notice_writeok</servlet-name>
