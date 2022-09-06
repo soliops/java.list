@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+ <typeAliases>
+ 	<typeAlias type="mydb.uservo" alias="uservo"></typeAlias>
+ </typeAliases>
+</configuration>
+<!-- 
+[select]
+모든 결과물에 대해서 getter,setter로 진행이 되도록 설정을 하게 됩니다. 
+-->

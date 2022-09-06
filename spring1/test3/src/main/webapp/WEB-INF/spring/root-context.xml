@@ -20,11 +20,14 @@
 	<!-- sqlSessionFactory : SQL 전체 실행에 대한 모든 객체를 연결하는 공간 (최고중요사항) 
 	configLocation : mybatis 전용 기본설정 사항
 	mapperLocations : sql문법을 매핑해주는 공간
+	classpath : 각 class와 공유할 수 있는 경로 말합니다.
 	-->
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 	<property name="dataSource" ref="dataSource"></property>
-<!-- 	<property name="configLocation" value="classpath:/mydb/mybatisConfig.xml"></property> -->
-<!-- 	<property name="mapperLocations" value="classpath:/mydb/mybatisMapper.xml"></property> -->
+	<!-- 
+	 -->
+	<property name="configLocation" value="classpath:/META-INF/mybatisConfig.xml"></property>
+	<property name="mapperLocations" value="classpath:/META-INF/mybatisMapper.xml"></property>
 	</bean>
 	
 	<!-- sqlSessionTemplate : SQL 쿼리문을 실행해 주는 곳입니다.-->

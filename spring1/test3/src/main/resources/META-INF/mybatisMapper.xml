@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="userDB">
+<select id="selectall" resultType="uservo">
+	select * from test3;
+</select>
+
+<select id="selectid" parameterType="string" resultType="uservo"> 
+	select * from test3 where mid=#{value}
+</select>
+
+<!-- <![CDATA[>]]> : 해당 기호 없이는 >, <, >=, <= 작동 불능 -->
+<select id="selectage" parameterType="int" resultType="uservo">
+	select * from test3 where mage <![CDATA[>]]> #{value}
+</select>
+<insert id="userinsert" parameterType="string">
+	insert into test3 values('0',#{mid},#{mpw},#{mnm},#{mtel},#{mage});
+</insert>
+<update id="userupdate" parameterType="string">
+	update test3 set mpw=#{mpw} where mid=#{mid} and mnm=#{mnm}
+</update>
+<delete id="userdelete" parameterType="string">
+	delete from test3 where mid=#{mid} and mpw=#{mpw} and mnm=#{mnm}
+</delete>
+</mapper> 
