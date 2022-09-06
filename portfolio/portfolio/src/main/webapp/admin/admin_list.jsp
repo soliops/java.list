@@ -30,9 +30,10 @@ else{
 int w = 0;
 int c = 1;
 while(w<al.size()){
+	c=al.size()-w;
 %>
 <ol class="new_admin_lists">
-    <li><%=al.get(w).get("admin_idx") %></li>
+    <li><%=c %></li>
     <li><%=al.get(w).get("admin_nm") %></li>
     <li><%=al.get(w).get("admin_id") %></li>
     <li><%=al.get(w).get("admin_tel") %></li>
