@@ -20,7 +20,7 @@ public class admin_category_write_select {
 				sql = "select * from category where cbcate_code='"+data.get(1)+"';";				
 			}
 			else {
-				sql = "select * from category where cscate_code='"+data.get(1)+"' and cbcate_code='"+data.get(3)+"';";
+				sql = "select * from category where cbcate_code='"+data.get(1)+"' and cscate_code='"+data.get(3)+"';";
 			}
 			PreparedStatement ps = ct.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery();

@@ -82,6 +82,8 @@ public class admin_product_select {
 				m.put("product_explain",rs.getString("product_explain"));
 				this.ar.add(m);
 			}
+			ct.close();
+			ps.close();
 		} catch (Exception e) {
 			e.getMessage();
 		}
