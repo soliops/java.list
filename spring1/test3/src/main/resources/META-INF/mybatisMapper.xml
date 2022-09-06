@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="userDB">
+<select id="whereid" parameterType="string">
+select * from #{tablenm} order by #{idx} #{andlimit}
+</select>
+
+<select id="whereid" parameterType="string">
+select * from #{tablenm} where #{search}
+</select>
+
 <select id="selectall" resultType="uservo">
 	select * from test3;
 </select>
