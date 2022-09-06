@@ -11,7 +11,7 @@
   </welcome-file-list>
   <servlet>
   <servlet-name>reserve</servlet-name>
-  <servlet-class>reser_system.reserve</servlet-class>
+  <servlet-class>reserve.reserve</servlet-class>
   </servlet>
   <servlet-mapping>
   <servlet-name>reserve</servlet-name>
@@ -19,10 +19,58 @@
   </servlet-mapping>
     <servlet>
   <servlet-name>reserveok</servlet-name>
-  <servlet-class>reser_system.reserveok</servlet-class>
+  <servlet-class>reserve.reserveok</servlet-class>
   </servlet>
   <servlet-mapping>
   <servlet-name>reserveok</servlet-name>
   <url-pattern>/reserveok.do</url-pattern>
   </servlet-mapping>
+    <servlet>
+  <servlet-name>check_view</servlet-name>
+  <servlet-class>reserve_check.check_view</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>check_view</servlet-name>
+  <url-pattern>/reserve_check.html</url-pattern>
+  </servlet-mapping> 
+  <servlet>
+  <servlet-name>check_ok</servlet-name>
+  <servlet-class>reserve_check.check_ok</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>check_ok</servlet-name>
+  <url-pattern>/check_ok.do</url-pattern>
+  </servlet-mapping>   
+  <servlet>
+  <servlet-name>index</servlet-name>
+  <servlet-class>reserve_index.index</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>index</servlet-name>
+  <url-pattern>/index.html</url-pattern>
+  </servlet-mapping>   
+  <servlet>
+  <servlet-name>reserve_info</servlet-name>
+  <servlet-class>reserve_info.reserve_info</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>reserve_info</servlet-name>
+  <url-pattern>/reserve_info.html</url-pattern>
+  </servlet-mapping>   
+  <servlet>
+  <servlet-name>reserve_modify</servlet-name>
+  <servlet-class>reserve_modify.reserve_modify</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>reserve_modify</servlet-name>
+  <url-pattern>/reserve_modify.html</url-pattern>
+  </servlet-mapping>   
+  <servlet>
+  <servlet-name>modify_ok</servlet-name>
+  <servlet-class>reserve_modify.modify_ok</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>modify_ok</servlet-name>
+  <url-pattern>/modify_ok.do</url-pattern>
+  </servlet-mapping>   
 </web-app>

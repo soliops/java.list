@@ -10,9 +10,8 @@
     <link rel="stylesheet" href="./css/default.css?v=3">
     <script src="./js/jquery.js"></script>
     <script src="./js/jquery-ui.js"></script>
-    <script src="./js/index.js"></script>
     <link rel="stylesheet" href="./js/jquery-ui.css?v=1">
-	<script src="./js/reserve2.js"></script>
+	<script src="./js/reserve.js?v=1"></script>
 </head>
 <body>
     <header class="header_css">
