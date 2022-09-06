@@ -78,6 +78,7 @@ public class xmljava {
 	}
 	//session.selectOne : 한개의 데이터
 	//session.selectList : 여러개의 데이터
+	//session.selectMap : session.selectMap("userDB.userdelete", 키값 ,vo); 키값을 중간에 넣음
 	//session.insert : 입력파트
 	//session.update : 수정파트
 	//session.delete : 삭제파트
