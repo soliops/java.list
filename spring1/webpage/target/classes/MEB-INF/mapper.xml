@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 
+parameterMap : Map, Hash 
+parameterType : 고정(String, int, Integer, float) 한개
+-->
+ <mapper namespace="sql">
+	<select id="select_test" parameterType="string" resultType="dataDAO">
+	select * from test3 where mid=#{value};
+	</select> 
+	<select id="selectall" resultType="dataDAO">
+	select * from test3;
+	</select>
+ </mapper>
