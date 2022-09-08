@@ -25,7 +25,8 @@
 </table>
 </body>
 <script>
-var today = "2022-09-07";
+/* Front(AJAX)는 apikey와 날짜를 파라미터에 적용하여 GET으로 전달 */
+var today = "2022-09-07"; //mysql 저장된 날짜
 var ajax = new XMLHttpRequest();
 ajax.open("GET","http://localhost:8080/webpage/movie?apikey=movie_opete95&apidate="+today,true);
 ajax.send();
