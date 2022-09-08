@@ -61,11 +61,11 @@ public class movie_api {
 				
 			}
 			else {
-				this.result="error : 32 { 해당 api키가 올바르지 않습니다. }";				
+				this.result="error : { 해당 api키가 올바르지 않습니다. }";				
 			}
 		}
 		} catch (Exception e) {
-			this.result="error2 : 31 { 해당 api키가 올바르지 않습니다. }";
+			this.result="error : { 해당 api키가 올바르지 않습니다. }";
 		}
 		return this.result;
 	}
