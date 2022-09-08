@@ -33,7 +33,9 @@ ajax.send();
 ajax.onreadystatechange = function (){
 	if(ajax.status==200 && ajax.readyState ==XMLHttpRequest.DONE){
 		var mdata = JSON.parse(ajax.response);
-		console.log(mdata);
+// 		var mdata = ajax.response;
+// 		var mdata2 = mdata.replaceAll(/\./gi," ");
+// 		console.log(mdata2);
 		html_print(mdata);
 	}
 }
