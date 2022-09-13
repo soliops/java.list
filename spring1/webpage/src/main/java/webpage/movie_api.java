@@ -4,13 +4,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-import javax.inject.Inject;
-import javax.swing.text.html.HTMLEditorKit.Parser;
-
 import org.apache.commons.dbcp.BasicDataSource;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -61,11 +57,11 @@ public class movie_api {
 				
 			}
 			else {
-				this.result="error : { 해당 api키가 올바르지 않습니다. }";				
+				this.result="error : 32 { 해당 api키가 올바르지 않습니다. }";				
 			}
 		}
 		} catch (Exception e) {
-			this.result="error : { 해당 api키가 올바르지 않습니다. }";
+			this.result="error2 : 31 { 해당 api키가 올바르지 않습니다. }";
 		}
 		return this.result;
 	}

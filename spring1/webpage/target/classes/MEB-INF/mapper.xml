@@ -13,4 +13,12 @@ parameterType : 고정(String, int, Integer, float) 한개
 	<select id="selectall" resultType="dataDAO">
 	select * from test3;
 	</select>
+	<select id="select_api" resultType="apiDAO">
+	select * from apimovie where <![CDATA[aindate >= #{value1} and aindate <= #{value2}]]>
+	</select>
+	<!-- Hashmap을 이용하여 2개 이상의 인자값을 받음 -->
+	<select id="select_api2" parameterType="hashmap" resultType="apiDAO">
+<!-- 	select * from apimovie where aindate between #{value1} and #{value2} -->
+	select * from apimovie where <![CDATA[aindate >= #{value1} and aindate <= #{value2}]]>	
+	</select>
  </mapper>
