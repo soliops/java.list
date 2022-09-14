@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+<bean name="person" class="aop.aop_person">
+<constructor-arg value="홍길동"></constructor-arg>
+<constructor-arg value="hong"></constructor-arg>
+<constructor-arg value="45"></constructor-arg>
+<constructor-arg value="1"></constructor-arg>
+</bean>
+<!-- property : 데이터 한개의 대한 의존성 주입 -->
+<!-- list : 배열 형태의 값을 구성할 때 사용하는 태그 입니다.-->
+<bean name="aop4" class="aop.aop_class4">
+<property name="listdata">
+<list>
+<value>일반회원</value>
+<value>실버회원</value>
+<value>골드회원</value>
+<value>VIP회원</value>
+<ref bean="person"/>
+</list>
+</property>
+</bean>
+
+</beans>
