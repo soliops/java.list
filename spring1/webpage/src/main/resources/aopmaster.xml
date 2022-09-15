@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+<!-- 실제 프로세서가 실행되는 설정		 -->
+<bean id="dao_class" class="aopmaster.aop_daotemp"></bean>
+<!-- 객체 메소드를 실행하는파트 -->
+<bean id="service_class1" class="aopmaster.aop_servicetemp">
+<property name="dao" ref="dao_class"/>
+</bean>
+<!-- log 기록 담당 -->
+<bean id="log_class" class="aopmaster.aop_log">
+<property name="jdbcurl" value="com.mysql.jdbc.Driver"></property>
+<property name="url" value="jdbc:mysql://umj7-009.cafe24.com/opete95"></property>
+<property name="username" value="opete95"></property>
+<property name="password" value="soli5857!@"></property>
+</bean>
+<!-- AOP 연결 부분 -->
+<aop:config>
+<aop:pointcut expression="within(aopmaster.*aop_servicetemp)" id="cts_service"/>
+<aop:pointcut expression="within(aopmaster.*aop_daotemp)" id="cts_dao"/>
+<aop:aspect id="timeck" ref="log_class">
+<!-- times : aop_log.java에 있는 times 실제 메소드명 -->
+<aop:around method="times" pointcut-ref="cts_service"/>
+<aop:around method="times" pointcut-ref="cts_dao"/>
+</aop:aspect>
+</aop:config>
+
+</beans>
