@@ -11,5 +11,5 @@
 <view-resolvers>
 <jsp prefix="/WEB-INF/views/" suffix=".jsp"/>
 </view-resolvers>
-<context:component-scan base-package="webpage,aop,aopmaster"></context:component-scan>
+<context:component-scan base-package="webpage,aop,aopmaster,nice,kakao"></context:component-scan>
 </beans:beans>
