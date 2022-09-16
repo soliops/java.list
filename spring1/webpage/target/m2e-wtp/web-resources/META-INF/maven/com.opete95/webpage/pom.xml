@@ -103,5 +103,11 @@
     <artifactId>aspectjtools</artifactId>
     <version>1.7.4</version>
 </dependency>
+<!-- jsp taglib 사용 -->
+<dependency>
+    <groupId>javax.servlet</groupId>
+    <artifactId>jstl</artifactId>
+    <version>1.2</version>
+</dependency>
 </dependencies>
 </project>
