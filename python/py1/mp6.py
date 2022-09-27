@@ -25,5 +25,6 @@ bar = mpt.barh(person,product,color=barcolor)
 # bar[2].set_hatch('x')
 for idx, txt in enumerate(bar): # bar (문자,숫자 겸용)
     #txt.get_width() : 막대가로 값을 계산해서 출력
-    mpt.text(idx, txt.get_width(),product[idx],ha="center")
+    #주의점 barh 사용시 x축을 기준으로 get_width() 사용
+    mpt.text(txt.get_width()+5,idx,product[idx],ha="center")
 mpt.show()
