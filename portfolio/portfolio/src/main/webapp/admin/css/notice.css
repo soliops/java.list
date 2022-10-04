@@ -59,10 +59,24 @@
     text-align: right;
     margin-bottom: 20px;
 }
-.border_del { 
+.border_list { 
     width: 120px;
     height: 40px;
     background-color: rgb(27, 25, 25);
+    color: white; 
+    cursor: pointer;
+}
+.border_modify { 
+    width: 120px;
+    height: 40px;
+    background-color: rgb(20, 4, 91);
+    color: white; 
+    cursor: pointer;
+}
+.border_del { 
+    width: 120px;
+    height: 40px;
+    background-color: rgb(132, 6, 6);
     color: white; 
     cursor: pointer;
 }
@@ -170,4 +184,8 @@
 .write_view > .ul_height > li { 
     padding-top: 5px;
     height: 410px;
+}
+.fileview { 
+    margin-left: 10px;
+    color: brown;
 }

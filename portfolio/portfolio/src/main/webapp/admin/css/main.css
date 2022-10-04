@@ -51,12 +51,13 @@
     color: orangered;
 }
 .maincss { 
-    height: auto;
+    height: 100vh;
     padding-top: 20px;
+    position: relative;
 }
 .maincss > section:nth-of-type(1) {
     width: 1100px;
-    height: 300px;
+    height: auto;
     margin: 0 auto;
 }
 .maincss > section:nth-of-type(1) > p {
@@ -163,7 +164,10 @@
     cursor: pointer;
 }
 .main_copyright {
+    width: 100%;
+    position: absolute;
     height: 40px;
+    top:100%;
     background-color: black;
 }
 .main_copyright > div {

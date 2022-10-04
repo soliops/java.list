@@ -171,7 +171,7 @@ $(function(){
    					
    				}
    				else{   					
-   				add_master_frm.method="POST";
+   					add_master_frm.method="POST";
    	    			add_master_frm.enctype="application/x-www-form-urlencoded";
    	    			add_master_frm.action="../add_masterok.do";
    	    			add_master_frm.submit();

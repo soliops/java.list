@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>관리자 페이지</title>
     <link rel="stylesheet" type="text/css" href="./css/basic.css">
-    <link rel="stylesheet" type="text/css" href="./css/login.css?v=1">
+    <link rel="stylesheet" type="text/css" href="./css/mainlogin.css?v=3">
     <link rel="icon" href="./img/logo.png" sizes="128x128">
     <link rel="icon" href="./img/logo.png" sizes="64x64">
     <link rel="icon" href="./img/logo.png" sizes="32x32">
@@ -41,7 +41,7 @@
     
     </script>
 </head>
-<body>
+<body style="height:100vh;">
 <%   
 String id = (String)session.getAttribute("admin_id");
 		if(id!=null){        

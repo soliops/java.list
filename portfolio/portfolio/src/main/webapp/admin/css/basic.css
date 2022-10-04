@@ -7,7 +7,7 @@ blockquote:before, blockquote:after,q:before, q:after {content:'';content:none}
 input,select,textarea,button {vertical-align:middle}
 input:focus, button:focus, textarea:focus {outline:none;}
 button {border:0 none;background-color:transparent;cursor:pointer}
-body {background:#fff;-webkit-text-size-adjust:none;}
+body {background:#fff;-webkit-text-size-adjust:none; position: relative;}
 body,th,td,input,select,textarea,button {font-size:12px; color:#333; font-family: 'Noto Sans KR', sans-serif;}
 a {color:#ccc;text-decoration:none}
 a:active, a:hover {text-decoration:none;}

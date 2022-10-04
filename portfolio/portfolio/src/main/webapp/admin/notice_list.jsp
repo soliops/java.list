@@ -23,12 +23,11 @@ double pagenumber= (double)page_data.get(2);
 <%if(notice_list.size()!=0||notice_nlist.size()!=0){
 	int t=0;
 	do{
-	
  %>
 <ol>
     <li><input type="checkbox" name="view_check" id="view_check<%=notice_list.get(t).get("notice_idx")%>" value="<%=notice_list.get(t).get("notice_idx")%>" onclick="view_allchange();"></li>
     <li>공지 사항</li>
-    <li><%=notice_list.get(t).get("notice_title")%></li>
+    <li><a href="./admin_notice_view.html?idx=<%=notice_list.get(t).get("notice_idx")%>"><%=notice_list.get(t).get("notice_title")%></a></li>
     <li><%=notice_list.get(t).get("notice_writer")%></li>
     <li><%=notice_list.get(t).get("notice_date").toString().substring(0,10)%></li>
     <li>100</li>
@@ -44,7 +43,7 @@ double pagenumber= (double)page_data.get(2);
 <ol>
    <li><input type="checkbox" name="view_check"  id="view_check<%=notice_nlist.get(r).get("notice_idx")%>" value="<%=notice_nlist.get(r).get("notice_idx")%>" onclick="view_allchange();"></li>
    <li><%=no%></li>
-   <li><%=notice_nlist.get(r).get("notice_title")%></li>
+   <li><a href="./admin_notice_view.html?idx=<%=notice_nlist.get(r).get("notice_idx")%>"><%=notice_nlist.get(r).get("notice_title")%></a></li>
    <li><%=notice_nlist.get(r).get("notice_writer")%></li>
    <li><%=notice_nlist.get(r).get("notice_date").toString().substring(0,10)%></li>
    <li>100</li>
