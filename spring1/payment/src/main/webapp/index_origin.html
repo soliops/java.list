@@ -1,6 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<!doctype html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko"  xmlns:fb="http://ogp.me/ns/fb#"  xmlns:og="http://ogp.me/ns#">
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/fb/website#">
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -58,34 +56,36 @@ background-color:#ffffff;}
 
 <div id="wrap">
 <div id="layout_wrap" class="layout_wrap">
-    <%@ include file="./top.html" %>
+    <!--상단 영역 top.html-->
 </div>
 <div class="sliderA wide_visual_slider">
-    <%@ include file="./banner.html" %>
+    <!-- 배너 영역 banner.html-->
 </div>
 
 <div class="resp_wrap display_wrap">
-    <%@ include file="./collection.html" %>
+   <!-- 
+        collection 상품 파트  collection.html
+    -->
 </div>
 <br/>
 <br/>
 <br/>
 <div class="full_bnr">
-    <%@ include file="./av.html" %>    
+    <!--신상품 광고 파트 av.html-->
 </div>
 <div class="full_bnr2">
-    <%@ include file="./av2.html" %>
+   <!--이벤트 광고 파트 av2.html-->
 </div>
 <div class="resp_wrap display_wrap">
-    <%@ include file="./newproduct.html" %>
+   <!--newproduct.html-->
 </div>
 <div class="resp_wrap display_wrap">
-    <%@ include file="./bestproduct.html" %>
+    <!-- bestproduct.html-->
 </div>
 <div id="layout_footer" class="layout_footer">
-    <%@ include file="./footer.html" %>
+    <!-- footer.html-->
 </div>
-</div>
+
 <script type="text/javascript">
 	$(function() {
 		/* 반응형 슬라이드 배너 관련( 절대 삭제 금지 ) */
