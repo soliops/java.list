@@ -193,4 +193,44 @@
   <servlet-name>coupon_writeok</servlet-name>
   <url-pattern>/admin/coupon_writeok.do</url-pattern>
   </servlet-mapping>  
+  <servlet>
+  <servlet-name>admin_info</servlet-name>
+  <servlet-class>admin_info.admin_info</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>admin_info</servlet-name>
+  <url-pattern>/admin/admin_info.html</url-pattern>
+  </servlet-mapping>    
+  <servlet>
+  <servlet-name>admin_infook</servlet-name>
+  <servlet-class>admin_info.admin_infook</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>admin_infook</servlet-name>
+  <url-pattern>/admin/admin_infook.do</url-pattern>
+  </servlet-mapping> 
+  <servlet>
+  <servlet-name>admin_notice_view</servlet-name>
+  <servlet-class>admin_notice.admin_notice_view</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>admin_notice_view</servlet-name>
+  <url-pattern>/admin/admin_notice_view.html</url-pattern>
+  </servlet-mapping>   
+  <servlet>
+  <servlet-name>admin_notice_viewok</servlet-name>
+  <servlet-class>admin_notice.admin_notice_viewok</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>admin_notice_viewok</servlet-name>
+  <url-pattern>/admin/admin_notice_viewok.do</url-pattern>
+  </servlet-mapping>   
+  <servlet>
+  <servlet-name>admin_notice_view_delok</servlet-name>
+  <servlet-class>admin_notice.admin_notice_view_delok</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>admin_notice_view_delok</servlet-name>
+  <url-pattern>/admin/admin_notice_view_delok.do</url-pattern>
+  </servlet-mapping>     
 </web-app>
