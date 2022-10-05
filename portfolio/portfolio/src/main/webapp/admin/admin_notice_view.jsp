@@ -27,10 +27,6 @@ String admin_main_nm = (String)session.getAttribute("admin_nm");
 if(admin_main_id==null){
 	out.print("<script>alert('자동으로 로그아웃 되었습니다.');location.href='./index.html';</script>");
 }
-
-ArrayList<Map<String,Object>> list = (ArrayList<Map<String,Object>>)request.getAttribute("list");
-String ck = (String)list.get(0).get("notice_print");
-String text = ((String)list.get(0).get("notice_text")).replace("<p>","").replace("</p>","");
 %>
 <body>
 <header class="headercss">

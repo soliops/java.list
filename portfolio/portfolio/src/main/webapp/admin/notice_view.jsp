@@ -2,7 +2,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <meta charset="UTF-8">
-
+<%
+ArrayList<Map<String,Object>> list = (ArrayList<Map<String,Object>>)request.getAttribute("list");
+String ck = (String)list.get(0).get("notice_print");
+String text = ((String)list.get(0).get("notice_text")).replace("<p>","").replace("</p>","");
+%>
 <p>공지사항 VIEW 페이지</p>
 <div class="write_view">
 <ul>
@@ -12,7 +16,7 @@
 <ul>
     <li>공지사항 여부</li>
     <li>
-        <label class="label_notice"><em class="cbox"><input type="checkbox" name="notice_print" id="notice_print" value="<%=ck %>" <%if(ck.equals("Y")){%>checked<%} %>></em> 공지 출력</label> ※ 공지출력을 체크할 시 해당 글 내용은 최상단에 노출 되어 집니다.
+        <label class="label_notice"><em class="cbox"><input type="checkbox" name="notice_print" id="notice_print" value="Y" <%if(ck.equals("Y")){%>checked<%} %>><input type="hidden" name="notice_print" id="notice_print_hidden" value="N"></em> 공지 출력</label> ※ 공지출력을 체크할 시 해당 글 내용은 최상단에 노출 되어 집니다.
     </li>
 </ul>
 <ul>
@@ -30,7 +34,7 @@
 <ul>
     <li>첨부파일</li>
     <li>
-        <input type="file" name="notice_file" id="notice_file"> ※ 새로운 첨부파일 적용시 기본 첨부파일은 삭제 됩니다.
+        <input type="file" name="notice_file" id="notice_file" value=""> ※ 새로운 첨부파일 적용시 기본 첨부파일은 삭제 됩니다.
         <em class="fileview">기존 첨부 파일명 : <%=list.get(0).get("notice_file") %></em>
         <input type="hidden" name="notice_file_origin" id="notice_file_origin" value="<%=list.get(0).get("notice_file") %>">
     </li>

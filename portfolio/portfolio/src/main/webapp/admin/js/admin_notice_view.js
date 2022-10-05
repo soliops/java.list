@@ -11,7 +11,11 @@ $(function(){
 			alert("공지사항 내용을 입력하세요.");
 			CKEDITOR.instances.notice_text.focus();
 		}
+		else if($("#notice_print").checked){
+		frm.notice_print_hidden.disabled = true;
+		}
 		else{
+			frm.notice_print.value="N";
 			frm.method="POST" 
 			frm.enctype="multipart/form-data"
 			frm.action="./admin_notice_viewok.do";
