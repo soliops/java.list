@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 
+parameterMap : Map, Hash 
+parameterType : 고정(String, int, Integer, float) 한개
+-->
+ <mapper namespace="sql">
+ <select id="cs_notice_select" resultType="notice_dao">
+ select * from admin_notice where notice_print='Y' and notice_title like CONCAT('%',#{search},'%') order by idx desc;
+ </select>
+ <select id="cs_notice_count" resultType="int">
+ select count(*) as count from admin_notice where notice_print='N';
+ </select>
+<select id="cs_notice_select2" parameterType="hashmap" resultType="notice_dao">
+select * from admin_notice where notice_print=#{check} and notice_title like CONCAT('%',#{search},'%') order by idx desc limit #{startpage},#{pageview};
+</select>
+ </mapper>
+	<!-- Hashmap을 이용하여 2개 이상의 인자값을 받음 -->
+<!-- 	<select id="select_api2" parameterType="hashmap" resultType="apiDAO"> -->
+<!-- 	select * from apimovie where aindate between #{value1} and #{value2} -->
+<!-- 	select * from apimovie where <![CDATA[aindate >= #{value1} and aindate <= #{value2}]]>	 -->
+<!-- 	</select> -->

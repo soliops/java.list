@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+<typeAliases>
+<!-- 계속적으로 DAO를 추가 (새롭게 config.xml을 만들 필요가 없다) 
+<typeAlias alias="dataDAO" type="webpage.dataDAO"/>
+<typeAlias alias="apiDAO" type="webpage.movieDAO"/>
+	alias는 절대 중복되면 안됨 -->
+<typeAlias alias="notice_dao" type="portfolio2.notice_dao"/>
+</typeAliases>
+</configuration>
