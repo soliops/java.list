@@ -1,0 +1,86 @@
+
+@charset "utf-8";
+
+
+.goodS_info { padding:3px 0; font-size:13px; line-height:1.4; font-weight:400; color:#767676; }
+.goodS_info a:hover { text-decoration:underline; }
+.infO_group { clear:both; font-size:0; line-height:0; }
+.infO_group .goodS_info { display:inline-block; margin-right:8px; }
+.infO_group .goodS_info:last-child { margin-right:0; }
+.goodS_info .warning_text { font-size:15px; }
+
+.displaY_goods_name { font-size:15px; line-height:1.4; }
+.displaY_goods_name a { color:#333; }
+.infO_group .goodS_info + .displaY_goods_name { display:inline; }
+.displaY_sales_price,
+.displaY_goods_price { color:#333; }
+.displaY_sales_price .nuM,
+.displaY_goods_price .nuM { font-size:17px; line-height:1.2; font-weight:500; letter-spacing:-1px; }
+.displaY_consumer_price { text-decoration:line-through; color:#999; }
+.displaY_consumer_price .areA { color:#999; }
+.displaY_sales_percent { color:#007cd2; }
+.displaY_sales_percent .nuM { font-size:17px; line-height:1.2; font-weight:500; letter-spacing:-1px; }
+.infO_group .displaY_sales_price, .infO_group .displaY_goods_price, .infO_group .displaY_consumer_price, .infO_group .displaY_sales_percent { margin-right:10px; }
+.displaY_besong { display:inline-block; box-sizing:border-box; height:24px; font-size:12px; line-height:24px; padding:0 6px; border:1px #ddd solid; }
+.infO_group .goodS_info.displaY_besong { margin-right:-1px; }
+.displaY_event_order_ea .nuM { display:inline-block; margin-left:4px; }
+.displaY_review_count .nuM { display:inline-block; margin-left:4px; }
+.displaY_seller_grade_b .icoN { max-height:16px; margin-right:4px; }
+.displaY_seller_grade_a + .displaY_seller_grade_b { margin-left:-5px; }
+.displaY_seller_grade_a + .displaY_seller_grade_b:before { display:inline; content:'('; }
+.displaY_seller_grade_a + .displaY_seller_grade_b:after { display:inline; content:')'; }
+.displaY_icon_images { font-size:0; line-height:0; padding:5px 0; }
+.displaY_icon_images img { margin-right:6px; }
+.displaY_icon_images img:last-child { margin-right:0; }
+.displaY_brand_name { font-size:15px; line-height:1.4; font-weight:500; color:#333; }
+.displaY_brand_name .areA:before { display:inline; content:'[ '; font-weight:300; color:#999; }
+.displaY_brand_name .areA:after { display:inline; content:' ]'; font-weight:300; color:#999; }
+.infO_group .displaY_brand_name { padding-bottom:0; }
+.displaY_goods_short_desc { color:#999; }
+.displaY_review_score_a { font-size:14px; color:#f7c000; text-shadow:0 0 1px #ff0000; }
+.displaY_review_score_a .ev_active2 { display:inline-block; position:relative; vertical-align:top; width:80px; height:16px; font-size:0; background-color:#eee; }
+.displaY_review_score_a .ev_active2:after { display:block; content:''; position:absolute; left:0; top:0; width:100%; height:100%; background:url('/data/icon/goodsdisplay/img_ev_star.png') no-repeat; background-size:cover; }
+.displaY_review_score_a .ev_active2>b { display:block; height:100%; background:#999; }
+.displaY_review_score_b .nuM { font-size:17px; line-height:1.2; color:#333; }
+.displaY_review2_score_a { font-size:14px; color:#f7c000; text-shadow:0 0 1px #ff0000; }
+.displaY_review2_score_b .nuM { font-size:17px; line-height:1.2; color:#333; }
+.displaY_review2_score_b:before { display:inline; content:'매우만족'; }
+.displaY_review2_score_c .nuM { font-size:17px; line-height:1.2; color:#333; }
+.displaY_review2_score_b + .displaY_review2_score_c:before { display:inline; content:'('; color:#999; }
+.displaY_review2_score_b + .displaY_review2_score_c:after { display:inline; content:')'; color:#999; }
+.displaY_review2_score_b + .displaY_review2_score_c { margin-left:-4px; }
+.displaY_best_review .titlE { display:block; font-size:14px; font-weight:400; color:#697ba4; }
+/* .displaY_best_review .titlE:before { display:inline; content:'[매우만족] '; } */
+.displaY_best_review .desC { font-size:12px; display:block; color:#999; }
+.displaY_best_review .titlE + .desC { padding-top:2px; }
+.displaY_color_option .areA { font-size:0; line-height:0; display:inline-block; box-sizing:border-box; width:16px; height:8px; border-radius:4px; }
+.displaY_color_option .areA.border { border:1px #ddd solid; }
+.displaY_page_view .areA { display:inline-block; height:16px; padding:0 0 0 24px; line-height:16px; background:url('/data/icon/goodsdisplay/preview/icon_pageview.png') 0 50% no-repeat; }
+.displaY_zzim .areA { display:inline-block; height:16px; padding:0 0 0 18px; line-height:16px; cursor:pointer; background:url('/data/icon/goodsdisplay/preview/icon_zzim_off.png') 1px 50% no-repeat; }
+.displaY_zzim.on .areA { background-image:url('/data/icon/goodsdisplay/preview/icon_zzim_on.png'); color:#ef5061; }
+.displaY_page_view + .displaY_zzim,
+.displaY_zzim + .displaY_page_view { margin-left:4px; }
+.displaY_event_time { font-size:13px; color:#697ba4; }
+.displaY_event_time .title { display:inline-block; width:18px; height:18px; vertical-align:middle; background:#333
+url('/data/icon/goodsdisplay/preview/icon_clock.png') 50% 50% no-repeat; background-size:cover; background-position:50% 50%; background-repeat:no-repeat; }
+.displaY_event_time .time_container { display:inline-block; vertical-align:middle; height:22px; padding:0 7px; line-height:22px; font-weight:300; background:#333; color:#fff; border-radius:2px; }
+.displaY_event_time .time_container .num2 { font-size:14px; font-weight:400; }
+
+.infO_style_2 .displaY_consumer_price { padding-bottom:0; }
+.infO_style_2 .displaY_sales_price,
+.infO_style_2 .displaY_goods_price,
+.infO_style_2 .displaY_sales_percent { padding-top:0; line-height:1.0; }
+.infO_style_2 .displaY_sales_percent:after { display:inline; content:'↓'; position:relative; left:-4px; top:-1px; }
+
+.infO_style_3 .displaY_color_option { border-top:1px #ddd dashed; margin-top:4px; padding-top:8px; }
+.infO_style_3 .displaY_color_option .areA { width:20px; height:10px; border-radius:0; }
+
+.infO_style_4 .displaY_goods_name { padding-bottom:8px; margin-bottom:5px; border-bottom:1px #ddd solid; }
+
+.infO_style_7 .displaY_besong { border:none; padding-left:0; padding-right:10px; font-size:13px; }
+.infO_style_7 .displaY_event_order_ea .nuM { margin-left:0; font-size:15px; color:#333; line-height:1.2; }
+
+@media only screen and (max-width:767px) {
+	.infO_group .displaY_sales_price, .infO_group .displaY_goods_price, .infO_group .displaY_consumer_price, .infO_group .displaY_sales_percent { margin-right:4px; }
+}
+
