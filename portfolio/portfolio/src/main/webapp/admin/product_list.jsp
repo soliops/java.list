@@ -9,6 +9,9 @@ ArrayList<Object> page_data = (ArrayList<Object>)request.getAttribute("page_data
 int total = (int)page_data.get(3);
 int startpage = (int)page_data.get(2);
 double pagenumber= (double)page_data.get(1);
+String pn = request.getParameter("page");
+if(pn==null){pn="1";}
+int pt = Integer.parseInt(pn);
 %>
 <p>상품관리 페이지</p>
 <div class="subpage_view">
@@ -42,15 +45,15 @@ if(list.size()!=0){
         <li>품절</li>
         <li>관리</li>
     </ul>
-<%if(list.size()!=0){ 
+<%
+if(list.size()!=0){ 
 int w=0;
 do{
-	String img = (String)(list.get(w).get("product_img1"));
 %>
     <ul>
         <li><input type="checkbox" name="product_check" id="product_check<%=list.get(w).get("pidx")%>" value="<%=list.get(w).get("pidx")%>" onclick="product_change(this);"></li>
         <li><%=list.get(w).get("product_code")%></li> 
-        <li><img src="<%=img%>" style="height:90%; margin-top:1px;" alt="사진 없음"></li>
+        <li><img src="<%=list.get(w).get("product_img1")%>" style="height:90%; margin-top:1px;" alt="사진 없음"></li>
         <li><%=list.get(w).get("product_name")%></li>
         <li><%=list.get(w).get("cbcate_code")%><%=list.get(w).get("cscate_code")%></li>
         <li><%=list.get(w).get("product_price")%></li>
@@ -72,15 +75,15 @@ w++;
 </div>
 <div class="subpage_view3">
     <ul class="pageing">
+        <li onclick="pagefirst();"><img src="./ico/double_left.svg"></li>
+        <li onclick="pagebefore(<%=pt-1%>);"><img src="./ico/left.svg"></li>
 <%int p=1;
 do{%>
-        <li onclick="pagefirst();"><img src="./ico/double_left.svg"></li>
-        <li onclick="pagebefore(<%=p-1%>);"><img src="./ico/left.svg"></li>
         <li onclick="pagego(<%=p%>);"><%=p%></li>
-        <li onclick="pagenext(<%=p+1%>,<%=pagenumber%>);"><img src="./ico/right.svg"></li>
-        <li onclick="pageend(<%=pagenumber%>);"><img src="./ico/double_right.svg"></li>
 <%
 p++;}while(p<=pagenumber); %>    
+        <li onclick="pagenext(<%=pt+1%>,<%=p%>);"><img src="./ico/right.svg"></li>
+        <li onclick="pageend(<%=pagenumber%>);"><img src="./ico/double_right.svg"></li>
     </ul>
 </div>
 <div class="subpage_view4">

@@ -146,10 +146,37 @@ function product_add(){
 			
 		}
 		else{
+		var ct =0;
+		for(var w=1;w<4;w++){
+			var filenm = document.getElementById("product_img"+w).value;
+			if(filenm!=""){
+				var property = filenm.slice(filenm.indexOf(".")+1).toLowerCase();
+				if(property!="jpg" && property!="jpeg" && property!="bmp" && property!="gif" && property!="png" && property!="webp"){
+					alert("파일첨부에는 이미지 파일만 사용하시길 바랍니다.");
+					document.getElementById("product_img"+w).value ="";
+				
+				}
+				else{
+					ct++;
+				}
+			}
+		}
+		var gopage="yes";
+		var z=1;
+		while(z<=ct){
+			var ck = document.getElementById("product_img"+z).value;
+			if(ck==""){
+				alert("파일 첨부는 순서대로 하시길 바랍니다.");
+				gopage="no";
+			}
+			z++
+		}
+		if(gopage=="yes"){
 			frm.method="post";
 			frm.action="./product_writeok.do";
 			frm.enctype="multipart/form-data";
 			frm.submit();			
+		}
 		}
 	}
 }

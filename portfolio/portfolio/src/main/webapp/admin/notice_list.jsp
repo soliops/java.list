@@ -9,6 +9,9 @@ ArrayList<Object> page_data = (ArrayList<Object>)request.getAttribute("page_data
 int total = (int)page_data.get(3);
 int startpage = (int)page_data.get(1);
 double pagenumber= (double)page_data.get(2);
+String pt = request.getParameter("page");
+if(pt==null){pt="1";}
+int pn = Integer.parseInt(pt);
 %>
 <p>공지사항 관리페이지</p>
 <div class="subpage_view">
@@ -66,18 +69,19 @@ else{
 </div>
 <div class="border_page">
     <ul class="pageing">
+        <li onclick="pagefirst();"><img src="./ico/double_left.svg"></li>
+        <li onclick="pagebefore(<%=pn-1%>);"><img src="./ico/left.svg"></li>
 <%
+
 int p=1;
 do{
  	%>
-        <li onclick="pagefirst();"><img src="./ico/double_left.svg"></li>
-        <li onclick="pagebefore(<%=p-1%>);"><img src="./ico/left.svg"></li>
         <li onclick="pagego(<%=p%>);"><%=p%></li>        
-        <li onclick="pagenext(<%=p+1%>,<%=pagenumber%>);"><img src="./ico/right.svg"></li>
-        <li onclick="pageend(<%=pagenumber%>);"><img src="./ico/double_right.svg"></li>
 <%
 p++;
 }while(p<=pagenumber);
 %>
+        <li onclick="pagenext(<%=pn+1%>,<%=pagenumber%>);"><img src="./ico/right.svg"></li>
+        <li onclick="pageend(<%=pagenumber%>);"><img src="./ico/double_right.svg"></li>
     </ul>
 </div>

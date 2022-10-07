@@ -46,6 +46,13 @@
 </footer>
 </body>
 <script>
-CKEDITOR.replace("product_explain");
+CKEDITOR.replace("product_explain",{
+	height:290,
+	width:"100%",
+// 	filebrowserUploadMethod = 'form',
+// 	filebrowserUploadUrl : './admin_product_write.html?type=file',   
+// 	filebrowserImageUploadUrl : './admin_product_write.html?type=image',   
+// 	filebrowserFlashUploadUrl : './admin_product_write.html?type=flash'
+});
 </script>
 </html>
