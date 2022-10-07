@@ -34,7 +34,6 @@ public class admin_product_select {
 			else {
 				startpage=((Integer.parseInt(pgno))-1)*pageview;
 			}
-			
 			if(total%pageview==0) {
 				pagenumber=total/pageview;
 			}
@@ -48,7 +47,7 @@ public class admin_product_select {
 			this.page.add(total);
 			String sql="";
 			if(product==""&&search=="" || product==null && search==null || product=="null" && search=="null") {
-				sql = "select * from product order by product_code asc;";				
+				sql = "select * from product order by product_code asc limit "+startpage+","+pageview+";";			
 			}
 			else {
 				if(product.equals("0")) {
@@ -58,7 +57,6 @@ public class admin_product_select {
 					sql="select * from product where product_code like '%"+search+"%' order by product_code asc limit "+startpage+","+pageview+";";					
 				}
 			}
-			
 			PreparedStatement ps = ct.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery();
 			this.ar = new ArrayList<Map<String,Object>>();

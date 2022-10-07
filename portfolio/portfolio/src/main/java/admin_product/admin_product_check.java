@@ -36,7 +36,7 @@ public class admin_product_check {
 	}
 	public void catecode_check(String data2,String data3) {
 		Connection ct = null;
-		try {
+		try {			
 			dbconfig db = new dbconfig();
 			ct = db.cafe24();
 			String sql = "select * from category where cbcate_code='"+data2+"';";
