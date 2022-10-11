@@ -62,7 +62,6 @@ public class product_writeok extends HttpServlet {
 			String filetext = request.getParameter(filecheck);
 			if(filecheck.equals("product_img1")||filecheck.equals("product_img2")||filecheck.equals("product_img3")) {
 				String originName = time + file.getSubmittedFileName();
-//				String realpath = "C:/portfolio/portfolio/src/main/webapp/admin/product_img/";
 				if(originName==null||originName=="") {						
 					filetext="";
 				}
@@ -71,9 +70,8 @@ public class product_writeok extends HttpServlet {
 					File fe = new File(path);
 					if(!fe.exists()) {fe.mkdir();}
 					file.write(filetext);
-//					filetext="./product_img/"+originName;
+					filetext="./product_img/"+originName;
 				}
-//				filetext=filetext.replace("C:/portfolio/portfolio/src/main/webapp/admin",".");
 			}
 			ar.add(filetext);
 			}

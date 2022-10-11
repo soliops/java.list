@@ -35,8 +35,8 @@ public class cate_writeok extends HttpServlet {
 			String allcheck = em.nextElement();
 			String emcheck=request.getParameter(allcheck);
 			if(allcheck.equals("classcode")) {				
-				if(emcheck.length()==3) {
-					emcheck+="000";
+				if(emcheck.length()==2) {
+					emcheck+="00";
 				}
 			}
 			else if(allcheck.equals("cbcate_use")) {
