@@ -22,8 +22,8 @@ function cate_create(){
 				alert("대메뉴는 영어, 한글, 숫자만 입력 가능합니다.");
 				frm.cbcate_name.focus();		
 			}
-			else if(frm.cbcate_code.value.length!=3){
-				alert("대메뉴 코드는 무조건 3자리 숫자로 입력하셔야 합니다.");
+			else if(frm.cbcate_code.value.length!=2){
+				alert("대메뉴 코드는 무조건 2자리 숫자로 입력하셔야 합니다.");
 				frm.cbcate_code.focus();
 			}
 			else{
@@ -45,12 +45,12 @@ function cate_create(){
 					alert("소메뉴명은 영어, 한글, 숫자만 입력 가능합니다.");
 					frm.cscate_name.focus();
 				}
-				else if(frm.cbcate_code.value.length!=3){
-				alert("대메뉴 코드는 무조건 3자리 숫자로 입력하셔야 합니다.");
+				else if(frm.cbcate_code.value.length!=2){
+				alert("대메뉴 코드는 무조건 2자리 숫자로 입력하셔야 합니다.");
 				frm.cbcate_code.focus();
 				}
-				else if(frm.cscate_code.value.length!=3){
-				alert("소메뉴 코드는 무조건 3자리 숫자로 입력하셔야 합니다.");
+				else if(frm.cscate_code.value.length!=2){
+				alert("소메뉴 코드는 무조건 2자리 숫자로 입력하셔야 합니다.");
 				frm.cscate_code.focus();
 				}
 				else{	

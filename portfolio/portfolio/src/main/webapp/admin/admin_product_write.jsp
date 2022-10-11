@@ -41,7 +41,7 @@
 </section>
 </main>
 </form>
-<footer class="main_copyright">
+<footer class="main_copyright" style="margin-top:40%;">
 <%@ include file = "admin_footer.html"  %>
 </footer>
 </body>
@@ -49,10 +49,6 @@
 CKEDITOR.replace("product_explain",{
 	height:290,
 	width:"100%",
-// 	filebrowserUploadMethod = 'form',
-// 	filebrowserUploadUrl : './admin_product_write.html?type=file',   
-// 	filebrowserImageUploadUrl : './admin_product_write.html?type=image',   
-// 	filebrowserFlashUploadUrl : './admin_product_write.html?type=flash'
 });
 </script>
 </html>

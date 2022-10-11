@@ -6,19 +6,19 @@
     <ul>
         <li>대메뉴 카테고리</li>
         <li>
-            <input type="text" class="product_input1" name="cbcate_code" id="cbcate_code" maxlength="3"> 
+            <input type="text" class="product_input1" name="cbcate_code" id="cbcate_code" maxlength="2"> 
         </li>
     </ul>
     <ul>
         <li>소메뉴 카테고리</li>
         <li>
-            <input type="text" class="product_input1" name="cscate_code" id="cscate_code" maxlength="3"> 
+            <input type="text" class="product_input1" name="cscate_code" id="cscate_code" maxlength="2"> 
         </li>
     </ul>
     <ul>
         <li>상품코드</li>
         <li>
-            <input type="text" class="product_input1" name="product_code" id="product_code" maxlength="8"> 
+            <input type="text" class="product_input1" name="product_code" id="product_code" maxlength="6"> 
             <input type="button" value="중복확인" title="중복확인" class="product_btn" onclick="code_check();"> <span class="help_text">※ 상품코드는 절대 중복되지 않도록 합니다.</span>
         </li>
     </ul>

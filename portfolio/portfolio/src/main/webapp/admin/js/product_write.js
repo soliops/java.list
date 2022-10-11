@@ -9,8 +9,8 @@ function code_check(){
 		frm.product_code.focus();
 		return false;
 	}
-	else if(frm.product_code.value.length!=8){
-		alert("상품코드는 8자리를 입력하셔야 합니다.");
+	else if(frm.product_code.value.length!=6){
+		alert("상품코드는 6자리를 입력하셔야 합니다.");
 		frm.product_code.focus();		
 		return false;
 	}
@@ -63,8 +63,8 @@ function all_check(){
 		frm.cbcate_code.focus();
 		return false;
 	}
-	else if(frm.cbcate_code.value.length!=3){
-		alert("대메뉴 카테고리는 3자리 숫자를 입력하셔야 합니다.");
+	else if(frm.cbcate_code.value.length!=2){
+		alert("대메뉴 카테고리는 2자리 숫자를 입력하셔야 합니다.");
 		frm.cbcate_code.focus();
 		return false;
 	}
@@ -73,8 +73,8 @@ function all_check(){
 		frm.cscate_code.focus();
 		return false;
 	}
-	else if(frm.cscate_code.value.length!=3){
-		alert("소메뉴 카테고리는 3자리 숫자를 입력하셔야 합니다.");
+	else if(frm.cscate_code.value.length!=2){
+		alert("소메뉴 카테고리는 2자리 숫자를 입력하셔야 합니다.");
 		frm.cscate_code.focus();
 		return false;
 	}

@@ -13,7 +13,7 @@
     <ul>
         <li>대메뉴 코드</li>
         <li>
-            <input type="text" name="cbcate_code" id="cbcate_code" class="cate_input2" onkeyup="cate_plus();" list="lg_menu" maxlength="3">
+            <input type="text" name="cbcate_code" id="cbcate_code" class="cate_input2" onkeyup="cate_plus();" list="lg_menu" maxlength="2">
             <datalist id="lg_menu">
             <%
             int w= 0;
@@ -24,7 +24,7 @@
                 } %>
             </datalist>
         </li>
-        <li>※ 대메뉴에 사용할 코드 번호를 입력하세요 3자리 숫자로 입력하셔야 합니다.</li>
+        <li>※ 대메뉴에 사용할 코드 번호를 입력하세요 2자리 숫자로 입력하셔야 합니다.</li>
     </ul>
     <ul>
         <li>대메뉴명</li>
@@ -34,7 +34,7 @@
     <ul>
         <li>소메뉴 코드</li>
         <li>
-            <input type="text" name="cscate_code" id="cscate_code" class="cate_input2" onkeyup="cate_plus();" list="lg_menu" maxlength="3">
+            <input type="text" name="cscate_code" id="cscate_code" class="cate_input2" onkeyup="cate_plus();" list="lg_menu" maxlength="2">
             <datalist id="lg_menu">
                      <%
             int e= 0;
@@ -45,7 +45,7 @@
                 } %>
             </datalist>
         </li>
-        <li>※ 소메뉴에 사용할 코드 번호를 입력하세요 3자리 숫자로 입력하셔야 합니다.</li>
+        <li>※ 소메뉴에 사용할 코드 번호를 입력하세요 2자리 숫자로 입력하셔야 합니다.</li>
     </ul>
     <ul>
         <li>소메뉴명</li>

@@ -53,7 +53,7 @@ do{
     <ul>
         <li><input type="checkbox" name="product_check" id="product_check<%=list.get(w).get("pidx")%>" value="<%=list.get(w).get("pidx")%>" onclick="product_change(this);"></li>
         <li><%=list.get(w).get("product_code")%></li> 
-        <li><img src="<%=list.get(w).get("product_img1")%>" style="height:90%; margin-top:1px;" alt="사진 없음"></li>
+        <li><img src=".<%=list.get(w).get("product_img1")%>" style="height:90%; margin-top:1px;" alt="사진 없음"></li>
         <li><%=list.get(w).get("product_name")%></li>
         <li><%=list.get(w).get("cbcate_code")%><%=list.get(w).get("cscate_code")%></li>
         <li><%=list.get(w).get("product_price")%></li>

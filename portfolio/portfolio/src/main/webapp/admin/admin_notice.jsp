@@ -41,7 +41,7 @@
 </form>
 </section>
 </main>
-<footer class="main_copyright">
+<footer class="main_copyright" style="margin-top:250px;">
 <%@ include file="./admin_footer.html" %>
 </footer>
 </body>
