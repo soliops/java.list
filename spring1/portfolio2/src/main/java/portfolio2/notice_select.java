@@ -21,6 +21,7 @@ public class notice_select {
 		Connection ct =null;
 		try {
 			ct = dataSource.getConnection();
+			System.out.println("시작");
 			String sql = "select * from admin_notice order by idx desc;";
 			PreparedStatement ps = ct.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery();

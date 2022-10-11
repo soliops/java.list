@@ -3,20 +3,24 @@ package portfolio2;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.dbcp.BasicDataSource;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.google.inject.Inject;
+
 @Controller
 public class cs {
+	@Inject
+	private SqlSessionFactory sqlFactory;
 	
 	@Autowired
 	BasicDataSource dataSource;
@@ -69,5 +73,25 @@ public class cs {
 		ct.close();
 		ps.close();
 		return "cs";
+	}
+	@RequestMapping("/notice.do")
+	public String notice_page(HttpServletRequest req, Model m) throws Exception {
+		String pgno = req.getParameter("page");
+		if(pgno==null||pgno=="") {
+			pgno="1";
+		}
+		notice_select ns = new notice_select();
+		System.out.println("처음");
+		ns.list_select();
+		ArrayList<Map<String,Object>> notice_list = ns.select_list();
+		System.out.println("중간");
+		System.out.println(notice_list);
+//		ns.nlist_select(pgno);
+//		ArrayList<Map<String,Object>> notice_nlist = ns.select_list();
+//		m.addAttribute("notice_list",notice_list);
+//		m.addAttribute("notice_nlist",notice_nlist);
+//		ArrayList<Object> page_data = ns.page_data();
+//		m.addAttribute("page_data", page_data);
+		return "notice";
 	}
 }
