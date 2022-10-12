@@ -1,12 +1,12 @@
+<%@page import="java.text.DecimalFormat"%>
 <%@page import="portfolio2.item_dao"%>
 <%@page import="java.util.*"%>
+<%@ taglib prefix="fm" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <% 
 item_dao list = (item_dao)request.getAttribute("list");
-out.print(list.getPidx());
 String url = request.getRealPath("");
-out.print(url);
 %>
 <div class="detail_title_area">
 	<h3 class="name" ><%=list.getProduct_name() %></h3>
@@ -15,7 +15,7 @@ out.print(url);
 		<span class="detail_icons">
 		</span>
 	</p>
-	<p class="seq_num Hide">상품번호 : 767</p>
+	<p class="seq_num Hide">상품번호 : <%=list.getProduct_code() %></p>
 </div>
 
 <div id="goods_view">
@@ -78,14 +78,14 @@ out.print(url);
 				<li class="deatil_price_area">
 						<div class="deatil_sale_rate">
 							<p class="inner">
-								<span class="num">20</span>%
+								<span class="num"><%=list.getProduct_discount() %></span>%
 							</p>
 						</div>
 						<p class="org_price">
-							<span class="dst_th_size"><s><span class="num">8,910,000</span></s>&#x20a9;</span>
+							<span class="dst_th_size"><s><span class="num"><fm:formatNumber value="<%=list.getProduct_price() %>"/></span></s>&#x20a9;</span>
 						</p>
 						<p class="sale_price">
-								<span class="num">7,128,000</span><span class='price_won'>&#x20a9;</span>
+								<span class="num"><fm:formatNumber value="<%=list.getProduct_disprice() %>"/></span><span class='price_won'>&#x20a9;</span>
 						</p>
 
 					<!--<button type="button" class="btn_open_small btn_resp B" onclick="detail_contents_toggle(this,'priceDetail')"><span designElement="text">할인금액</span></button>//-->
@@ -96,7 +96,7 @@ out.print(url);
 						<ul>
 							<li>
 								<span class="title">이벤트</span>
-								<span class="detail">1,782,000&#x20a9;</span>
+								<span class="detail" id="price_detail" name="price_detail" value="<%=list.getProduct_disprice()%>"><fm:formatNumber value="<%=list.getProduct_disprice() %>"/>&#x20a9;</span>
 							</li>
 						</ul>
 					</div>
@@ -107,7 +107,7 @@ out.print(url);
 				<li class="goods_spec_number hide">
 					<ul class="detail_spec_table">
 						<li class="th"><span designElement="text" textIndex="6" >상품번호</span></li>
-						<li class="td">767</li>
+						<li class="td"><%=list.getProduct_code() %></li>
 					</ul>
 				</li>
 				<!-- ~~~~~ //상품번호 ~~~~~ -->
@@ -122,7 +122,8 @@ out.print(url);
 						<li class="th"><span designElement="text" textIndex="44" >적립혜택</span></li>
 						<li>
 							<span designElement="text" textIndex="45" >구매</span>
-							21,384&#x20a9;
+							<%int point = (int)Math.ceil(Integer.parseInt(list.getProduct_disprice())*0.01); %>
+							<fm:formatNumber value="<%=point%>"/>&#x20a9;
 
 						</li>
 					</ul>
@@ -280,13 +281,11 @@ out.print(url);
 		<tr class="optionTr">
 			<td colspan="2">
 				<span class="optionTitle hide">수량</span>
-				<select>
-					<option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                    <option>6</option>
+				<select id="product_num" onchange="price_cal();">
+				<%int w=1; 
+					while(w<=Integer.parseInt(list.getProduct_stock())){%>
+					<option value="<%=w%>" ><%=w %></option>
+                    <%w++;}; %>
 				</select>
 			</td>
 		</tr>
@@ -313,11 +312,24 @@ out.print(url);
 						<!-- 단일옵션일 경우 수량 -->
 						<td class="total_goods_price">
 							<span class="total_goods_tit" designElement="text">총 상품금액</span>
-							<span id="total_goods_price">7,128,000</span> &#x20a9;
+							<%
+							DecimalFormat df = new DecimalFormat("#,###");
+							int goods_price = Integer.parseInt(list.getProduct_disprice()); %>
+							<span id="total_goods_price" value="<%=goods_price%>">
+							<%=df.format(goods_price)%>
+							</span> &#x20a9;
 						</td>
 					</tr>
 					</table>
 				</div>
+				<script>
+				function price_cal(){					
+				var detail_price = '<%=list.getProduct_disprice()%>';
+				var num = document.getElementById("product_num").value;
+				var total_price = num * detail_price;
+				document.getElementById("total_goods_price").innerText = total_price.toLocaleString();
+				}
+				</script>
 				<!-- 총 상품 금액 표기 끝-->
 
 				<div class="goods_buttons_area">
@@ -414,7 +426,7 @@ out.print(url);
             }
             </style>
 			<div class="goods_description_images goods_view_contents">
-				카페24에 올려놓은 이미지가 출력되어야 하는 부분
+				<%=list.getProduct_explain() %>
                <!-- 상세설명 출력 부분 해당 부분에 상세정보 이미지가 추가 되어야 합니다.-->
 			</div>
 		</div>

@@ -1,8 +1,24 @@
+<%@page import="portfolio2.notice_dao"%>
 <%@page import="java.util.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%-- <%ArrayList<Map<String,Object>> data = (ArrayList<Map<String,Object>>)request.getAttribute("notice_list"); %> --%>
-<%-- <%out.print(data.size()); %> --%>
+<%
+String url = request.getContextPath();
+List<notice_dao> list = (List<notice_dao>)request.getAttribute("notice_list");
+List<notice_dao> notice_list = (List<notice_dao>)request.getAttribute("notice_list_limit");
+ArrayList<Object> page_data = (ArrayList<Object>)request.getAttribute("page_data");
+int total = (int)page_data.get(3);
+int startpage = (int)page_data.get(1);
+double pagenumber = (double)page_data.get(2);
+int size = 0;
+if(notice_list.size()!=0){
+	size=notice_list.size();
+}
+String pages = request.getParameter("page");
+if(pages==null){pages="1";}
+%>    
+
+
 <meta charset="utf-8">
 <div id="boardlayout" >
     <div class="subpage_wrap">
@@ -40,7 +56,7 @@ $(function() {
 <ul class="bbs_top_wrap">
     <li class="left">
         <select name="category" id="searchcategory">
-            <option value="" selected="selected">- 전체 -</option>
+            <option value="0" selected="selected">- 전체 -</option>
             <option value="공지" >공지</option>
             <option value="긴급공지" >긴급공지</option>
         </select>
@@ -48,19 +64,22 @@ $(function() {
     <li class="right2">
         <span class="searchform">
             <input type="text" name="search_text" id="search_text" class="res_bbs_search_input" value="" title="제목, 내용" />
-            <button type="submit" class="btn_resp size_b">검색</button>
-            <button type="button" class="btn_resp size_b">초기화</button>
+            <input type="hidden" name="p_check" value="N">
+            <input type="submit" class="btn_resp size_b" value="검색" onclick="search();">
+            <input type="button" class="btn_resp size_b" value="초기화" onclick="search_reset();">
         </span>
     </li>
 </ul>
 <div class="article_info hide">
-총 0개 (현재 0/총 0페이지)
+총 <%=size %>개 (현재 <%=pages%>/총 <%=pagenumber %>페이지)
 </div>
+<%if(size==0){ %>
 <!--등록된 글이 없을 경우-->
 <div class="no_data_area2">
     등록된 게시글이 없습니다.
 </div>
-
+<%}
+else{%>
 <!--등록된 글이 있을 경우-->
 
 <div class="res_table">
@@ -70,29 +89,69 @@ $(function() {
 <li style="width:94px;"><span designElement="text">작성자</span></li>
 <li style="width:84px;"><span designElement="text">등록일</span></li>
 </ul>
-
-<!--반복구간 사항-->
-
+<%
+if(!page_data.get(4).equals("공지")){
+int t = 0;
+while(t<list.size()){%>
 <ul class="tbody">
 <li class="mo_hide">
-<span class="mtitle" designElement="text">번호:</span> 1</li>
+<span class="mtitle" designElement="text">번호:</span> 긴급 </li>
 <li class="subject">
-    제목
+    <%=list.get(t).getNotice_title() %>
 </li>
 <li class="subject" style="text-align: center;">
-    관리자
+  <%=list.get(t).getNotice_writer() %>
 </li>
 <li class="subject" style="text-align: center;">
-    2022-10-05
+    <%String date =list.get(t).getNotice_date(); %>
+    	<%=date.substring(0,10)%>
 </li>
 </ul>
-
+<%t++;
+}
+}
+%>
+<!--반복구간 사항-->
+<% 
+if(!page_data.get(4).equals("긴급공지")){
+int w=0;
+int no =0;
+String title = "공지";
+while(w<size){
+	String p_check = notice_list.get(w).getNotice_print();
+	no= total-startpage-w;
+%>
+<ul class="tbody">
+<li class="mo_hide">
+<span class="mtitle" designElement="text">번호:</span> <%if(p_check.equals("Y")){%><%=title%><%}else{%><%=no%><%}%></li>
+<li class="subject">
+    <%=notice_list.get(w).getNotice_title() %>
+</li>
+<li class="subject" style="text-align: center;">
+  <%=notice_list.get(w).getNotice_writer() %>
+</li>
+<li class="subject" style="text-align: center;">
+    <%String date =notice_list.get(w).getNotice_date(); %>
+    	<%=date.substring(0,10)%>
+</li>
+</ul>
+<%
+w++;
+} 
+}
+}
+%>
 <!--반복구간 종료-->
 </div>
 <div id="pagingDisplay" class="paging_navigation">
 <p>
+<%
+int ww=1;
+while(ww<=pagenumber){%>
 <!--페이지 번호 반복구간-->
-<a class="on red">1</a>
+<a class="on red" href="./notice.do?page=<%=ww %>"><%=ww%></a>
+<%
+ww++;} %>
 <!--페이지 번호 반복구간-->
 </p>
 </div>

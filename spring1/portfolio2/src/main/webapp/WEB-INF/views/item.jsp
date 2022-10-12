@@ -46,6 +46,7 @@
 <script src="./js/slick.min.js"></script>
 <script src="./js/jquery.event.swipe.js"></script>
 <script src="./js/swiper.js"></script>
+<script src="./js/item.js"></script>
 <body>
 <style>
         #layout_body { background-color:#ffffff; }
@@ -59,10 +60,11 @@
 <div id="layout_wrap" class="layout_wrap">
     <%@ include file="./top.html" %>  
 </div>
-	
+<form name="item_form" id="item_form">
 <div class="resp_wrap display_wrap">
     <%@ include file="./item_view.jsp" %>
 </div>
+</form>
 <div id="layout_footer" class="layout_footer">
     <%@ include file="./footer.html" %>
 </div>
