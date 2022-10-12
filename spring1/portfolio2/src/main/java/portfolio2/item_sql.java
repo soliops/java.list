@@ -6,8 +6,9 @@ import javax.annotation.Resource;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
-@Repository("it")
+@Service("it")
 public class item_sql {
 	item_dao ido = null;
 

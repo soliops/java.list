@@ -26,11 +26,9 @@ public class item {
 			@RequestParam(name = "num", defaultValue = "1") Integer num
 			) throws Exception {
 		String url = req.getServletContext().getRealPath("");
-		System.out.println(url);
 		SqlSession session = sqlFactory.openSession();
 		item_dao list = item_sql.list_select(num);
 		m.addAttribute("list",list);
-		System.out.println(list);
 		return "item";
 	}
 }
